@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pizza House</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin: 0 1rem;
+                font-size: 1rem;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        .icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cart-icon, .account-icon {
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+            .search-bar input {
+                width: 100%;
+                max-width: 400px;
+                padding: 0.5rem 15rem 0.5rem 2rem;
+                font-size: 1rem;
+                border: none;
+                border-radius: 20px;
+                background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" width="18px" height="18px"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat 10px center;
+                background-size: 18px;
+            }
+
+                .search-bar input:focus {
+                    outline: none;
+                    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+                }
+
+        /* Menu Section */
+        .menu {
+            padding: 8rem 2rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+            .menu h2 {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                color: #1a1a1a;
+                font-family: 'Dancing Script', cursive;
+            }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+            .menu-tabs button {
+                background: none;
+                border: none;
+                margin: 0 10px;
+                padding: 10px 20px;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 20px;
+            }
+
+                .menu-tabs button.active {
+                    background-color: #ffc107;
+                    color: white;
+                }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .menu-item {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+            .menu-item img {
+                width: 100%;
+                max-width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+            }
+
+            .menu-item h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .menu-item p {
+                font-size: 0.9rem;
+                color: #ccc;
+                margin-bottom: 0.5rem;
+            }
+
+            .menu-item .price {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+
+            .menu-item button {
+                background-color: transparent;
+                border: 2px solid #fbc02d;
+                color: #fbc02d;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                cursor: pointer;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+                .menu-item button:hover {
+                    background-color: #fbc02d;
+                    color: #1a1a1a;
+                }
+
+                .menu-item button::before {
+                    content: "🛒";
+                    margin-right: 0.5rem;
+                }
+
+        .view-more {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+            .view-more button {
+                background-color: #fbc02d;
+                border: none;
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+                cursor: pointer;
+                border-radius: 20px;
+                color: #1a1a1a;
+                font-weight: 700;
+            }
+
+                .view-more button:hover {
+                    background-color: #e0a800;
+                }
+
+        /* Footer */
+        footer {
+            background-color: #1b2526;
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .footer-left, .footer-right {
+            flex: 1;
+            min-width: 200px;
+            margin: 1rem 0;
+        }
+
+        .footer-center {
+            flex: 1;
+            min-width: 200px;
+            margin: 1rem 0;
+        }
+
+        .footer-left h3, .footer-right h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-center h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-left p, .footer-right p, .footer-center p {
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+            color: #ccc;
+        }
+
+        .footer-center .social-icons {
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+            }
+
+            .menu {
+                padding-top: 10rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+    <script>
+        function goToHomePage() {
+            window.location.href = 'menu_all.html';
+        }
+        function goToKhaiviPage() {
+            window.location.href = 'menu_khaivi.html';
+        }
+        function goToPizzaPage() {
+            window.location.href = 'Menu_pizza.html';
+        }
+        function goToSpaghettiPage() {
+            window.location.href = 'Menu_Spaghetti.html';
+        }
+         function goToDrinkPage() {
+                window.location.href = 'Menu_Drink.html';
+            }
+        
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <h1>The Pizza House</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
+            </div>
+            <nav>
+                <a href="#home">Trang chủ</a>
+                <a href="menu.html">Thực đơn</a>
+                <a href="#new">Món mới</a>
+                <a href="#contact">Liên hệ</a>
+                <div class="icons">
+                    <span class="icons">
+                        <i class="fas fa-user"></i>
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+
+
+                </div>
+</div>
+            </nav>
+        </div>
+       
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <h2>Thực đơn</h2>
+        <div class="menu-tabs">
+            <button onclick="goToHomePage()">Tất cả</button>
+            <button onclick="goToKhaiviPage()">Khai vị</button>
+            <button class="active">Pizza</button>
+            <button onclick="goToSpaghettiPage()">Spaghetti</button>
+            <button onclick="goToDrinkPage()">Đồ uống</button>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
+                <h3>Delicious Pizza</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$20</div>
+                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Burger">
+                <h3>Delicious Burger</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$15</div>
+                <button onclick="addToCart('Delicious Burger')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
+                <h3>Delicious Pizza</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$17</div>
+                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
+                <h3>Delicious Pasta</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$18</div>
+                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1551181723-e3a7f6c1905e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="French Fries">
+                <h3>French Fries</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$10</div>
+                <button onclick="addToCart('French Fries')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
+                <h3>Delicious Pizza</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$15</div>
+                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
+                <h3>Tasty Burger</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$12</div>
+                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
+                <h3>Tasty Burger</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$14</div>
+                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
+                <h3>Delicious Pasta</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$10</div>
+                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+            </div>
+        </div>
+        <div class="view-more">
+            <button>Xem thêm</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-left">
+            <h3>Liên hệ</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 12 Chùa Bộc, đống Đa, Hà Nội</p>
+            <p><i class="fas fa-phone"></i> 0705311048</p>
+            <p><i class="fas fa-envelope"></i> thepizzahouse@gmail.com</p>
+        </div>
+        <div class="footer-center">
+            <h2>The Pizza House</h2>
+            <p>The Pizza House - không chỉ là ăn thức, mà còn là cả một trải nghiệm vị giác.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3>Giờ mở cửa</h3>
+            <p>Everyday</p>
+            <p>8:00 AM - 23:00 PM</p>
+        </div>
+    </footer>
+
+    <script>
+        function addToCart(itemName) {
+            alert(`${itemName} đã được thêm vào giỏ hàng!`);
+        }
+
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = document.getElementById('searchInput').value;
+                if (query) {
+                    alert(`Bạn đã tìm kiếm: ${query}`);
+                } else {
+                    alert('Vui lòng nhập món ăn để tìm kiếm!');
+                }
+            }
+        }
+
+        // Tab functionality
+        const tabs = document.querySelectorAll('.menu-tabs button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

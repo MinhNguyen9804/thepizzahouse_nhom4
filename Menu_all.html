@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pizza House</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+   
+    <script>
+        function goToHomePage() {
+            window.location.href = 'menu_all.html';
+        }
+        function goToKhaiviPage() {
+            window.location.href = 'menu_khaivi.html';
+        }
+        function goToPizzaPage() {
+            window.location.href = 'Menu_pizza.html';
+        }
+        function goToSpaghettiPage() {
+            window.location.href = 'Menu_Spaghetti.html';
+        }
+        function goToDrinkPage() {
+            window.location.href = 'Menu_Drink.html';
+        }
+
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <img src="link-logo-cua-ban.png" alt="Pizza House Logo">
+            <h1>The Pizza House</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
+            </div>
+            <nav>
+                <a href="#home">Trang chủ</a>
+                <a href="menu.html">Thực đơn</a>
+                <a href="#new">Món mới</a>
+                <a href="#contact">Liên hệ</a>
+                <div class="icons">
+                    <span class="icons">
+                        <i class="fas fa-user"></i>
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+
+
+                </div>
+        </div>
+            </nav>
+        </div>
+       
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <h2>Thực đơn</h2>
+        <div class="menu-tabs">
+            <button class="active">Tất cả</button>
+            <button onclick="goToKhaiviPage()">Khai vị</button>
+            <button onclick="goToPizzaPage()">Pizza</button>
+            <button onclick="goToSpaghettiPage()">Spaghetti</button>
+            <button onclick="goToDrinkPage()">Đồ uống</button>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
+                <h3>Delicious Pizza</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$20</div>
+                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Burger">
+                <h3>Delicious Burger</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$15</div>
+                <button onclick="addToCart('Delicious Burger')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
+                <h3>Delicious Pizza</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$17</div>
+                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
+                <h3>Delicious Pasta</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$18</div>
+                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1551181723-e3a7f6c1905e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="French Fries">
+                <h3>French Fries</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$10</div>
+                <button onclick="addToCart('French Fries')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
+                <h3>Delicious Pizza</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$15</div>
+                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
+                <h3>Tasty Burger</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$12</div>
+                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
+                <h3>Tasty Burger</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$14</div>
+                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
+                <h3>Delicious Pasta</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$10</div>
+                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+            </div>
+        </div>
+        <div class="view-more">
+            <button>Xem thêm</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-left">
+            <h3>Liên hệ</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 12 Chùa Bộc, đống Đa, Hà Nội</p>
+            <p><i class="fas fa-phone"></i> 0705311048</p>
+            <p><i class="fas fa-envelope"></i> thepizzahouse@gmail.com</p>
+        </div>
+        <div class="footer-center">
+            <h2>The Pizza House</h2>
+            <p>The Pizza House - không chỉ là ăn thức, mà còn là cả một trải nghiệm vị giác.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3>Giờ mở cửa</h3>
+            <p>Everyday</p>
+            <p>8:00 AM - 23:00 PM</p>
+        </div>
+    </footer>
+
+    <script>
+        function addToCart(itemName) {
+            alert(`${itemName} đã được thêm vào giỏ hàng!`);
+        }
+
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = document.getElementById('searchInput').value;
+                if (query) {
+                    alert(`Bạn đã tìm kiếm: ${query}`);
+                } else {
+                    alert('Vui lòng nhập món ăn để tìm kiếm!');
+                }
+            }
+        }
+
+        // Tab functionality
+        const tabs = document.querySelectorAll('.menu-tabs button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
