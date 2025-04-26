@@ -175,7 +175,7 @@
                 font-size: 1rem;
                 cursor: pointer;
                 border-radius: 20px;
-                display: flex;
+                display: flex;S
                 align-items: center;
                 justify-content: center;
                 margin: 0 auto;
@@ -294,6 +294,7 @@
                 gap: 1rem;
             }
         }
+
         .fade-out {
             opacity: 0;
             transition: opacity 0.4s ease;
@@ -301,10 +302,10 @@
     </style>
     <script>
         function goToHomePage() {
-            window.location.href = 'index.html';
+            window.location.href = 'menu_all.html';
         }
         function goToKhaiviPage() {
-            window.location.href = 'Menu_Khaivi.html';
+            window.location.href = 'menu_khaivi.html';
         }
         function goToPizzaPage() {
             window.location.href = 'Menu_pizza.html';
@@ -312,10 +313,10 @@
         function goToSpaghettiPage() {
             window.location.href = 'Menu_Spaghetti.html';
         }
-            function goToDrinkPage() {
-                window.location.href = 'Menu_Drink.html';
-            }
-        
+        function goToDrinkPage() {
+            window.location.href = 'Menu_Drink.html';
+        }
+
     </script>
 </head>
 <body>
@@ -339,10 +340,10 @@
 
 
                 </div>
-</div>
-            </nav>
         </div>
-       
+        </nav>
+        </div>
+
     </header>
 
     <!-- Menu Section -->
@@ -355,74 +356,74 @@
             <button class="active">Spaghetti</button>
             <button onclick="goToDrinkPage()">Đồ uống</button>
         </div>
-      <div class="menu-item">
-    <img src="https://images.unsplash.com/photo-1589307003878-7b1c4ef29558?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Bolognese">
-    <h3>Spaghetti Bolognese</h3>
-    <p>Mì Ý sốt bò bằm đậm đà hương vị Ý truyền thống.</p>
-    <div class="price">$12</div>
-    <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
-</div>
-
-<div class="menu-item">
-    <img src="https://images.unsplash.com/photo-1606914469633-320b4a96a1c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Carbonara">
-    <h3>Spaghetti Carbonara</h3>
-    <p>Mì Ý sốt kem trứng béo ngậy cùng thịt xông khói.</p>
-    <div class="price">$13</div>
-    <button onclick="addToCart('Spaghetti Carbonara')">Thêm vào giỏ</button>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Pomodoro">
+                <h3>Spaghetti Pomodoro</h3>
+                <p>Spaghetti sốt cà chua tươi nhà làm, kết hợp với dầu ô liu và lá húng quế, mang đến hương vị Ý cổ điển, nhẹ nhàng và tinh tế.</p>
+                <div class="price">108,000 VND</div>
+                <button onclick="addToCart('Spaghetti Pomodoro')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
-                <h3>Delicious Pizza</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$17</div>
-                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Bolognese">
+                <h3>Spaghetti Bolognese</h3>
+                <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.</p>
+                <div class="price">148,000 VND</div>
+                <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
-                <h3>Delicious Pasta</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$18</div>
-                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Pesto Tôm">
+                <h3>Spaghetti Pesto Tôm</h3>
+                <p>Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút phô mai ricotta, mang đến hương vị Ý hiện đại.</p>
+                <div class="price">178,000 VND</div>
+                <button onclick="addToCart('Spaghetti Pesto Tôm')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1551181723-e3a7f6c1905e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="French Fries">
-                <h3>French Fries</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$10</div>
-                <button onclick="addToCart('French Fries')">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com/photo-1635264686146-1a1e61577d7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Fettuccine Cá Hồi Sốt Kem">
+                <h3>Fettuccine Cá Hồi Sốt Kem</h3>
+                <p>Fettuccine mềm mượt với cá hồi tươi, sốt kem béo ngậy, thêm chút rau mùi và phô mai, tạo nên món ăn sang trọng, đầy hấp dẫn.</p>
+                <div class="price">198,000 VND</div>
+                <button onclick="addToCart('Fettuccine Cá Hồi Sốt Kem')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
-                <h3>Delicious Pizza</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$15</div>
-                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Carbonara">
+                <h3>Spaghetti Carbonara</h3>
+                <p>Spaghetti với sốt carbonara béo ngậy từ trứng và phô mai camembert nhà làm, thêm chút tiêu đen, mang đến hương vị Ý đích thực.</p>
+                <div class="price">148,000 VND</div>
+                <button onclick="addToCart('Spaghetti Carbonara')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
-                <h3>Tasty Burger</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$12</div>
-                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Vongole">
+                <h3>Spaghetti Vongole</h3>
+                <p>Spaghetti với nghêu tươi, sốt dầu ô liu và tỏi, điểm thêm chút ớt và húng quế, mang đến hương vị biển cả tươi mát, đậm đà.</p>
+                <div class="price">168,000 VND</div>
+                <button onclick="addToCart('Spaghetti Vongole')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
-                <h3>Tasty Burger</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$14</div>
-                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com/photo-1635264686146-1a1e61577d7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Cua Sốt Kem">
+                <h3>Spaghetti Cua Sốt Kem</h3>
+                <p>Spaghetti với thịt cua ngọt tự nhiên, sốt kem béo nhẹ, thêm chút phô mai và rau thơm, mang đến món ăn tinh tế, hấp dẫn.</p>
+                <div class="price">228,000 VND</div>
+                <button onclick="addToCart('Spaghetti Cua Sốt Kem')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
-                <h3>Delicious Pasta</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$10</div>
-                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Lasagna Bò">
+                <h3>Lasagna Bò</h3>
+                <p>Lasagna nướng với sốt bolognese từ thịt bò, lớp phô mai mozzarella tan chảy, từng lớp mì mềm, mang đến hương vị Ý đậm đà.</p>
+                <div class="price">188,000 VND</div>
+                <button onclick="addToCart('Lasagna Bò')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Spaghetti Tôm Sốt Cà Chua">
+                <h3>Spaghetti Tôm Sốt Cà Chua</h3>
+                <p>Spaghetti với tôm tươi, sốt cà chua đậm đà, thêm chút phô mai và lá húng quế, mang đến hương vị Ý tươi mới, hấp dẫn.</p>
+                <div class="price">188,000 VND</div>
+                <button onclick="addToCart('Spaghetti Tôm Sốt Cà Chua')">Thêm vào giỏ</button>
             </div>
         </div>
-        <div class="view-more">
-            <button>Xem thêm</button>
-        </div>
+            <div class="view-more">
+                <button>Xem thêm</button>
+            </div>
     </section>
 
     <!-- Footer -->
