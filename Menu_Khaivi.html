@@ -297,10 +297,10 @@
     </style>
     <script>
         function goToHomePage() {
-            window.location.href = 'index.html';
+            window.location.href = 'menu_all.html';
         }
         function goToKhaiviPage() {
-            window.location.href = 'Menu_Khaivi.html';
+            window.location.href = 'menu_khaivi.html';
         }
         function goToPizzaPage() {
             window.location.href = 'Menu_pizza.html';
@@ -350,6 +350,14 @@
             <button onclick="goToPizzaPage()">Pizza</button>
             <button onclick="goToSpaghettiPage()">Spaghetti</button>
             <button onclick="goToDrinkPage()">Đồ uống</button>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
+                <h3>Delicious Pizza</h3>
+                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <div class="price">$20</div>
+                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Burger">
