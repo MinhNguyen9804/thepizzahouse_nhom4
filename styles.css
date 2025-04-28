@@ -22,7 +22,7 @@ header {
 
 .header-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -278,3 +278,4 @@ footer {
     .menu-grid {
         grid-template-columns: 1fr;
     }
+}

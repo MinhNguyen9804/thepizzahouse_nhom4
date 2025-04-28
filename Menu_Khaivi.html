@@ -7,294 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        body {
-            background-color: #fff;
-        }
-
-        /* Header */
-        header {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            font-family: 'Dancing Script', cursive;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-            nav a {
-                color: white;
-                text-decoration: none;
-                margin: 0 1rem;
-                font-size: 1rem;
-            }
-
-                nav a:hover {
-                    text-decoration: underline;
-                }
-
-        .icons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .cart-icon, .account-icon {
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .search-bar {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-        }
-
-            .search-bar input {
-                width: 100%;
-                max-width: 400px;
-                padding: 0.5rem 15rem 0.5rem 2rem;
-                font-size: 1rem;
-                border: none;
-                border-radius: 20px;
-                background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" width="18px" height="18px"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat 10px center;
-                background-size: 18px;
-            }
-
-                .search-bar input:focus {
-                    outline: none;
-                    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-                }
-
-        /* Menu Section */
-        .menu {
-            padding: 8rem 2rem 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-            .menu h2 {
-                text-align: center;
-                font-size: 2rem;
-                margin-bottom: 1rem;
-                color: #1a1a1a;
-                font-family: 'Dancing Script', cursive;
-            }
-
-        .menu-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-            .menu-tabs button {
-                background: none;
-                border: none;
-                margin: 0 10px;
-                padding: 10px 20px;
-                font-weight: bold;
-                cursor: pointer;
-                border-radius: 20px;
-            }
-
-                .menu-tabs button.active {
-                    background-color: #ffc107;
-                    color: white;
-                }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .menu-item {
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            color: white;
-        }
-
-            .menu-item img {
-                width: 100%;
-                max-width: 200px;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 50%;
-                margin-bottom: 1rem;
-            }
-
-            .menu-item h3 {
-                font-size: 1.3rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .menu-item p {
-                font-size: 0.9rem;
-                color: #ccc;
-                margin-bottom: 0.5rem;
-            }
-
-            .menu-item .price {
-                font-size: 1.1rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-            }
-
-            .menu-item button {
-                background-color: transparent;
-                border: 2px solid #fbc02d;
-                color: #fbc02d;
-                padding: 0.5rem 1rem;
-                font-size: 1rem;
-                cursor: pointer;
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto;
-            }
-
-                .menu-item button:hover {
-                    background-color: #fbc02d;
-                    color: #1a1a1a;
-                }
-
-                .menu-item button::before {
-                    content: "🛒";
-                    margin-right: 0.5rem;
-                }
-
-        .view-more {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-            .view-more button {
-                background-color: #fbc02d;
-                border: none;
-                padding: 0.8rem 2rem;
-                font-size: 1rem;
-                cursor: pointer;
-                border-radius: 20px;
-                color: #1a1a1a;
-                font-weight: 700;
-            }
-
-                .view-more button:hover {
-                    background-color: #e0a800;
-                }
-
-        /* Footer */
-        footer {
-            background-color: #1b2526;
-            color: white;
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-
-        .footer-left, .footer-right {
-            flex: 1;
-            min-width: 200px;
-            margin: 1rem 0;
-        }
-
-        .footer-center {
-            flex: 1;
-            min-width: 200px;
-            margin: 1rem 0;
-        }
-
-        .footer-left h3, .footer-right h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-center h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-left p, .footer-right p, .footer-center p {
-            font-size: 0.9rem;
-            margin: 0.5rem 0;
-            color: #ccc;
-        }
-
-        .footer-center .social-icons {
-            margin-top: 1rem;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            text-decoration: none;
-            background-color: rgba(255, 255, 255, 0.2);
-            width: 35px;
-            height: 35px;
-            line-height: 35px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-top {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav a {
-                margin: 0 0.5rem;
-            }
-
-            .menu {
-                padding-top: 10rem;
-            }
-
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    
     <script>
         function goToHomePage() {
             window.location.href = 'index.html';
@@ -311,6 +25,43 @@
         function goToDrinkPage() {
             window.location.href = 'Menu_Drink.html';
         }
+        function showMore() {
+        const hiddenProducts = document.querySelectorAll('.hidden-product');
+        hiddenProducts.forEach(product => {
+            product.style.display = 'block'; // Hiện sản phẩm ẩn
+        });
+        // Ẩn nút 'Xem thêm' sau khi hiện hết
+        document.querySelector('.view-more').style.display = 'none';
+    }
+    // Nút tìm kiếm.
+function handleSearch(event) {
+    if (event.key === 'Enter') {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const products = document.querySelectorAll('.menu-item');
+
+        let found = false;
+
+        products.forEach(product => {
+            const title = product.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(query)) {
+                product.style.display = 'block'; // Hiện món ăn đúng
+                found = true;
+            } else {
+                product.style.display = 'none';  // Ẩn món ăn không đúng
+            }
+        });
+
+        if (!found) {
+            alert('Không tìm thấy món ăn bạn cần!');
+        } 
+
+        // Ẩn nút "Xem thêm" luôn nếu có
+        const viewMoreBtn = document.querySelector('.view-more');
+        if (viewMoreBtn) {
+            viewMoreBtn.style.display = 'none';
+        }
+    }
+}
 
     </script>
 </head>
@@ -346,78 +97,78 @@
         <h2>Thực đơn</h2>
         <div class="menu-tabs">
             <button onclick="goToHomePage()">Tất cả</button>
-            <button class="active">Khai vị</button>
+            <button class="active" onclick="goToKhaiviPage()">Khai vị</button>
             <button onclick="goToPizzaPage()">Pizza</button>
             <button onclick="goToSpaghettiPage()">Spaghetti</button>
             <button onclick="goToDrinkPage()">Đồ uống</button>
         </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
-                <h3>Delicious Pizza</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$20</div>
-                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+                <img src="https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png" alt="Da Gà Rộp Rộp Xốt Hàn - Cay">
+                <h3>Da Gà Rộp Rộp Xốt Hàn - Cay</h3>
+                <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng ...</p>
+                <div class="price">79,000 VND</div>
+                <button onclick="addToCart('Da Gà Rộp Rộp Xốt Hàn - Cay')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Burger">
-                <h3>Delicious Burger</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$15</div>
-                <button onclick="addToCart('Delicious Burger')">Thêm vào giỏ</button>
+                <img src="https://webreview.vn/images/items/21979.jpg" alt="Gà Giòn Không Xương">
+                <h3>Gà Giòn Không Xương</h3>
+                <p>Gà giòn tan với sốt Cocktail thơm ngậy</p>
+                <div class="price">99,000 VND</div>
+                <button onclick="addToCart('Gà Giòn Không Xương')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
-                <h3>Delicious Pizza</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$17</div>
-                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+                <img src="http://thepizzacompany.vn/images/thumbs/000/0002248_spicy-garlic-shrimp-with-bread_300.jpeg" alt="Tôm Bơ tỏi và Bánh Mì Nướng  ">
+                <h3>Tôm Bơ tỏi và Bánh Mì Nướng</h3>
+                <p>Tôm tươi đút lò với tỏi, bơ dùng kèm bánh mì nướng bơ tỏi</p>
+                <div class="price">129,000 VND</div>
+                <button onclick="addToCart('Tôm Bơ tỏi và Bánh Mì Nướng')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
-                <h3>Delicious Pasta</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$18</div>
-                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+                <img src="https://cdn.shopify.com/s/files/1/0617/2497/files/banh-quay-xoan-pulmuone_2_480x480.png?v=1691724674" alt="Bánh Phô Mai Xoắn">
+                <h3>Bánh Phô Mai Xoắn</h3>
+                <p>Phô mai trắng được nướng với bơ, tỏi và dùng kèm sốt Cocktail</p>
+                <div class="price">119,000 VND</div>
+                <button onclick="addToCart('Bánh Phô Mai Xoắn')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1551181723-e3a7f6c1905e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="French Fries">
-                <h3>French Fries</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <img src="https://file.hstatic.net/1000030244/article/muc-chien-xu-gion-2_b564c8c99ca648b78a578e3d3ea5d4de.jpg" alt="Mực Chiên Giòn">
+                <h3>Mực Chiên Giòn</h3>
+                <p>Mực tẩm bột chiên giòn dùng kèm sốt ngò tây</p>
+                <div class="price">129,000 VND</div>
+                <button onclick="addToCart('Mực Chiên Giòn')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://khamphamexico.wordpress.com/wp-content/uploads/2018/08/banh-quesadilla.jpg" alt="Bánh Kẹp Nướng Mexico">
+                <h3>Bánh Kẹp Nướng Mexico</h3>
+                <p>Phô mai, sốt cà chua, nhân gà nướng bơ tỏi, ớt sừng dùng kèm sốt cocktail</p>
+                <div class="price">129,000 VND</div>
+                <button onclick="addToCart('Bánh Kẹp Nướng Mexico')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png" alt="Salad Gà Giòn Không Xương">
+                <h3>Salad Gà Giòn Không Xương</h3>
+                <p>Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island</p>
+                <div class="price">89,000 VND</div>
+                <button onclick="addToCart('Salad Gà Giòn Không Xương')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="http://thepizzacompany.vn/images/thumbs/000/0002250_signature-salad_500.png" alt="Salad Đặc Sắc">
+                <h3>Salad Đặc Sắc</h3>
+                <p>Salad rau và trái cây tươi dùng kèm xốt kem đặc biệt của The Pizza Company.</p>
+                <div class="price">89,000 VND</div>
+                <button onclick="addToCart('Salad Đặc Sắc')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="http://thepizzacompany.vn/images/thumbs/000/0002251_caesars-salad_500.png" alt="Salad Trộn Sốt Caesar">
+                <h3>Salad Trộn Sốt Caesar</h3>
+                <p>Rau tươi trộn với sốt Caesar</p>
                 <div class="price">$10</div>
-                <button onclick="addToCart('French Fries')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
-                <h3>Delicious Pizza</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$15</div>
-                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
-                <h3>Tasty Burger</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$12</div>
-                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
-                <h3>Tasty Burger</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$14</div>
-                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
-                <h3>Delicious Pasta</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$10</div>
-                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+                <button onclick="addToCart('Salad Trộn Sốt Caesar')">Thêm vào giỏ</button>
             </div>
         </div>
         <div class="view-more">
-            <button>Xem thêm</button>
+            <button onclick="showMore()">Xem thêm</button>
         </div>
     </section>
 
@@ -451,16 +202,7 @@
             alert(`${itemName} đã được thêm vào giỏ hàng!`);
         }
 
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = document.getElementById('searchInput').value;
-                if (query) {
-                    alert(`Bạn đã tìm kiếm: ${query}`);
-                } else {
-                    alert('Vui lòng nhập món ăn để tìm kiếm!');
-                }
-            }
-        }
+      
 
         // Tab functionality
         const tabs = document.querySelectorAll('.menu-tabs button');

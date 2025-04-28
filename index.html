@@ -25,7 +25,53 @@
         function goToDrinkPage() {
             window.location.href = 'Menu_Drink.html';
         }
+        let currentIndex = 0; // Biến lưu vị trí đang hiển thị
 
+function showMore() {
+    const hiddenProducts = document.querySelectorAll('.hidden-product');
+    const productsPerClick = 6; // Số sản phẩm muốn hiển thị mỗi lần bấm
+
+    for (let i = currentIndex; i < currentIndex + productsPerClick && i < hiddenProducts.length; i++) {
+        hiddenProducts[i].style.display = 'block'; // Hiện sản phẩm
+    }
+
+    currentIndex += productsPerClick; // Cập nhật vị trí đã hiện
+
+    // Nếu đã hiện hết thì ẩn nút "Xem thêm"
+    if (currentIndex >= hiddenProducts.length) {
+        document.querySelector('.view-more').style.display = 'none';
+    }
+}
+
+// Nút tìm kiếm.
+function handleSearch(event) {
+    if (event.key === 'Enter') {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const products = document.querySelectorAll('.menu-item');
+
+        let found = false;
+
+        products.forEach(product => {
+            const title = product.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(query)) {
+                product.style.display = 'block'; // Hiện món ăn đúng
+                found = true;
+            } else {
+                product.style.display = 'none';  // Ẩn món ăn không đúng
+            }
+        });
+
+        if (!found) {
+            alert('Không tìm thấy món ăn bạn cần!');
+        } 
+
+        // Ẩn nút "Xem thêm" luôn nếu có
+        const viewMoreBtn = document.querySelector('.view-more');
+        if (viewMoreBtn) {
+            viewMoreBtn.style.display = 'none';
+        }
+    }
+}
     </script>
 </head>
 <body>
@@ -60,7 +106,7 @@
     <section class="menu" id="menu">
         <h2>Thực đơn</h2>
         <div class="menu-tabs">
-            <button class="active">Tất cả</button>
+            <button class="active" onclick="goToHomePage()">Tất cả</button>
             <button onclick="goToKhaiviPage()">Khai vị</button>
             <button onclick="goToPizzaPage()">Pizza</button>
             <button onclick="goToSpaghettiPage()">Spaghetti</button>
@@ -68,71 +114,247 @@
         </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
-                <h3>Delicious Pizza</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$20</div>
-                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+                <img src="https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png" alt="Da Gà Rộp Rộp Xốt Hàn - Cay">
+                <h3>Da Gà Rộp Rộp Xốt Hàn - Cay</h3>
+                <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng ...</p>
+                <div class="price">79,000 VND</div>
+                <button onclick="addToCart('Da Gà Rộp Rộp Xốt Hàn - Cay')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Burger">
-                <h3>Delicious Burger</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$15</div>
-                <button onclick="addToCart('Delicious Burger')">Thêm vào giỏ</button>
+                <img src="https://webreview.vn/images/items/21979.jpg" alt="Gà Giòn Không Xương">
+                <h3>Gà Giòn Không Xương</h3>
+                <p>Gà giòn tan với sốt Cocktail thơm ngậy</p>
+                <div class="price">99,000 VND</div>
+                <button onclick="addToCart('Gà Giòn Không Xương')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
-                <h3>Delicious Pizza</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$17</div>
-                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+                <img src="http://thepizzacompany.vn/images/thumbs/000/0002248_spicy-garlic-shrimp-with-bread_300.jpeg" alt="Tôm Bơ tỏi và Bánh Mì Nướng  ">
+                <h3>Tôm Bơ tỏi và Bánh Mì Nướng</h3>
+                <p>Tôm tươi đút lò với tỏi, bơ dùng kèm bánh mì nướng bơ tỏi</p>
+                <div class="price">129,000 VND</div>
+                <button onclick="addToCart('Tôm Bơ tỏi và Bánh Mì Nướng')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
-                <h3>Delicious Pasta</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$18</div>
-                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+                <img src="https://cdn.shopify.com/s/files/1/0617/2497/files/banh-quay-xoan-pulmuone_2_480x480.png?v=1691724674" alt="Bánh Phô Mai Xoắn">
+                <h3>Bánh Phô Mai Xoắn</h3>
+                <p>Phô mai trắng được nướng với bơ, tỏi và dùng kèm sốt Cocktail</p>
+                <div class="price">119,000 VND</div>
+                <button onclick="addToCart('Bánh Phô Mai Xoắn')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1551181723-e3a7f6c1905e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="French Fries">
-                <h3>French Fries</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
+                <img src="https://file.hstatic.net/1000030244/article/muc-chien-xu-gion-2_b564c8c99ca648b78a578e3d3ea5d4de.jpg" alt="Mực Chiên Giòn">
+                <h3>Mực Chiên Giòn</h3>
+                <p>Mực tẩm bột chiên giòn dùng kèm sốt ngò tây</p>
+                <div class="price">129,000 VND</div>
+                <button onclick="addToCart('Mực Chiên Giòn')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://khamphamexico.wordpress.com/wp-content/uploads/2018/08/banh-quesadilla.jpg" alt="Bánh Kẹp Nướng Mexico">
+                <h3>Bánh Kẹp Nướng Mexico</h3>
+                <p>Phô mai, sốt cà chua, nhân gà nướng bơ tỏi, ớt sừng dùng kèm sốt cocktail</p>
+                <div class="price">129,000 VND</div>
+                <button onclick="addToCart('Bánh Kẹp Nướng Mexico')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png" alt="Salad Gà Giòn Không Xương">
+                <h3>Salad Gà Giòn Không Xương</h3>
+                <p>Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island</p>
+                <div class="price">89,000 VND</div>
+                <button onclick="addToCart('Salad Gà Giòn Không Xương')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="http://thepizzacompany.vn/images/thumbs/000/0002250_signature-salad_500.png" alt="Salad Đặc Sắc">
+                <h3>Salad Đặc Sắc</h3>
+                <p>Salad rau và trái cây tươi dùng kèm xốt kem đặc biệt của The Pizza Company.</p>
+                <div class="price">89,000 VND</div>
+                <button onclick="addToCart('Salad Đặc Sắc')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="http://thepizzacompany.vn/images/thumbs/000/0002251_caesars-salad_500.png" alt="Salad Trộn Sốt Caesar">
+                <h3>Salad Trộn Sốt Caesar</h3>
+                <p>Rau tươi trộn với sốt Caesar</p>
                 <div class="price">$10</div>
-                <button onclick="addToCart('French Fries')">Thêm vào giỏ</button>
+                <button onclick="addToCart('Salad Trộn Sốt Caesar')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pizza">
-                <h3>Delicious Pizza</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$15</div>
-                <button onclick="addToCart('Delicious Pizza')">Thêm vào giỏ</button>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/08/2-APPLY-2-Burrata-Parma-Ham-Margherita-2.jpg" alt="Phô mai Burrata Margherita">
+                <h3>Phô mai Burrata Margherita</h3>
+                <p>Pizza với lớp đế mỏng giòn, phủ sốt cà chua tươi, phô mai Burrata tự làm tan chảy, thêm chút lá húng quế thơm lừng, mang đến hương vị Ý cổ điển đậm đà.</p>
+                <div class="price">198,000 VND</div>
+                <button onclick="addToCart('Phô mai Burrata Margherita')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
-                <h3>Tasty Burger</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$12</div>
-                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000012_2.jpg" alt="Pizza Cá Hồi Xốt Kem Miso">
+                <h3>Pizza Cá Hồi Xốt Kem Miso</h3>
+                <p>Sự kết hợp độc đáo giữa cá hồi tươi ngon và xốt kem miso đậm đà, điểm thêm chút phô mai kéo sợi, tạo nên hương vị Nhật Bản hiện đại trên nền pizza Ý.</p>
+                <div class="price">238,000 VND</div>
+                <button onclick="addToCart('Pizza Cá Hồi Xốt Kem Miso')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tasty Burger">
-                <h3>Tasty Burger</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$14</div>
-                <button onclick="addToCart('Tasty Burger')">Thêm vào giỏ</button>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg" alt="Pizza Hải Sản Sốt Cà Chua Cay">
+                <h3>Pizza Hải Sản Sốt Cà Chua Cay</h3>
+                <p>Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ, thêm phô mai hun khói, mang đến hương vị biển cả đậm đà.</p>
+                <div class="price">185,000 VND</div>
+                <button onclick="addToCart('Pizza Hải Sản Sốt Cà Chua Cay')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1604382351386-c6e0943d7e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Delicious Pasta">
-                <h3>Delicious Pasta</h3>
-                <p>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price">$10</div>
-                <button onclick="addToCart('Delicious Pasta')">Thêm vào giỏ</button>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000017_2.jpg" alt="Pizza Gà Xốt Teriyaki">
+                <h3>Pizza Gà Xốt Teriyaki</h3>
+                <p>Gà ướp xốt teriyaki ngọt đậm, kết hợp cùng phô mai tan chảy và chút rong biển, mang đến hương vị Nhật Bản hòa quyện trên lớp đế pizza giòn rụm.</p>
+                <div class="price">159,000 VND</div>
+                <button onclick="addToCart('Pizza Gà Xốt Teriyaki')">Thêm vào giỏ</button>
             </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000024_2.jpg" alt="Pizza Nấm Tự Nhiên">
+                <h3>Pizza Nấm Tự Nhiên</h3>
+                <p>Dành cho người ăn chay, pizza này kết hợp nhiều loại nấm tươi, sốt bí ngòi quế tây, thêm chút phô mai nhẹ, tạo nên hương vị thanh đạm mà hấp dẫn.</p>
+                <div class="price">129,000 VND</div>
+                <button onclick="addToCart('Pizza Nấm Tự Nhiên')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg" alt="Pizza Thịt Lợn Ướp Gừng">
+                <h3>Pizza Thịt Lợn Ướp Gừng</h3>
+                <p>Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô mai, mang đến hương vị đậm đà, ấm áp, rất hợp cho ngày se lạnh.</p>
+                <div class="price">158,000 VND</div>
+                <button onclick="addToCart('Pizza Thịt Lợn Ướp Gừng')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000010_2.jpg" alt="Pizza Margherita Xúc Xích Ý">
+                <h3>Pizza Margherita Xúc Xích Ý</h3>
+                <p>Pizza Margherita cổ điển với sốt cà chua, phô mai mozzarella, thêm xúc xích Ý Milano thơm ngon, điểm xuyết lá húng quế tươi, chuẩn vị Ý.</p>
+                <div class="price">172,000 VND</div>
+                <button onclick="addToCart('Pizza Margherita Xúc Xích Ý')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg" alt="Pizza Bò Dầu Tỏi">
+                <h3>Pizza Bò Dầu Tỏi</h3>
+                <p>Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen, tạo nên một món pizza đậm chất phương Tây, rất đáng thử.</p>
+                <div class="price">168,000 VND</div>
+                <button onclick="addToCart('Pizza Bò Dầu Tỏi')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000015_2.jpg" alt="Pizza Tôm Sốt Mayonnaise">
+                <h3>Pizza Tôm Sốt Mayonnaise</h3>
+                <p>Tôm tươi ngọt tự nhiên, phủ sốt mayonnaise béo ngậy, thêm chút phô mai và hành lá, mang đến hương vị hài hòa, dễ chịu cho mọi thực khách.</p>
+                <div class="price">159,000 VND</div>
+                <button onclick="addToCart('Pizza Tôm Sốt Mayonnaise')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200013_2.jpg" alt="Spaghetti Pomodoro">
+                <h3>Spaghetti Pomodoro</h3>
+                <p>Spaghetti sốt cà chua tươi nhà làm, kết hợp với dầu ô liu và lá húng quế, mang đến hương vị Ý cổ điển, nhẹ nhàng và tinh tế.</p>
+                <div class="price">108,000 VND</div>
+                <button onclick="addToCart('Spaghetti Pomodoro')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
+                <h3>Spaghetti Bolognese</h3>
+                <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.</p>
+                <div class="price">148,000 VND</div>
+                <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg" alt="Spaghetti Pesto Tôm">
+                <h3>Spaghetti Pesto Tôm</h3>
+                <p>Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút phô mai ricotta, mang đến hương vị Ý hiện đại.</p>
+                <div class="price">178,000 VND</div>
+                <button onclick="addToCart('Spaghetti Pesto Tôm')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200009_2.jpg" alt="Fettuccine Cá Hồi Sốt Kem">
+                <h3>Fettuccine Cá Hồi Sốt Kem</h3>
+                <p>Fettuccine mềm mượt với cá hồi tươi, sốt kem béo ngậy, thêm chút rau mùi và phô mai, tạo nên món ăn sang trọng, đầy hấp dẫn.</p>
+                <div class="price">198,000 VND</div>
+                <button onclick="addToCart('Fettuccine Cá Hồi Sốt Kem')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/08/20200021_2.jpg" alt="Spaghetti Carbonara">
+                <h3>Spaghetti Carbonara</h3>
+                <p>Spaghetti với sốt carbonara béo ngậy từ trứng và phô mai camembert nhà làm, thêm chút tiêu đen, mang đến hương vị Ý đích thực.</p>
+                <div class="price">148,000 VND</div>
+                <button onclick="addToCart('Spaghetti Carbonara')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200003_2.jpg" alt="Spaghetti Vongole">
+                <h3>Spaghetti Vongole</h3>
+                <p>Spaghetti với nghêu tươi, sốt dầu ô liu và tỏi, điểm thêm chút ớt và húng quế, mang đến hương vị biển cả tươi mát, đậm đà.</p>
+                <div class="price">168,000 VND</div>
+                <button onclick="addToCart('Spaghetti Vongole')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200001_2.jpg" alt="Spaghetti Cua Sốt Kem">
+                <h3>Spaghetti Cua Sốt Kem</h3>
+                <p>Spaghetti với thịt cua ngọt tự nhiên, sốt kem béo nhẹ, thêm chút phô mai và rau thơm, mang đến món ăn tinh tế, hấp dẫn.</p>
+                <div class="price">228,000 VND</div>
+                <button onclick="addToCart('Spaghetti Cua Sốt Kem')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200015_2.jpg" alt="Lasagna Bò">
+                <h3>Lasagna Bò</h3>
+                <p>Lasagna nướng với sốt bolognese từ thịt bò, lớp phô mai mozzarella tan chảy, từng lớp mì mềm, mang đến hương vị Ý đậm đà.</p>
+                <div class="price">188,000 VND</div>
+                <button onclick="addToCart('Lasagna Bò')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/08/Smoked-Burrata-Bolo-5.jpg" alt="Spaghetti Tôm Sốt Cà Chua">
+                <h3>Spaghetti Tôm Sốt Cà Chua</h3>
+                <p>Spaghetti với tôm tươi, sốt cà chua đậm đà, thêm chút phô mai và lá húng quế, mang đến hương vị Ý tươi mới, hấp dẫn.</p>
+                <div class="price">188,000 VND</div>
+                <button onclick="addToCart('Spaghetti Tôm Sốt Cà Chua')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="image/YuzuBeer.jpg" alt="Yuzu Wheat">
+                <h3>Yuzu Wheat</h3>
+                <p>Một loại bia lúa mì nhẹ nhàng, tươi mát với hương thơm đặc trưng từ quả yuzu (một loại quýt Nhật Bản). Bia có vị chua nhẹ, thanh mát, hậu vị dịu dàng, rất thích hợp để giải khát trong những ngày nóng hoặc dùng kèm các món ăn nhẹ.</p>
+                <div class="price">105,000 VND</div>
+                <button onclick="addToCart('Yuzu Wheat')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="image/Wheycider.png" alt="Whey Cider">
+                <h3>Whey Cider</h3>
+                <p>Sự kết hợp độc đáo giữa nước whey (phần nước trong tách ra từ sữa khi làm phô mai) và nước táo lên men tự nhiên. Vị chua nhẹ tự nhiên từ whey hòa quyện với vị ngọt thanh của táo, tạo nên một loại cider tươi mát, lạ miệng và cực kỳ dễ uống.</p>
+                <div class="price">115,000 VND</div>
+                <button onclick="addToCart('Whey Cider')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="image/Originalsession.jpg" alt="Original Session IPA">
+                <h3>Original Session IPA</h3>
+                <p>Một phiên bản IPA nhẹ độ cồn (session IPA) nhưng vẫn đậm đà hương vị. Bia mang hương thơm nổi bật của hoa bia tươi, vị đắng nhẹ dễ chịu, cùng hậu vị khô gọn. Đây là lựa chọn hoàn hảo cho những ai yêu thích IPA nhưng muốn thưởng thức lâu hơn mà không bị nặng nề.</p>
+                <div class="price">105,000 VND</div>
+                <button onclick="addToCart('Original Session IPA')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="image/DalatWheyStout.png" alt="Dalat Whey Stout">
+                <h3>Dalat Whey Stout</h3>
+                <p>Một dòng stout độc đáo pha trộn whey từ phô mai Đà Lạt. Bia có màu đen đậm, hậu vị mượt mà, với hương cacao, cà phê rang nhẹ nhàng, thêm chút chua thanh tự nhiên từ whey, tạo nên trải nghiệm stout mới lạ, cân bằng giữa đậm đà và tươi mát.</p>
+                <div class="price">98,000 VND</div>
+                <button onclick="addToCart('Dalat Whey Stout')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="image/NaturalSake.jpg" alt="Natural Sake">
+                <h3>Natural Sake</h3>
+                <p>Sake thủ công lên men tự nhiên, giữ trọn vẹn hương vị tinh tế của gạo. Vị sake êm mượt, nhẹ nhàng, hơi ngọt thanh với hậu vị sạch sẽ, dễ chịu – rất thích hợp để nhâm nhi cùng các món ăn Nhật hay đơn giản là thưởng thức riêng trong không gian thư giãn.</p>
+                <div class="price">128,000 VND</div>
+                <button onclick="addToCart('Natural Sake')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="image/RedSangria.jpg" alt="Red Sangria">
+                <h3>Red Sangria</h3>
+                <p>Rượu vang đỏ kết hợp với trái cây tươi như cam, táo, berries, tạo nên một ly sangria quyến rũ, ngọt ngào và cực kỳ dễ uống. Vị vang nhẹ hoà cùng hương trái cây tự nhiên, rất hợp cho những buổi tụ họp bạn bè hay chill cuối tuần.</p>
+                <div class="price">123,000 VND</div>
+                <button onclick="addToCart('Red Sangria')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item hidden-product" style="display: none;">
+                <img src="image/WhiteSangria.jpg" alt="White Sangria">
+                <h3>White Sangria</h3>
+                <p>Phiên bản nhẹ nhàng hơn của sangria, sử dụng vang trắng cùng các loại trái cây tươi mát như đào, lê, nho. Hương vị tươi mới, dịu dàng, hậu vị ngọt nhẹ – White Sangria là lựa chọn hoàn hảo cho những ai thích cảm giác mát lạnh, sảng khoái.</p>
+                <div class="price">123,000 VND</div>
+                <button onclick="addToCart('White Sangria')">Thêm vào giỏ</button>
+            </div>
+            
         </div>
         <div class="view-more">
-            <button>Xem thêm</button>
+            <button onclick="showMore()">Xem thêm</button>
         </div>
     </section>
 
@@ -166,16 +388,7 @@
             alert(`${itemName} đã được thêm vào giỏ hàng!`);
         }
 
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = document.getElementById('searchInput').value;
-                if (query) {
-                    alert(`Bạn đã tìm kiếm: ${query}`);
-                } else {
-                    alert('Vui lòng nhập món ăn để tìm kiếm!');
-                }
-            }
-        }
+      
 
         // Tab functionality
         const tabs = document.querySelectorAll('.menu-tabs button');
