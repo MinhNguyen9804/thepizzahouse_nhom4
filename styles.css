@@ -65,15 +65,17 @@ nav {
         }
 
         
-.icons {
-    display: flex;
-    gap: 1rem;
-}
-
-.cart-icon, .account-icon {
-    font-size: 1.2rem;
-    cursor: pointer;
-}
+        .icons a {
+            color: white; /* Màu trắng cho icon */
+            margin: 0 10px; /* Khoảng cách giữa các icon */
+            font-size: 20px; /* Kích thước icon */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .icons a:hover {
+            transform: scale(1.2); /* Hiệu ứng phóng to khi hover */
+            color: #FFD700; /* Đổi màu sang vàng khi hover */
+        }
 
 .search-bar {
     margin-top: 1rem;
