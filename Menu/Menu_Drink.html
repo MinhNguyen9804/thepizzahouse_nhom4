@@ -11,7 +11,7 @@
 
     <script>
          function goToHomePage() {
-            window.location.href = 'index.html';
+            window.location.href = 'all.html';
         }
         function goToKhaiviPage() {
             window.location.href = 'Menu_Khaivi.html';
@@ -21,10 +21,11 @@
         }
         function goToSpaghettiPage() {
             window.location.href = 'Menu_Spaghetti.html';
-            function goToDrinkPage() {
+        }
+        function goToDrinkPage() {
                 window.location.href = 'Menu_Drink.html';
             }
-        }
+        
       
 // Nút tìm kiếm.
 function handleSearch(event) {
@@ -62,14 +63,17 @@ function handleSearch(event) {
     <!-- Header -->
     <header>
         <div class="header-top">
-            <h1>The Pizza House</h1>
+            <div class="logo-container">
+                <img src="image/logo.jpg" alt="The Pizza House Logo">
+                <h1>The Pizza House</h1>
+            </div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
             </div>
             <nav>
                
-                <a href="#home">Trang chủ</a>
-                <a href="menu.html">Thực đơn</a>    
+                <a href="../index.html">Trang chủ</a>
+                <a href="all.html">Thực đơn</a>    
                 <a href="#newaa">Đặt bàn</a>
                 <div class="dropdown">
                     <a href="#">Chúng tôi</a>
@@ -84,17 +88,17 @@ function handleSearch(event) {
             </nav>
                 <div class="icons">
                     <span class="icons">
-                        <i class="fas fa-user"></i>
-                        <i class="fas fa-shopping-cart"></i>
+                        <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                        <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
                     </span>
                 </div>
         </div>
     </header>
 
     <!-- Banner Top Section -->
-    <section class="banner-top">
+    <section class="banner-top" style="background-image: url('image/winebanner.jpg');">
         <h3>OUR MENU</h3>
-        <h1>CHECK OUR YUMMY MENU</h1>
+        <h1>Check our Drink menu</h1>
     </section>
 
     <!-- Menu Section -->
@@ -166,26 +170,57 @@ function handleSearch(event) {
 
     <!-- Footer -->
     <footer id="contact">
-        <div class="footer-left">
-            <h3>Liên hệ</h3>
-            <p><i class="fas fa-map-marker-alt"></i> 12 Chùa Bộc, đống Đa, Hà Nội</p>
-            <p><i class="fas fa-phone"></i> 0705311048</p>
-            <p><i class="fas fa-envelope"></i> thepizzahouse@gmail.com</p>
-        </div>
-        <div class="footer-center">
-            <h2>The Pizza House</h2>
+        <div class="footer-column">
+            <h3>VỀ CHÚNG TÔI</h3>
             <p>The Pizza House - không chỉ là ăn thức, mà còn là cả một trải nghiệm vị giác.</p>
             <div class="social-icons">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-linkedin"></i>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-        <div class="footer-right">
-            <h3>Giờ mở cửa</h3>
-            <p>Everyday</p>
-            <p>8:00 AM - 23:00 PM</p>
+
+        <div class="footer-column">
+            <h3>LIÊN KẾT</h3>
+            <ul>
+                <li><a href="../Us/introduce.html">Về chúng tôi</a></li>
+                <li><a href="../Menu/all.html">Thực đơn</a></li>
+                <li><a href="../Us/policy.html">Điều khoản</a></li>
+                <li><a href="../Us/contact.html">Liên hệ</a></li>
+                <li><a href="../Us/news.html">Tin tức</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>THỰC ĐƠN</h3>
+            <ul>
+                <li><a href="Menu_Khaivi.html">Khai vị</a></li>
+                <li><a href="Menu_pizza.html">Pizza</a></li>
+                <li><a href="Menu_Spaghetti.html">Spaghetti</a></li>
+                <li><a href="Menu_Drink.html">Đồ uống</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>LIÊN HỆ</h3>
+            <ul class="contact-info">
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+                </li>
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    0705311048<br>
+                    
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    thepizzahouse@gmail.com<br>
+                    
+                </li>
+            </ul>
         </div>
     </footer>
 
