@@ -137,7 +137,7 @@ nav {
 /* Banner Top Section */
 .banner-top {
     position: relative;
-    height: 200px;
+    height: 150px;
     background-color: #666;
     display: flex;
     flex-direction: column;
@@ -145,7 +145,7 @@ nav {
     align-items: center;
     text-align: center;
     color: white;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
     .banner-top::before {
@@ -156,6 +156,7 @@ nav {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
+        
     }
 
     .banner-top h3 {
@@ -166,6 +167,7 @@ nav {
         font-family: 'Open Sans', sans-serif;
         position: relative;
         z-index: 1;
+        margin-top: 20px;
     }
 
     .banner-top h1 {
@@ -488,14 +490,25 @@ footer {
 
     .policy-section h2 {
         font-family: 'Dancing Script', cursive;
-        color: #ffcc00;
+        color: #d4a017;
         margin-bottom: 1.5rem;
         text-align: center;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
         font-size: 2.5rem;
         font-weight: 800;
+        position: relative;
         transition: color 0.3s ease, transform 0.3s ease;
     }
+
+        .policy-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            height: 3px;
+            background-color: #ffea00;
+        }
 
         .policy-section h2:hover {
             color: #ffee00;

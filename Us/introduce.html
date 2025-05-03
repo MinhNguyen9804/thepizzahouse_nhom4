@@ -8,13 +8,256 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <style>
+        /* Hero Section with Parallax */
+        .hero-section {
+            height: 400px;
+            background-image: url('../image/hero-bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #fff;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .hero-content h1 {
+                font-size: 3rem;
+                font-family: 'Dancing Script', cursive;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+        /* History Section (Vertical Block Layout) */
+        .history {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .history h2 {
+                text-align: center;
+                font-family: 'Dancing Script', cursive;
+                color: #ffcc00;
+                margin-bottom: 2rem;
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+                font-size: 2.5rem;
+                font-weight: 800;
+                position: relative;
+                padding-top: 1rem;
+            }
+
+                .history h2::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -10px;
+                    width: 50px;
+                    height: 3px;
+                    background-color: #ffea00;
+                }
+
+        .history-block {
+            margin-bottom: 2rem;
+            background-color: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(50px) scale(0.95); /* Bắt đầu từ dưới và thu nhỏ */
+            transition: opacity 0.7s ease, transform 0.7s ease, background-color 0.3s ease;
+        }
+
+            .history-block.fade-in {
+                opacity: 1;
+                transform: translateY(0) scale(1); /* Nổi lên và về kích thước ban đầu */
+            }
+
+            .history-block:hover {
+                background-color: #3a3a3a;
+            }
+
+            .history-block img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                margin-bottom: 1rem;
+            }
+
+            .history-block h3 {
+                font-family: 'Dancing Script', cursive;
+                color: #ffea00;
+                margin-bottom: 0.5rem;
+            }
+
+            .history-block p {
+                font-size: 0.9rem;
+                color: #ccc;
+            }
+
+        /* Mission and Team Section */
+        .mission-team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .mission-team .card {
+                background-color: #2a2a2a;
+                padding: 1.5rem;
+                border-radius: 10px;
+                text-align: center;
+                color: #fff;
+                transition: transform 0.3s ease;
+            }
+
+                .mission-team .card:hover {
+                    transform: translateY(-5px);
+                }
+
+                .mission-team .card h3 {
+                    font-family: 'Dancing Script', cursive;
+                    color: #ffea00;
+                    margin-bottom: 1rem;
+                }
+
+                .mission-team .card p {
+                    font-size: 0.9rem;
+                    color: #ccc;
+                }
+
+        /* Achievements Section */
+        .achievements {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .achievements .owl-carousel .item {
+                background-color: #2a2a2a;
+                padding: 1.5rem;
+                border-radius: 10px;
+                color: #fff;
+                margin: 0 10px;
+            }
+
+                .achievements .owl-carousel .item h4 {
+                    color: #ffea00;
+                    margin-bottom: 1rem;
+                }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 3rem 2rem;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+            .cta-section h2 {
+                font-family: 'Dancing Script', cursive;
+                color: #ffea00;
+                margin-bottom: 1rem;
+            }
+
+        .cta-btn {
+            background-color: #ffea00;
+            color: #1a1a1a;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+            .cta-btn:hover {
+                background-color: #ffd900;
+                transform: scale(1.05);
+            }
+
+        /* Placeholder for Video */
+
+
+        /* Parallax Effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Fix Footer */
+        footer {
+            position: relative;
+            z-index: 1;
+            background-color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .history-block img {
+                height: 150px;
+            }
+
+            .mission-team {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-top">
             <div class="logo-container">
-                <img src="../Menu/image/logo.jpg" alt="The Pizza House Logo">
+                <img src="../image/logo.jpg" alt="The Pizza House Logo">
                 <h1>The Pizza House</h1>
             </div>
             <div class="search-bar">
@@ -22,7 +265,7 @@
             </div>
             <nav>
                 <a href="../index.html">Trang chủ</a>
-                <a href="all.html">Thực đơn</a>
+                <a href="../Menu/all.html">Thực đơn</a>
                 <a href="#newaa">Đặt bàn</a>
                 <div class="dropdown">
                     <a href="#">Chúng tôi</a>
@@ -43,31 +286,83 @@
         </div>
     </header>
 
-    <!-- Banner Top Section -->
-    <section class="banner-top" style="background-image: url('image/restaurant.jpg');">
-        <h3>OUR STORY</h3>
-        <h1>Về The Pizza House</h1>
+    <!-- Hero Section -->
+    <section class="hero-section parallax">
+        <div class="hero-content">
+            <h1>Về The Pizza House</h1>
+            <p>Khám phá câu chuyện đằng sau hương vị pizza tuyệt vời nhất tại Hà Nội, nơi chúng tôi biến từng miếng bánh thành một hành trình ẩm thực.</p>
+        </div>
     </section>
 
-    <!-- Introduce Section -->
-    <section class="section">
-        <div class="intro-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <div class="intro-item" style="text-align: center;">
-                <h2>Lịch sử</h2>
-                <p>The Pizza House được thành lập vào năm 2020, bắt đầu từ niềm đam mê mang hương vị Ý đích thực đến Hà Nội. Từ một quán nhỏ, chúng tôi đã phát triển thành một thương hiệu yêu thích.</p>
+    <!-- History Section (Vertical Block Layout) -->
+    <section class="history">
+        <h2 class="fade-in">Lịch sử</h2>
+        <div class="history-block">
+            <img src="../image/2020-opening.jpg" alt="Opening 2020">
+            <h3>2020 - Thành lập</h3>
+            <p>The Pizza House ra mắt tại Hà Nội, mang đến phong cách pizza độc đáo kết hợp giữa truyền thống và hiện đại. Chúng tôi bắt đầu với chỉ 5 nhân viên và một niềm đam mê lớn.</p>
+        </div>
+        <div class="history-block">
+            <img src="../image/2021-expansion.jpg" alt="Expansion 2021">
+            <h3>2021 - Mở rộng</h3>
+            <p>Mở thêm chi nhánh thứ hai tại Đống Đa, phục vụ hơn 10,000 khách hàng trong năm đầu tiên. Chúng tôi cũng ra mắt món pizza đặc biệt "Hà Nội Phố" được yêu thích.</p>
+        </div>
+        <div class="history-block">
+            <img src="../image/2023-award.jpg" alt="Award 2023">
+            <h3>2023 - Giải thưởng</h3>
+            <p>Nhận giải "Nhà hàng pizza xuất sắc nhất Hà Nội" từ Hiệp hội Ẩm thực Việt Nam, đánh dấu cột mốc quan trọng trong hành trình phát triển.</p>
+        </div>
+        <div class="history-block">
+            <img src="../image/2024-new-branch.jpg" alt="New Branch 2024">
+            <h3>2024 - Chi nhánh mới</h3>
+            <p>Khai trương chi nhánh thứ ba tại Ba Đình, mang đến không gian hiện đại và thực đơn mới với các món spaghetti sáng tạo.</p>
+        </div>
+        <div class="history-block">
+            <img src="../image/2025-anniversary.jpg" alt="Anniversary 2025">
+            <h3>2025 - Kỷ niệm 5 năm</h3>
+            <p>Kỷ niệm 5 năm thành lập với sự kiện lớn, tri ân khách hàng bằng chương trình ưu đãi đặc biệt và ra mắt món pizza phiên bản giới hạn.</p>
+        </div>
+    </section>
+
+    <!-- Mission and Team Section -->
+    <section class="mission-team">
+        <div class="card fade-in">
+            <h3>Sứ mệnh</h3>
+            <p>Chúng tôi cam kết mang đến những chiếc pizza tươi ngon, sử dụng nguyên liệu hữu cơ, và tạo ra trải nghiệm ẩm thực đáng nhớ cho mọi khách hàng. Giá trị cốt lõi của chúng tôi là sự tận tâm và chất lượng vượt trội.</p>
+        </div>
+        <div class="card fade-in">
+            <h3>Đội ngũ</h3>
+            <p>Đội ngũ The Pizza House gồm các đầu bếp tài hoa và nhân viên tận tụy, dẫn đầu bởi đầu bếp Nguyễn Văn A - chuyên gia pizza hơn 10 năm kinh nghiệm.</p>
+        </div>
+    </section>
+
+    <!-- Placeholder for Video -->
+
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <h2 class="fade-in">Thành tựu</h2>
+        <div class="owl-carousel owl-theme">
+            <div class="item fade-in">
+                <h4>Giải thưởng 2023</h4>
+                <p>Nhận giải "Nhà hàng pizza xuất sắc nhất" từ Hiệp hội Ẩm thực Việt Nam.</p>
             </div>
-            <div class="intro-item" style="text-align: center;">
-                <h2>Sứ mệnh</h2>
-                <p>Cam kết mang đến trải nghiệm ẩm thực tuyệt vời, kết hợp giữa truyền thống Ý và sáng tạo hiện đại, để mỗi bữa ăn là một kỷ niệm đáng nhớ.</p>
+            <div class="item fade-in">
+                <h4>Phản hồi khách hàng</h4>
+                <p>Hơn 95% khách hàng đánh giá 5 sao trên Google Reviews.</p>
             </div>
-            <div class="intro-item" style="text-align: center;">
-                <h2>Đội ngũ</h2>
-                <p>Đội ngũ đầu bếp và nhân viên tận tâm, với kinh nghiệm lâu năm, luôn sẵn sàng phục vụ bạn những món ăn chất lượng nhất.</p>
+            <div class="item fade-in">
+                <h4>Mở rộng thị trường</h4>
+                <p>Phục vụ hơn 50,000 khách hàng tại Hà Nội trong năm 2024.</p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="all.html" class="btn">Khám phá thực đơn</a>
-        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Khám phá ngay!</h2>
+        <p>Hãy ghé thăm The Pizza House hoặc đặt bàn để trải nghiệm hương vị tuyệt vời.</p>
+        <button class="cta-btn">Đặt bàn ngay</button>
     </section>
 
     <!-- Footer -->
@@ -86,7 +381,7 @@
             <h3>LIÊN KẾT</h3>
             <ul>
                 <li><a href="introduce.html">Về chúng tôi</a></li>
-                <li><a href="all.html">Thực đơn</a></li>
+                <li><a href="../Menu/all.html">Thực đơn</a></li>
                 <li><a href="policy.html">Điều khoản</a></li>
                 <li><a href="contact.html">Liên hệ</a></li>
                 <li><a href="news.html">Tin tức</a></li>
@@ -95,10 +390,10 @@
         <div class="footer-column">
             <h3>THỰC ĐƠN</h3>
             <ul>
-                <li><a href="Menu_Khaivi.html">Khai vị</a></li>
-                <li><a href="Menu_pizza.html">Pizza</a></li>
-                <li><a href="Menu_Spaghetti.html">Spaghetti</a></li>
-                <li><a href="Menu_Drink.html">Đồ uống</a></li>
+                <li><a href="../Menu/Menu_Khaivi.html">Khai vị</a></li>
+                <li><a href="../Menu/Menu_pizza.html">Pizza</a></li>
+                <li><a href="../Menu/Menu_Spaghetti.html">Spaghetti</a></li>
+                <li><a href="../Menu/Menu_Drink.html">Đồ uống</a></li>
             </ul>
         </div>
         <div class="footer-column">
@@ -111,11 +406,10 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        function addToCart(itemName) {
-            alert(`${itemName} đã được thêm vào giỏ hàng!`);
-        }
-
+        // Handle Search
         function handleSearch(event) {
             if (event.key === 'Enter') {
                 const query = document.getElementById('searchInput').value.toLowerCase();
@@ -136,13 +430,40 @@
             }
         }
 
-        // Tab functionality (không áp dụng cho trang này, nhưng giữ để nhất quán)
-        const tabs = document.querySelectorAll('.menu-tabs button');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
+        // Fade-in and Pop-up Animation
+        const fadeItems = document.querySelectorAll('.fade-in, .history-block');
+        function checkFade() {
+            fadeItems.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                if (rect.top >= 0 && rect.top <= windowHeight * 0.8) {
+                    setTimeout(() => {
+                        item.classList.add('fade-in');
+                    }, index * 200); // Delay 0.2s cho từng phần tử
+                }
             });
+        }
+
+        // Gọi hàm khi cuộn và khi tải trang
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+
+        // Owl Carousel for Achievements
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
         });
     </script>
 </body>
