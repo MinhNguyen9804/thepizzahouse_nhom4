@@ -587,6 +587,81 @@ nav a {
     .menu-item:hover {
         transform: scale(1.02);
     }
+/*court*/
+.hot-product-section {
+    background-color: #f5f5f0; /* Màu nền nhẹ giống mục quote */
+    padding: 40px 0; /* Giảm padding ngang để full chiều ngang */
+    width: 100%; /* Full chiều ngang */
+}
+
+.hot-product-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Căn giữa nội dung */
+    padding: 20px;
+}
+
+.hot-product-card img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hot-product-content {
+    text-align: left;
+    flex: 1;
+}
+
+.hot-product-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hot-product-content h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hot-product-content .description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.hot-product-content .price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.hot-product-content button {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hot-product-content button:hover {
+    background-color: #e6c200;
+}
 
 /* Customer Reviews styles */
 .reviews-section {
