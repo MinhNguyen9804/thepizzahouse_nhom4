@@ -45,8 +45,3 @@ settings.local.json
 # Ignore image/video caches (nếu có)
 ImageCache/
 VideoCache/
-
-# Ignore specific files from your project (tùy chỉnh)
-*.jpg
-*.png
-*.mp4
