@@ -8,114 +8,219 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-   
-    <script>
-         function goToHomePage() {
-            window.location.href = 'index.html';
-        }
-        function goToKhaiviPage() {
-            window.location.href = 'Menu_Khaivi.html';
-        }
-        function goToPizzaPage() {
-            window.location.href = 'Menu_pizza.html';
-        }
-        function goToSpaghettiPage() {
-            window.location.href = 'Menu_Spaghetti.html';
-        }
-        function goToDrinkPage() {
-            window.location.href = 'Menu_Drink.html';
-        }
-        let currentIndex = 0; // Biến lưu vị trí đang hiển thị
 
-function showMore() {
-    const hiddenProducts = document.querySelectorAll('.hidden-product');
-    const productsPerClick = 6; // Số sản phẩm muốn hiển thị mỗi lần bấm
-
-    for (let i = currentIndex; i < currentIndex + productsPerClick && i < hiddenProducts.length; i++) {
-        hiddenProducts[i].style.display = 'block'; // Hiện sản phẩm
-    }
-
-    currentIndex += productsPerClick; // Cập nhật vị trí đã hiện
-
-    // Nếu đã hiện hết thì ẩn nút "Xem thêm"
-    if (currentIndex >= hiddenProducts.length) {
-        document.querySelector('.view-more').style.display = 'none';
-    }
-}
-
-// Nút tìm kiếm.
-function handleSearch(event) {
-    if (event.key === 'Enter') {
-        const query = document.getElementById('searchInput').value.toLowerCase();
-        const products = document.querySelectorAll('.menu-item');
-
-        let found = false;
-
-        products.forEach(product => {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            if (title.includes(query)) {
-                product.style.display = 'block'; // Hiện món ăn đúng
-                found = true;
-            } else {
-                product.style.display = 'none';  // Ẩn món ăn không đúng
-            }
-        });
-
-        if (!found) {
-            alert('Không tìm thấy món ăn bạn cần!');
-        } 
-
-        // Ẩn nút "Xem thêm" luôn nếu có
-        const viewMoreBtn = document.querySelector('.view-more');
-        if (viewMoreBtn) {
-            viewMoreBtn.style.display = 'none';
-        }
-    }
-}
-    </script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-top">
             <div class="logo-container">
-                <img src="Menu/image/logo.jpg" alt="The Pizza House Logo">
+                <img src="image_index/logo.jpg" alt="The Pizza House Logo">
                 <h1>The Pizza House</h1>
             </div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
             </div>
             <nav>
-               
                 <a href="index.html">Trang chủ</a>
                 <a href="Menu/all.html">Thực đơn</a>    
                 <a href="#newaa">Đặt bàn</a>
                 <div class="dropdown">
                     <a href="#">Chúng tôi</a>
                     <ul class="dropdown-menu">
-                      <li><a href="Us/introduce.html">Giới thiệu</a></li>
-                      <li><a href="Us/news.html">Tin tức</a></li>
-                      <li><a href="Us/policy.html">Điều khoản</a></li>
-                      <li><a href="Us/contact.html">Liên hệ</a></li>
+                        <li><a href="Us/introduce.html">Giới thiệu</a></li>
+                        <li><a href="Us/news.html">Tin tức</a></li>
+                        <li><a href="Us/policy.html">Điều khoản</a></li>
+                        <li><a href="Us/contact.html">Liên hệ</a></li>
                     </ul>
-                  </div>
-                 
-            </nav>
-                <div class="icons">
-                    <span class="icons">
-                        <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
-                        <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
-                    </span>
                 </div>
+            </nav>
+            <div class="icons">
+                <span class="icons">
+                    <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
+                </span>
+            </div>
         </div>
     </header>
-       <!-- Banner Top Section -->
-       <section class="banner-top" style="background-image: url('image/all.jpg');">
-        
-        <h1>Banner </h1>
+
+    <!-- Banner Section -->
+    <section class="banner-container">
+        <div class="banner-slide">
+            <video autoplay muted loop>
+                <source src="image_index/4911800_Pizza_Bake_3840x2160.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+            <div class="banner-content">
+                <h1>The Pizza House</h1>
+                <p>Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.</p>
+                <button onclick="window.location.href='Menu/all.html'">Đặt bàn</button>
+            </div>
+        </div>
+        <div class="banner-slide" style="background-image: url('image_index/banner1.jpg');">
+            <div class="banner-content">
+                <h1>The Pizza House</h1>
+                <p>Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.</p>
+                <button onclick="window.location.href='Menu/all.html'">Đặt bàn</button>
+            </div>
+        </div>
+        <div class="banner-slide" style="background-image: url('image_index/banner3.jpg');">
+            <div class="banner-content">
+                <h1>The Pizza House</h1>
+                <p>Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.</p>
+                <button onclick="window.location.href='Menu/all.html'">Đặt bàn</button>
+            </div>
+        </div>
+        <div class="banner-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
     </section>
 
-  
+    <!-- New Dishes Section with Carousel -->
+    <section class="menu" id="menu">
+        <h2>Món mới</h2>
+        
+        <div class="menu-grid">
+            <div class="menu-item" onclick="showProductDetail(`Da Gà Rộp Rộp Xốt Hàn - Cay`, `https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png`, `Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng cho một bữa tiệc vị giác bùng nổ với vị xốt Hàn đậm đà cùng cảm giác rộp rộp đầy thú vị trong mỗi miếng gà.`, `79,000 VND`)">
+                <div class="image-wrapper">
+                <img src="https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png" alt="Da Gà Rộp Rộp Xốt Hàn - Cay">
+            </div>
+                <h3>Da Gà Rộp Rộp Xốt Hàn - Cay</h3>
+                <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng...</p>
+                <div class="price">
+                    <span class="current-price">79.000 VND</span>
+                    <span class="old-price">89,000 VND</span>
+                </div>
+                <button onclick="addToCart('Da Gà Rộp Rộp Xốt Hàn - Cay')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item " onclick="showProductDetail(`Salad Gà Giòn Không Xương`, `https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png`, `Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island, tươi ngon và bổ dưỡng.`, `89,000 VND`)">
+                <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png" alt="Salad Gà Giòn Không Xương">
+                <h3>Salad Gà Giòn Không Xương</h3>
+                <p>Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island</p>
+                <div class="price">
+                    <span class="current-price">89,000 VND</span>
+                    <span class="old-price">99,000 VND</span>
+                </div>
+                <button onclick="addToCart('Salad Gà Giòn Không Xương')">Thêm vào giỏ</button>
+            </div>
+            <div class="menu-item" onclick="showProductDetail(`Pizza Bò Dầu Tỏi`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg`, `Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen, tạo nên một món pizza đậm chất phương Tây, rất đáng thử.`, `168,000 VND`)">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg" alt="Pizza Bò Dầu Tỏi">
+                <h3>Pizza Bò Dầu Tỏi</h3>
+                <p>Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen,...</p>
+                <div class="price">
+                    <span class="current-price">145,000 VND</span>
+                    <span class="old-price">168,000 VND</span>
+                </div>
+                <button onclick="addToCart('Pizza Bò Dầu Tỏi')">Thêm vào giỏ</button>
+            </div>
+            
+            <div class="menu-item" onclick="showProductDetail(`Spaghetti Bolognese`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg`, `Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.`, `148,000 VND`)">
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
+                <h3>Spaghetti Bolognese</h3>
+                <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
+                <div class="price">
+                    <span class="current-price">148,000 VND</span>
+                    <span class="old-price">170,000 VND</span>
+                </div>
+                <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
+            </div>
+            
+            </div>
+            </section>
+            <section class="menu" id="menu">
+                <h2>Must try</h2>
+                
+                <div class="menu-grid">
+                    <div class="menu-item" onclick="showProductDetail(`Da Gà Rộp Rộp Xốt Hàn - Cay`, `https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png`, `Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng cho một bữa tiệc vị giác bùng nổ với vị xốt Hàn đậm đà cùng cảm giác rộp rộp đầy thú vị trong mỗi miếng gà.`, `79,000 VND`)">
+                        <div class="image-wrapper">
+                        <img src="https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png" alt="Da Gà Rộp Rộp Xốt Hàn - Cay">
+                    </div>
+                        <h3>Da Gà Rộp Rộp Xốt Hàn - Cay</h3>
+                        <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng...</p>
+                        <div class="price">
+                            <span class="current-price">79.000 VND</span>
+                            <span class="old-price">89,000 VND</span>
+                        </div>
+                        <button onclick="addToCart('Da Gà Rộp Rộp Xốt Hàn - Cay')">Thêm vào giỏ</button>
+                    </div>
+                    
+                   
+                    <div class="menu-item" onclick="showProductDetail(`Pizza Bò Dầu Tỏi`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg`, `Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen, tạo nên một món pizza đậm chất phương Tây, rất đáng thử.`, `168,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg" alt="Pizza Bò Dầu Tỏi">
+                        <h3>Pizza Bò Dầu Tỏi</h3>
+                        <p>Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen,...</p>
+                        <div class="price">
+                            <span class="current-price">145,000 VND</span>
+                            <span class="old-price">168,000 VND</span>
+                        </div>
+                        <button onclick="addToCart('Pizza Bò Dầu Tỏi')">Thêm vào giỏ</button>
+                    </div>
+                    
+                    <div class="menu-item" onclick="showProductDetail(`Spaghetti Bolognese`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg`, `Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.`, `148,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
+                        <h3>Spaghetti Bolognese</h3>
+                        <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
+                        <div class="price">
+                            <span class="current-price">148,000 VND</span>
+                            <span class="old-price">170,000 VND</span>
+                        </div>
+                        <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
+                    </div>
+                    <div class="menu-item" onclick="showProductDetail(`Spaghetti Bolognese`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg`, `Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.`, `148,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
+                        <h3>Spaghetti Bolognese</h3>
+                        <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
+                        <div class="price">
+                            <span class="current-price">148,000 VND</span>
+                            <span class="old-price">170,000 VND</span>
+                        </div>
+                        <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
+                    </div>
+                    
+                    
+                    </div>
+                    </section>
+    <!-- Customer Reviews Section -->
+<section class="reviews-section">
+        <h2>Đánh giá từ khách hàng</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Vũ Trọng Sinh">
+                <h3>Vũ Trọng Sinh</h3>
+                <p>"Mua hàng tại đây rất nhanh chóng. Web sử dụng dễ hiểu, thao tác dễ dàng. Shop này 10 điểm không cần chỉnh!"</p>
+            </div>
+            <div class="review-card">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Nguyễn Thùy Chi">
+                <h3>Nguyễn Thùy Chi</h3>
+                <p>"Hoa đẹp, dịch vụ chăm sóc khách hàng tốt!"</p>
+            </div>
+            <div class="review-card">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Nguyễn Thành Tùng">
+                <h3>Nguyễn Thành Tùng</h3>
+                <p>"Rất hài lòng với chất lượng sản phẩm và phong cách phục vụ!"</p>
+            </div>
+        </div>
+    </section>
+     <!-- Modal for Product Detail -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProductDetail()">×</span>
+            <div class="modal-image" id="modalImage"></div>
+            <div class="modal-info">
+                <div>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-buttons">
+                    <button class="add-to-cart" id="addToCartButton">
+                        <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -129,7 +234,6 @@ function handleSearch(event) {
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-
         <div class="footer-column">
             <h3>LIÊN KẾT</h3>
             <ul>
@@ -140,18 +244,15 @@ function handleSearch(event) {
                 <li><a href="Us/news.html">Tin tức</a></li>
             </ul>
         </div>
-
         <div class="footer-column">
             <h3>THỰC ĐƠN</h3>
             <ul>
-                <li><a href="Menu_Khaivi.html">Khai vị</a></li>
-                <li><a href="Menu_pizza.html">Pizza</a></li>
-                <li><a href="Menu_Spaghetti.html">Spaghetti</a></li>
-                <li><a href="Menu_Drink.html">Đồ uống</a></li>
-                
+                <li><a href="Menu/Menu_Khaivi.html">Khai vị</a></li>
+                <li><a href="Menu/Menu_pizza.html">Pizza</a></li>
+                <li><a href="Menu/Menu_Spaghetti.html">Spaghetti</a></li>
+                <li><a href="Menu/Menu_Drink.html">Đồ uống</a></li>
             </ul>
         </div>
-
         <div class="footer-column">
             <h3>LIÊN HỆ</h3>
             <ul class="contact-info">
@@ -162,12 +263,10 @@ function handleSearch(event) {
                 <li>
                     <i class="fas fa-phone-alt"></i>
                     0705311048<br>
-                    
                 </li>
                 <li>
                     <i class="fas fa-envelope"></i>
                     thepizzahouse@gmail.com<br>
-                    
                 </li>
             </ul>
         </div>
@@ -178,16 +277,109 @@ function handleSearch(event) {
             alert(`${itemName} đã được thêm vào giỏ hàng!`);
         }
 
+        // Banner slideshow
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("banner-slide");
+            let dots = document.getElementsByClassName("dot");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+                dots[i].classList.remove("active");
+            }
+
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+
+            slides[slideIndex].classList.add("active");
+            dots[slideIndex].classList.add("active");
+
+            setTimeout(showSlides, 15000); // Chuyển slide sau 15 giây
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            let slides = document.getElementsByClassName("banner-slide");
+            let dots = document.getElementsByClassName("dot");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+                dots[i].classList.remove("active");
+            }
+
+            slides[slideIndex].classList.add("active");
+            dots[slideIndex].classList.add("active");
+        }
+
       
 
-        // Tab functionality
-        const tabs = document.querySelectorAll('.menu-tabs button');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-            });
-        });
+        // Search function
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = document.getElementById('searchInput').value.toLowerCase();
+                alert('Chuyển hướng đến trang tìm kiếm với từ khóa: ' + query);
+                window.location.href = 'Menu/all.html?search=' + query;
+            }
+        }
+
+
+        // Hiển thị chi tiết sản phẩm trong modal
+        function showProductDetail(name, image, description, price) {
+            const modal = document.getElementById('productModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const addToCartButton = document.getElementById('addToCartButton');
+
+            modalImage.style.backgroundImage = `url('${image}')`;
+            modalTitle.textContent = name;
+            modalDescription.textContent = description;
+            addToCartButton.onclick = () => addToCart(name);
+
+            modal.style.display = 'flex';
+        }
+
+        // Đóng modal
+        function closeProductDetail() {
+            const modal = document.getElementById('productModal');
+            modal.style.display = 'none';
+        }
+
+        // Đóng modal khi nhấn ra ngoài
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        //đánh giá khách hàng
+        let currentIndex = 0;
+
+function showTestimonials() {
+  const cards = document.querySelectorAll('.testimonial-card');
+  cards.forEach((card, index) => {
+    card.style.display = (index === currentIndex || index === currentIndex + 1) ? 'block' : 'none';
+  });
+}
+
+function changeTestimonial(direction) {
+  const cards = document.querySelectorAll('.testimonial-card');
+  const total = cards.length;
+
+  currentIndex += direction * 2;
+
+  if (currentIndex < 0) currentIndex = total - 2;
+  if (currentIndex >= total) currentIndex = 0;
+
+  showTestimonials();
+}
+
+document.addEventListener("DOMContentLoaded", showTestimonials);
     </script>
 </body>
 </html>

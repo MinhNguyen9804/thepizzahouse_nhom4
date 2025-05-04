@@ -169,6 +169,17 @@ nav {
     border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+.menu-item .current-price {
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.menu-item .old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+}
 
 .menu-item button:hover {
     background-color: #000;

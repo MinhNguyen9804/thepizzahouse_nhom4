@@ -125,7 +125,10 @@ function handleSearch(event) {
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
                 <h3>Spaghetti Bolognese</h3>
                 <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
-                <div class="price">148,000 VND</div>
+                <div class="price">
+                    <span class="current-price">148,000 VND</span>
+                    <span class="old-price">170,000 VND</span>
+                </div>
                 <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
             </div>
             <div class="menu-item" onclick="showProductDetail(`Spaghetti Pesto Tôm`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg`, `Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút phô mai ricotta, mang đến hương vị Ý hiện đại.`, `178,000 VND`)">
