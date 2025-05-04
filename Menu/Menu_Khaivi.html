@@ -8,62 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
-    <script>
-        function goToHomePage() {
-            window.location.href = 'all.html';
-        }
-        function goToKhaiviPage() {
-            window.location.href = 'Menu_Khaivi.html';
-        }
-        function goToPizzaPage() {
-            window.location.href = 'Menu_pizza.html';
-        }
-        function goToSpaghettiPage() {
-            window.location.href = 'Menu_Spaghetti.html';
-        }
-        function goToDrinkPage() {
-            window.location.href = 'Menu_Drink.html';
-        }
-        function showMore() {
-        const hiddenProducts = document.querySelectorAll('.hidden-product');
-        hiddenProducts.forEach(product => {
-            product.style.display = 'block'; // Hiện sản phẩm ẩn
-        });
-        // Ẩn nút 'Xem thêm' sau khi hiện hết
-        document.querySelector('.view-more').style.display = 'none';
-    }
-    // Nút tìm kiếm.
-function handleSearch(event) {
-    if (event.key === 'Enter') {
-        const query = document.getElementById('searchInput').value.toLowerCase();
-        const products = document.querySelectorAll('.menu-item');
 
-        let found = false;
-
-        products.forEach(product => {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            if (title.includes(query)) {
-                product.style.display = 'block'; // Hiện món ăn đúng
-                found = true;
-            } else {
-                product.style.display = 'none';  // Ẩn món ăn không đúng
-            }
-        });
-
-        if (!found) {
-            alert('Không tìm thấy món ăn bạn cần!');
-        } 
-
-        // Ẩn nút "Xem thêm" luôn nếu có
-        const viewMoreBtn = document.querySelector('.view-more');
-        if (viewMoreBtn) {
-            viewMoreBtn.style.display = 'none';
-        }
-    }
-}
-
-    </script>
 </head>
 <body>
     <!-- Header -->
@@ -77,36 +22,32 @@ function handleSearch(event) {
                 <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
             </div>
             <nav>
-               
                 <a href="../index.html">Trang chủ</a>
                 <a href="all.html">Thực đơn</a>    
                 <a href="#newaa">Đặt bàn</a>
                 <div class="dropdown">
                     <a href="#">Chúng tôi</a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Giới thiệu</a></li>
-                      <li><a href="#">Tin tức</a></li>
-                      <li><a href="#">Điều khoản</a></li>
-                      <li><a href="#">Liên hệ</a></li>
+                        <li><a href="../Us/introduce.html">Giới thiệu</a></li>
+                        <li><a href="../Us/news.html">Tin tức</a></li>
+                        <li><a href="../Us/policy.html">Điều khoản</a></li>
+                        <li><a href="../Us/contact.html">Liên hệ</a></li>
                     </ul>
-                  </div>
-                 
-            </nav>
-                <div class="icons">
-                    <span class="icons">
-                        <span class="icons">
-                            <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
-                            <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
-                        </span>
-                    </span>
                 </div>
+            </nav>
+            <div class="icons">
+                <span class="icons">
+                    <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
+                </span>
+            </div>
         </div>
     </header>
-   <!-- Banner Top Section -->
-   <section class="banner-top" style="background-image: url('image/appetizerbanner.jpg');">
-    <h3>OUR MENU</h3>
-    <h1>Check our Appetizer menu </h1>
-</section>
+    <!-- Banner Top Section -->
+    <section class="banner-top" style="background-image: url('image/appetizerbanner.jpg');">
+        <h3>OUR MENU</h3>
+        <h1>Check our Appetizer menu </h1>
+    </section>
     <!-- Menu Section -->
     <section class="menu" id="menu">
         <h2>Thực đơn</h2>
@@ -118,67 +59,67 @@ function handleSearch(event) {
             <button onclick="goToDrinkPage()">Đồ uống</button>
         </div>
         <div class="menu-grid">
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Da Gà Rộp Rộp Xốt Hàn - Cay`, `https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png`, `Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng cho một bữa tiệc vị giác bùng nổ với vị xốt Hàn đậm đà cùng cảm giác rộp rộp đầy thú vị trong mỗi miếng gà.`, `79,000 VND`)">
                 <img src="https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png" alt="Da Gà Rộp Rộp Xốt Hàn - Cay">
                 <h3>Da Gà Rộp Rộp Xốt Hàn - Cay</h3>
-                <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng ...</p>
+                <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng...</p>
                 <div class="price">79,000 VND</div>
                 <button onclick="addToCart('Da Gà Rộp Rộp Xốt Hàn - Cay')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Gà Giòn Không Xương`, `https://webreview.vn/images/items/21979.jpg`, `Gà giòn tan với sốt Cocktail thơm ngậy, không xương để dễ dàng thưởng thức.`, `99,000 VND`)">
                 <img src="https://webreview.vn/images/items/21979.jpg" alt="Gà Giòn Không Xương">
                 <h3>Gà Giòn Không Xương</h3>
                 <p>Gà giòn tan với sốt Cocktail thơm ngậy</p>
                 <div class="price">99,000 VND</div>
                 <button onclick="addToCart('Gà Giòn Không Xương')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
-                <img src="http://thepizzacompany.vn/images/thumbs/000/0002248_spicy-garlic-shrimp-with-bread_300.jpeg" alt="Tôm Bơ tỏi và Bánh Mì Nướng  ">
+            <div class="menu-item" onclick="showProductDetail(`Tôm Bơ tỏi và Bánh Mì Nướng`, `http://thepizzacompany.vn/images/thumbs/000/0002248_spicy-garlic-shrimp-with-bread_300.jpeg`, `Tôm tươi đút lò với tỏi, bơ dùng kèm bánh mì nướng bơ tỏi, mang đến hương vị đậm đà.`, `129,000 VND`)">
+                <img src="http://thepizzacompany.vn/images/thumbs/000/0002248_spicy-garlic-shrimp-with-bread_300.jpeg" alt="Tôm Bơ tỏi và Bánh Mì Nướng">
                 <h3>Tôm Bơ tỏi và Bánh Mì Nướng</h3>
                 <p>Tôm tươi đút lò với tỏi, bơ dùng kèm bánh mì nướng bơ tỏi</p>
                 <div class="price">129,000 VND</div>
                 <button onclick="addToCart('Tôm Bơ tỏi và Bánh Mì Nướng')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Bánh Phô Mai Xoắn`, `https://cdn.shopify.com/s/files/1/0617/2497/files/banh-quay-xoan-pulmuone_2_480x480.png?v=1691724674`, `Phô mai trắng được nướng với bơ, tỏi và dùng kèm sốt Cocktail, tạo cảm giác béo ngậy.`, `119,000 VND`)">
                 <img src="https://cdn.shopify.com/s/files/1/0617/2497/files/banh-quay-xoan-pulmuone_2_480x480.png?v=1691724674" alt="Bánh Phô Mai Xoắn">
                 <h3>Bánh Phô Mai Xoắn</h3>
                 <p>Phô mai trắng được nướng với bơ, tỏi và dùng kèm sốt Cocktail</p>
                 <div class="price">119,000 VND</div>
                 <button onclick="addToCart('Bánh Phô Mai Xoắn')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Mực Chiên Giòn`, `https://file.hstatic.net/1000030244/article/muc-chien-xu-gion-2_b564c8c99ca648b78a578e3d3ea5d4de.jpg`, `Mực tẩm bột chiên giòn dùng kèm sốt ngò tây, giòn rụm và thơm ngon.`, `129,000 VND`)">
                 <img src="https://file.hstatic.net/1000030244/article/muc-chien-xu-gion-2_b564c8c99ca648b78a578e3d3ea5d4de.jpg" alt="Mực Chiên Giòn">
                 <h3>Mực Chiên Giòn</h3>
                 <p>Mực tẩm bột chiên giòn dùng kèm sốt ngò tây</p>
                 <div class="price">129,000 VND</div>
                 <button onclick="addToCart('Mực Chiên Giòn')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Bánh Kẹp Nướng Mexico`, `https://khamphamexico.wordpress.com/wp-content/uploads/2018/08/banh-quesadilla.jpg`, `Phô mai, sốt cà chua, nhân gà nướng bơ tỏi, ớt sừng dùng kèm sốt cocktail, đậm đà hương vị Mexico.`, `129,000 VND`)">
                 <img src="https://khamphamexico.wordpress.com/wp-content/uploads/2018/08/banh-quesadilla.jpg" alt="Bánh Kẹp Nướng Mexico">
                 <h3>Bánh Kẹp Nướng Mexico</h3>
                 <p>Phô mai, sốt cà chua, nhân gà nướng bơ tỏi, ớt sừng dùng kèm sốt cocktail</p>
                 <div class="price">129,000 VND</div>
                 <button onclick="addToCart('Bánh Kẹp Nướng Mexico')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item hidden-product" style="display: none;">
+            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Salad Gà Giòn Không Xương`, `https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png`, `Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island, tươi ngon và bổ dưỡng.`, `89,000 VND`)">
                 <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png" alt="Salad Gà Giòn Không Xương">
                 <h3>Salad Gà Giòn Không Xương</h3>
                 <p>Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island</p>
                 <div class="price">89,000 VND</div>
                 <button onclick="addToCart('Salad Gà Giòn Không Xương')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item hidden-product" style="display: none;">
+            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Salad Đặc Sắc`, `http://thepizzacompany.vn/images/thumbs/000/0002250_signature-salad_500.png`, `Salad rau và trái cây tươi dùng kèm xốt kem đặc biệt của The Pizza Company, thanh mát và ngon miệng.`, `89,000 VND`)">
                 <img src="http://thepizzacompany.vn/images/thumbs/000/0002250_signature-salad_500.png" alt="Salad Đặc Sắc">
                 <h3>Salad Đặc Sắc</h3>
                 <p>Salad rau và trái cây tươi dùng kèm xốt kem đặc biệt của The Pizza Company.</p>
                 <div class="price">89,000 VND</div>
                 <button onclick="addToCart('Salad Đặc Sắc')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item hidden-product" style="display: none;">
+            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Salad Trộn Sốt Caesar`, `http://thepizzacompany.vn/images/thumbs/000/0002251_caesars-salad_500.png`, `Rau tươi trộn với sốt Caesar, đơn giản nhưng đậm đà.`, `89,000 VND`)">
                 <img src="http://thepizzacompany.vn/images/thumbs/000/0002251_caesars-salad_500.png" alt="Salad Trộn Sốt Caesar">
                 <h3>Salad Trộn Sốt Caesar</h3>
                 <p>Rau tươi trộn với sốt Caesar</p>
-                <div class="price">$10</div>
+                <div class="price">89,000 VND</div>
                 <button onclick="addToCart('Salad Trộn Sốt Caesar')">Thêm vào giỏ</button>
             </div>
         </div>
@@ -186,6 +127,25 @@ function handleSearch(event) {
             <button onclick="showMore()">Xem thêm</button>
         </div>
     </section>
+
+    <!-- Modal for Product Detail -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProductDetail()">×</span>
+            <div class="modal-image" id="modalImage"></div>
+            <div class="modal-info">
+                <div>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-buttons">
+                    <button class="add-to-cart" id="addToCartButton">
+                        <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -218,7 +178,6 @@ function handleSearch(event) {
                 <li><a href="Menu_pizza.html">Pizza</a></li>
                 <li><a href="Menu_Spaghetti.html">Spaghetti</a></li>
                 <li><a href="Menu_Drink.html">Đồ uống</a></li>
-                
             </ul>
         </div>
 
@@ -232,12 +191,10 @@ function handleSearch(event) {
                 <li>
                     <i class="fas fa-phone-alt"></i>
                     0705311048<br>
-                    
                 </li>
                 <li>
                     <i class="fas fa-envelope"></i>
                     thepizzahouse@gmail.com<br>
-                    
                 </li>
             </ul>
         </div>
@@ -248,7 +205,89 @@ function handleSearch(event) {
             alert(`${itemName} đã được thêm vào giỏ hàng!`);
         }
 
-      
+        function goToHomePage() {
+            window.location.href = 'all.html';
+        }
+        function goToKhaiviPage() {
+            window.location.href = 'Menu_Khaivi.html';
+        }
+        function goToPizzaPage() {
+            window.location.href = 'Menu_pizza.html';
+        }
+        function goToSpaghettiPage() {
+            window.location.href = 'Menu_Spaghetti.html';
+        }
+        function goToDrinkPage() {
+            window.location.href = 'Menu_Drink.html';
+        }
+        function showMore() {
+            const hiddenProducts = document.querySelectorAll('.hidden-product');
+            hiddenProducts.forEach(product => {
+                product.style.display = 'block';// Hiện sản phẩm ẩn
+            });
+              // Ẩn nút 'Xem thêm' sau khi hiện hết
+            document.querySelector('.view-more').style.display = 'none';
+        }
+   // Nút tìm kiếm.
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = document.getElementById('searchInput').value.toLowerCase();
+                const products = document.querySelectorAll('.menu-item');
+
+                let found = false;
+
+                products.forEach(product => {
+                    const title = product.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        product.style.display = 'block';// Hiện món ăn đúng
+                        found = true;
+                    } else {
+                        
+                        product.style.display = 'none';// Ẩn món ăn không đúng
+                    }
+                });
+
+                if (!found) {
+                    alert('Không tìm thấy món ăn bạn cần!');
+                }
+
+        // Ẩn nút "Xem thêm" luôn nếu có
+                const viewMoreBtn = document.querySelector('.view-more');
+                if (viewMoreBtn) {
+                    viewMoreBtn.style.display = 'none';
+                }
+            }
+        }
+
+        // Hiển thị chi tiết sản phẩm trong modal
+        function showProductDetail(name, image, description, price) {
+            const modal = document.getElementById('productModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const addToCartButton = document.getElementById('addToCartButton');
+
+            modalImage.style.backgroundImage = `url('${image}')`;
+            modalTitle.textContent = name;
+            modalDescription.textContent = description;
+            addToCartButton.onclick = () => addToCart(name);
+
+            modal.style.display = 'flex';
+        }
+
+        // Đóng modal
+        function closeProductDetail() {
+            const modal = document.getElementById('productModal');
+            modal.style.display = 'none';
+        }
+
+        // Đóng modal khi nhấn ra ngoài
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
 
         // Tab functionality
         const tabs = document.querySelectorAll('.menu-tabs button');

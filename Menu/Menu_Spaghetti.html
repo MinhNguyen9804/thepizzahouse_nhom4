@@ -77,37 +77,32 @@ function handleSearch(event) {
                 <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
             </div>
             <nav>
-               
                 <a href="../index.html">Trang chủ</a>
                 <a href="all.html">Thực đơn</a>   
                 <a href="#newaa">Đặt bàn</a>
                 <div class="dropdown">
                     <a href="#">Chúng tôi</a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Giới thiệu</a></li>
-                      <li><a href="#">Tin tức</a></li>
-                      <li><a href="#">Điều khoản</a></li>
-                      <li><a href="#">Liên hệ</a></li>
+                        <li><a href="../Us/introduce.html">Giới thiệu</a></li>
+                        <li><a href="../Us/news.html">Tin tức</a></li>
+                        <li><a href="../Us/policy.html">Điều khoản</a></li>
+                        <li><a href="../Us/contact.html">Liên hệ</a></li>
                     </ul>
-                  </div>
-                </nav>
-
-                <div class="icons">
-                    <span class="icons">
-                        <span class="icons">
-                            <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
-                            <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
-                        </span>
-                    </span>
                 </div>
-           
+            </nav>
+            <div class="icons">
+                <span class="icons">
+                    <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
+                </span>
+            </div>
         </div>
     </header>
-   <!-- Banner Top Section -->
-   <section class="banner-top" style="background-image: url('image/spageti.jpg');">
-    <h3>OUR MENU</h3>
-    <h1>Check our Spaghetti menu</h1>
-</section>
+    <!-- Banner Top Section -->
+    <section class="banner-top" style="background-image: url('image/spageti.jpg');">
+        <h3>OUR MENU</h3>
+        <h1>Check our Spaghetti menu</h1>
+    </section>
     <!-- Menu Section -->
     <section class="menu" id="menu">
         <h2>Thực đơn</h2>
@@ -119,74 +114,93 @@ function handleSearch(event) {
             <button onclick="goToDrinkPage()">Đồ uống</button>
         </div>
         <div class="menu-grid">
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Spaghetti Pomodoro`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200013_2.jpg`, `Spaghetti sốt cà chua tươi nhà làm, kết hợp với dầu ô liu và lá húng quế, mang đến hương vị Ý cổ điển, nhẹ nhàng và tinh tế.`, `108,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200013_2.jpg" alt="Spaghetti Pomodoro">
                 <h3>Spaghetti Pomodoro</h3>
-                <p>Spaghetti sốt cà chua tươi nhà làm, kết hợp với dầu ô liu và lá húng quế, mang đến hương vị Ý cổ điển, nhẹ nhàng và tinh tế.</p>
+                <p>Spaghetti sốt cà chua tươi nhà làm, kết hợp với dầu ô liu và lá húng quế,...</p>
                 <div class="price">108,000 VND</div>
                 <button onclick="addToCart('Spaghetti Pomodoro')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Spaghetti Bolognese`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg`, `Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.`, `148,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
                 <h3>Spaghetti Bolognese</h3>
-                <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.</p>
+                <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
                 <div class="price">148,000 VND</div>
                 <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Spaghetti Pesto Tôm`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg`, `Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút phô mai ricotta, mang đến hương vị Ý hiện đại.`, `178,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg" alt="Spaghetti Pesto Tôm">
                 <h3>Spaghetti Pesto Tôm</h3>
-                <p>Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút phô mai ricotta, mang đến hương vị Ý hiện đại.</p>
+                <p>Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút...</p>
                 <div class="price">178,000 VND</div>
                 <button onclick="addToCart('Spaghetti Pesto Tôm')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Fettuccine Cá Hồi Sốt Kem`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200009_2.jpg`, `Fettuccine mềm mượt với cá hồi tươi, sốt kem béo ngậy, thêm chút rau mùi và phô mai, tạo nên món ăn sang trọng, đầy hấp dẫn.`, `198,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200009_2.jpg" alt="Fettuccine Cá Hồi Sốt Kem">
                 <h3>Fettuccine Cá Hồi Sốt Kem</h3>
-                <p>Fettuccine mềm mượt với cá hồi tươi, sốt kem béo ngậy, thêm chút rau mùi và phô mai, tạo nên món ăn sang trọng, đầy hấp dẫn.</p>
+                <p>Fettuccine mềm mượt với cá hồi tươi, sốt kem béo ngậy, thêm chút rau mùi và...</p>
                 <div class="price">198,000 VND</div>
                 <button onclick="addToCart('Fettuccine Cá Hồi Sốt Kem')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Spaghetti Carbonara`, `https://pizza4ps.com/wp-content/uploads/2023/08/20200021_2.jpg`, `Spaghetti với sốt carbonara béo ngậy từ trứng và phô mai camembert nhà làm, thêm chút tiêu đen, mang đến hương vị Ý đích thực.`, `148,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/08/20200021_2.jpg" alt="Spaghetti Carbonara">
                 <h3>Spaghetti Carbonara</h3>
-                <p>Spaghetti với sốt carbonara béo ngậy từ trứng và phô mai camembert nhà làm, thêm chút tiêu đen, mang đến hương vị Ý đích thực.</p>
+                <p>Spaghetti với sốt carbonara béo ngậy từ trứng và phô mai camembert nhà làm...</p>
                 <div class="price">148,000 VND</div>
                 <button onclick="addToCart('Spaghetti Carbonara')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showProductDetail(`Spaghetti Vongole`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200003_2.jpg`, `Spaghetti với nghêu tươi, sốt dầu ô liu và tỏi, điểm thêm chút ớt và húng quế, mang đến hương vị biển cả tươi mát, đậm đà.`, `168,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200003_2.jpg" alt="Spaghetti Vongole">
                 <h3>Spaghetti Vongole</h3>
-                <p>Spaghetti với nghêu tươi, sốt dầu ô liu và tỏi, điểm thêm chút ớt và húng quế, mang đến hương vị biển cả tươi mát, đậm đà.</p>
+                <p>Spaghetti với nghêu tươi, sốt dầu ô liu và tỏi, điểm thêm chút ớt và húng quế,...</p>
                 <div class="price">168,000 VND</div>
                 <button onclick="addToCart('Spaghetti Vongole')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item hidden-product" style="display: none;">
+            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Spaghetti Cua Sốt Kem`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200001_2.jpg`, `Spaghetti với thịt cua ngọt tự nhiên, sốt kem béo nhẹ, thêm chút phô mai và rau thơm, mang đến món ăn tinh tế, hấp dẫn.`, `228,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200001_2.jpg" alt="Spaghetti Cua Sốt Kem">
                 <h3>Spaghetti Cua Sốt Kem</h3>
-                <p>Spaghetti với thịt cua ngọt tự nhiên, sốt kem béo nhẹ, thêm chút phô mai và rau thơm, mang đến món ăn tinh tế, hấp dẫn.</p>
+                <p>Spaghetti với thịt cua ngọt tự nhiên, sốt kem béo nhẹ, thêm chút phô mai và rau...</p>
                 <div class="price">228,000 VND</div>
                 <button onclick="addToCart('Spaghetti Cua Sốt Kem')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item hidden-product" style="display: none;" >
+            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Lasagna Bò`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200015_2.jpg`, `Lasagna nướng với sốt bolognese từ thịt bò, lớp phô mai mozzarella tan chảy, từng lớp mì mềm, mang đến hương vị Ý đậm đà.`, `188,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200015_2.jpg" alt="Lasagna Bò">
                 <h3>Lasagna Bò</h3>
-                <p>Lasagna nướng với sốt bolognese từ thịt bò, lớp phô mai mozzarella tan chảy, từng lớp mì mềm, mang đến hương vị Ý đậm đà.</p>
+                <p>Lasagna nướng với sốt bolognese từ thịt bò, lớp phô mai mozzarella tan chảy, từng...</p>
                 <div class="price">188,000 VND</div>
                 <button onclick="addToCart('Lasagna Bò')">Thêm vào giỏ</button>
             </div>
-            <div class="menu-item hidden-product" style="display: none;">
+            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Spaghetti Tôm Sốt Cà Chua`, `https://pizza4ps.com/wp-content/uploads/2023/08/Smoked-Burrata-Bolo-5.jpg`, `Spaghetti với tôm tươi, sốt cà chua đậm đà, thêm chút phô mai và lá húng quế, mang đến hương vị Ý tươi mới, hấp dẫn.`, `188,000 VND`)">
                 <img src="https://pizza4ps.com/wp-content/uploads/2023/08/Smoked-Burrata-Bolo-5.jpg" alt="Spaghetti Tôm Sốt Cà Chua">
                 <h3>Spaghetti Tôm Sốt Cà Chua</h3>
-                <p>Spaghetti với tôm tươi, sốt cà chua đậm đà, thêm chút phô mai và lá húng quế, mang đến hương vị Ý tươi mới, hấp dẫn.</p>
+                <p>Spaghetti với tôm tươi, sốt cà chua đậm đà, thêm chút phô mai và lá húng quế, mang...</p>
                 <div class="price">188,000 VND</div>
                 <button onclick="addToCart('Spaghetti Tôm Sốt Cà Chua')">Thêm vào giỏ</button>
             </div>
         </div>
-            <div class="view-more">
-                <button onclick="showMore()">Xem thêm</button>
-            </div>
+        <div class="view-more">
+            <button onclick="showMore()">Xem thêm</button>
+        </div>
     </section>
+
+    <!-- Modal for Product Detail -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProductDetail()">×</span>
+            <div class="modal-image" id="modalImage"></div>
+            <div class="modal-info">
+                <div>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-buttons">
+                    <button class="add-to-cart" id="addToCartButton">
+                        <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -219,7 +233,6 @@ function handleSearch(event) {
                 <li><a href="Menu_pizza.html">Pizza</a></li>
                 <li><a href="Menu_Spaghetti.html">Spaghetti</a></li>
                 <li><a href="Menu_Drink.html">Đồ uống</a></li>
-                
             </ul>
         </div>
 
@@ -233,12 +246,10 @@ function handleSearch(event) {
                 <li>
                     <i class="fas fa-phone-alt"></i>
                     0705311048<br>
-                    
                 </li>
                 <li>
                     <i class="fas fa-envelope"></i>
                     thepizzahouse@gmail.com<br>
-                    
                 </li>
             </ul>
         </div>
@@ -249,7 +260,89 @@ function handleSearch(event) {
             alert(`${itemName} đã được thêm vào giỏ hàng!`);
         }
 
-       
+        function goToHomePage() {
+            window.location.href = 'all.html';
+        }
+        function goToKhaiviPage() {
+            window.location.href = 'Menu_Khaivi.html';
+        }
+        function goToPizzaPage() {
+            window.location.href = 'Menu_pizza.html';
+        }
+        function goToSpaghettiPage() {
+            window.location.href = 'Menu_Spaghetti.html';
+        }
+        function goToDrinkPage() {
+            window.location.href = 'Menu_Drink.html';
+        }
+        function showMore() {
+            const hiddenProducts = document.querySelectorAll('.hidden-product');
+            hiddenProducts.forEach(product => {
+                product.style.display = 'block';// Hiện sản phẩm ẩn
+            });
+              // Ẩn nút 'Xem thêm' sau khi hiện hết
+            document.querySelector('.view-more').style.display = 'none';
+        }
+   // Nút tìm kiếm.
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = document.getElementById('searchInput').value.toLowerCase();
+                const products = document.querySelectorAll('.menu-item');
+
+                let found = false;
+
+                products.forEach(product => {
+                    const title = product.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        product.style.display = 'block';// Hiện món ăn đúng
+                        found = true;
+                    } else {
+                        
+                        product.style.display = 'none';// Ẩn món ăn không đúng
+                    }
+                });
+
+                if (!found) {
+                    alert('Không tìm thấy món ăn bạn cần!');
+                }
+
+        // Ẩn nút "Xem thêm" luôn nếu có
+                const viewMoreBtn = document.querySelector('.view-more');
+                if (viewMoreBtn) {
+                    viewMoreBtn.style.display = 'none';
+                }
+            }
+        }
+
+        // Hiển thị chi tiết sản phẩm trong modal
+        function showProductDetail(name, image, description, price) {
+            const modal = document.getElementById('productModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const addToCartButton = document.getElementById('addToCartButton');
+
+            modalImage.style.backgroundImage = `url('${image}')`;
+            modalTitle.textContent = name;
+            modalDescription.textContent = description;
+            addToCartButton.onclick = () => addToCart(name);
+
+            modal.style.display = 'flex';
+        }
+
+        // Đóng modal
+        function closeProductDetail() {
+            const modal = document.getElementById('productModal');
+            modal.style.display = 'none';
+        }
+
+        // Đóng modal khi nhấn ra ngoài
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
 
         // Tab functionality
         const tabs = document.querySelectorAll('.menu-tabs button');
