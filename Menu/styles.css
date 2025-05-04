@@ -175,6 +175,108 @@ nav {
     color: #fff;
 }
 
+/*Chi tiết món ăn*/
+       /* Modal styles */
+       .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #000000;
+        max-width: 800px;
+        width: 90%;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        position: relative;
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #ffffff;
+    }
+
+    .modal-image {
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+    }
+
+    .modal-info {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .modal-info h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.8rem;
+        color: #ffdd00;
+        margin-bottom: 10px;
+    }
+
+    .modal-info p {
+        font-family: 'Open Sans', sans-serif;
+        color: #ffffff;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    .modal-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .modal-buttons button.add-to-cart {
+        background-color: #000;
+        color: #ffd700; /* Màu vàng cho chữ */
+        border: 2px solid #ffd700; /* Viền màu vàng */
+        border-radius: 20px; /* Bo tròn nút */
+        padding: 8px 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .modal-buttons button.add-to-cart:hover {
+        background-color: #ffd700; /* Màu vàng khi hover */
+        color: #000; /* Chữ đen khi hover */
+    }
+
+    .modal-buttons button.add-to-cart i {
+        font-size: 1rem; /* Kích thước biểu tượng */
+    }
+
+    /* Style cho menu item để có thể nhấn vào */
+    .menu-item {
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .menu-item:hover {
+        transform: scale(1.02);
+    }
+
 /*Dropdown*/
 /* NAV LINK STYLE */
 nav a {
