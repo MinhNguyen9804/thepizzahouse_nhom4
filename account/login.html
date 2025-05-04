@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập – The Pizza House</title>
+  <!-- Các font và icon dùng chung -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- CSS chung của site chính -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- ==== HEADER (copy nguyên từ index.html) ==== -->
+  <header>
+    <div class="header-top">
+      <div class="logo-container">
+        <img src="Menu/image/logo.jpg" alt="The Pizza House Logo">
+        <h1>The Pizza House</h1>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
+      </div>
+      <nav>
+        <a href="../index.html">Trang chủ</a>
+        <a href="../Menu/all.html">Thực đơn</a>    
+        <a href="#newaa">Đặt bàn</a>
+        <div class="dropdown">
+          <a href="#">Chúng tôi</a>
+          <ul class="dropdown-menu">
+            <li><a href="../Us/introduce.html">Giới thiệu</a></li>
+            <li><a href="../Us/news.html">Tin tức</a></li>
+            <li><a href="../Us/policy.html">Điều khoản</a></li>
+            <li><a href="../Us/contact.html">Liên hệ</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="icons">
+        <a href="login.html" title="Tài khoản"><i class="fas fa-user"></i></a>
+        <a href="../cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </header>
+  <!-- ==== END HEADER ==== -->
+
+  <main class="account-page">
+    <h2>Đăng nhập</h2>
+    <form action="#" method="post">
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="password">Mật khẩu:</label><br>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <button type="submit">Đăng nhập</button>
+    </form>
+    <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+  </main>
+
+  <!-- ==== FOOTER (copy nguyên từ index.html) ==== -->
+  <footer id="contact">
+    <div class="footer-column">
+      <h3>VỀ CHÚNG TÔI</h3>
+      <p>The Pizza House - không chỉ là ăn thức, mà còn là cả một trải nghiệm vị giác.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>LIÊN KẾT</h3>
+      <ul>
+        <li><a href="../Us/introduce.html">Về chúng tôi</a></li>
+        <li><a href="../Menu/all.html">Thực đơn</a></li>
+        <li><a href="../Us/policy.html">Điều khoản</a></li>
+        <li><a href="../Us/contact.html">Liên hệ</a></li>
+        <li><a href="../Us/news.html">Tin tức</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>THỰC ĐƠN</h3>
+      <ul>
+        <li><a href="../Menu_Khaivi.html">Khai vị</a></li>
+        <li><a href="../Menu_pizza.html">Pizza</a></li>
+        <li><a href="../Menu_Spaghetti.html">Spaghetti</a></li>
+        <li><a href="../Menu_Drink.html">Đồ uống</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>LIÊN HỆ</h3>
+      <ul class="contact-info">
+        <li><i class="fas fa-map-marker-alt"></i>12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</li>
+        <li><i class="fas fa-phone-alt"></i>0705311048</li>
+        <li><i class="fas fa-envelope"></i>thepizzahouse@gmail.com</li>
+      </ul>
+    </div>
+  </footer>
+  <!-- ==== END FOOTER ==== -->
+
+  <!-- JS chung (copy nếu có) -->
+  <script src="../main.js"></script>
+</body>
+</html>
