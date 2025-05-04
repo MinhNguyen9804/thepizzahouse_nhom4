@@ -10,254 +10,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <style>
-        /* Hero Section with Parallax */
-        .hero-section {
-            height: 400px;
-            background-image: url('../image/hero-bg.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            position: relative;
-            overflow: hidden;
-            margin-top: 60px;
-        }
-
-            .hero-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-            }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            color: #fff;
-            padding: 2rem;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-            .hero-content h1 {
-                font-size: 3rem;
-                font-family: 'Dancing Script', cursive;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
-            }
-
-            .hero-content p {
-                font-size: 1.2rem;
-                max-width: 600px;
-                margin: 0 auto;
-            }
-
-        /* History Section (Vertical Block Layout) */
-        .history {
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-bottom: 1px solid #ccc;
-        }
-
-            .history h2 {
-                text-align: center;
-                font-family: 'Dancing Script', cursive;
-                color: #ffcc00;
-                margin-bottom: 2rem;
-                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-                font-size: 2.5rem;
-                font-weight: 800;
-                position: relative;
-                padding-top: 1rem;
-            }
-
-                .history h2::after {
-                    content: '';
-                    position: absolute;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    bottom: -10px;
-                    width: 50px;
-                    height: 3px;
-                    background-color: #ffea00;
-                }
-
-        .history-block {
-            margin-bottom: 2rem;
-            background-color: #2a2a2a;
-            padding: 1.5rem;
-            border-radius: 10px;
-            color: #fff;
-            opacity: 0;
-            transform: translateY(50px) scale(0.95); /* Bắt đầu từ dưới và thu nhỏ */
-            transition: opacity 0.7s ease, transform 0.7s ease, background-color 0.3s ease;
-        }
-
-            .history-block.fade-in {
-                opacity: 1;
-                transform: translateY(0) scale(1); /* Nổi lên và về kích thước ban đầu */
-            }
-
-            .history-block:hover {
-                background-color: #3a3a3a;
-            }
-
-            .history-block img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 10px;
-                margin-bottom: 1rem;
-            }
-
-            .history-block h3 {
-                font-family: 'Dancing Script', cursive;
-                color: #ffea00;
-                margin-bottom: 0.5rem;
-            }
-
-            .history-block p {
-                font-size: 0.9rem;
-                color: #ccc;
-            }
-
-        /* Mission and Team Section */
-        .mission-team {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-bottom: 1px solid #ccc;
-        }
-
-            .mission-team .card {
-                background-color: #2a2a2a;
-                padding: 1.5rem;
-                border-radius: 10px;
-                text-align: center;
-                color: #fff;
-                transition: transform 0.3s ease;
-            }
-
-                .mission-team .card:hover {
-                    transform: translateY(-5px);
-                }
-
-                .mission-team .card h3 {
-                    font-family: 'Dancing Script', cursive;
-                    color: #ffea00;
-                    margin-bottom: 1rem;
-                }
-
-                .mission-team .card p {
-                    font-size: 0.9rem;
-                    color: #ccc;
-                }
-
-        /* Achievements Section */
-        .achievements {
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            border-bottom: 1px solid #ccc;
-        }
-
-            .achievements .owl-carousel .item {
-                background-color: #2a2a2a;
-                padding: 1.5rem;
-                border-radius: 10px;
-                color: #fff;
-                margin: 0 10px;
-            }
-
-                .achievements .owl-carousel .item h4 {
-                    color: #ffea00;
-                    margin-bottom: 1rem;
-                }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 3rem 2rem;
-            text-align: center;
-            background-color: #1a1a1a;
-            color: #fff;
-        }
-
-            .cta-section h2 {
-                font-family: 'Dancing Script', cursive;
-                color: #ffea00;
-                margin-bottom: 1rem;
-            }
-
-        .cta-btn {
-            background-color: #ffea00;
-            color: #1a1a1a;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-            .cta-btn:hover {
-                background-color: #ffd900;
-                transform: scale(1.05);
-            }
-
-        /* Placeholder for Video */
-
-
-        /* Parallax Effect */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* Fix Footer */
-        footer {
-            position: relative;
-            z-index: 1;
-            background-color: #000;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                height: 300px;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .history-block img {
-                height: 150px;
-            }
-
-            .mission-team {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-top">
             <div class="logo-container">
-                <img src="../image/logo.jpg" alt="The Pizza House Logo">
+                <img src="../Menu/image/logo.jpg" alt="The Pizza House Logo">
                 <h1>The Pizza House</h1>
             </div>
             <div class="search-bar">
@@ -288,9 +47,13 @@
 
     <!-- Hero Section -->
     <section class="hero-section parallax">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="ImageVideo/Video.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+        </video>
         <div class="hero-content">
             <h1>Về The Pizza House</h1>
-            <p>Khám phá câu chuyện đằng sau hương vị pizza tuyệt vời nhất tại Hà Nội, nơi chúng tôi biến từng miếng bánh thành một hành trình ẩm thực.</p>
+            <p>Khám phá câu chuyện đằng sau hương vị pizza tuyệt vời nhất tại Hà Nội, ...</p>
         </div>
     </section>
 
@@ -325,19 +88,27 @@
     </section>
 
     <!-- Mission and Team Section -->
-    <section class="mission-team">
-        <div class="card fade-in">
-            <h3>Sứ mệnh</h3>
-            <p>Chúng tôi cam kết mang đến những chiếc pizza tươi ngon, sử dụng nguyên liệu hữu cơ, và tạo ra trải nghiệm ẩm thực đáng nhớ cho mọi khách hàng. Giá trị cốt lõi của chúng tôi là sự tận tâm và chất lượng vượt trội.</p>
+    <section class="mission-team-v2">
+        <div class="mission-row">
+            <div class="image">
+                <img src="ImageVideo/SuMenh.jpg" alt="Sứ mệnh" />
+            </div>
+            <div class="content">
+                <h3>Sứ mệnh</h3>
+                <p>Chúng tôi cam kết mang đến những chiếc pizza tươi ngon, sử dụng nguyên liệu hữu cơ, và tạo ra trải nghiệm ẩm thực đáng nhớ cho mọi khách hàng. Giá trị cốt lõi của chúng tôi là sự tận tâm và chất lượng vượt trội.</p>
+            </div>
         </div>
-        <div class="card fade-in">
-            <h3>Đội ngũ</h3>
-            <p>Đội ngũ The Pizza House gồm các đầu bếp tài hoa và nhân viên tận tụy, dẫn đầu bởi đầu bếp Nguyễn Văn A - chuyên gia pizza hơn 10 năm kinh nghiệm.</p>
+
+        <div class="mission-row reverse">
+            <div class="image">
+                <img src="ImageVideo/DauBep.jpg" alt="Đội ngũ" />
+            </div>
+            <div class="content">
+                <h3>Đội ngũ</h3>
+                <p>Đội ngũ The Pizza House gồm các đầu bếp tài hoa và nhân viên tận tụy, dẫn đầu bởi đầu bếp Nguyễn Đức Minh - chuyên gia pizza hơn 10 năm kinh nghiệm.</p>
+            </div>
         </div>
     </section>
-
-    <!-- Placeholder for Video -->
-
 
     <!-- Achievements Section -->
     <section class="achievements">
@@ -346,14 +117,22 @@
             <div class="item fade-in">
                 <h4>Giải thưởng 2023</h4>
                 <p>Nhận giải "Nhà hàng pizza xuất sắc nhất" từ Hiệp hội Ẩm thực Việt Nam.</p>
+                <img src="ImageVideo/cup.png" alt="Award 2023" class="item-image">
             </div>
             <div class="item fade-in">
                 <h4>Phản hồi khách hàng</h4>
                 <p>Hơn 95% khách hàng đánh giá 5 sao trên Google Reviews.</p>
+                <img src="ImageVideo/rate.jpg" alt="Customer Reviews" class="item-image">
             </div>
             <div class="item fade-in">
                 <h4>Mở rộng thị trường</h4>
                 <p>Phục vụ hơn 50,000 khách hàng tại Hà Nội trong năm 2024.</p>
+                <img src="ImageVideo/KH.jpg" alt="Market Expansion" class="item-image">
+            </div>
+            <div class="item fade-in">
+                <h4>Đổi mới thực đơn</h4>
+                <p>Ra mắt thực đơn đặc biệt với pizza phiên bản giới hạn năm 2025.</p>
+                <img src="ImageVideo/pz.png" alt="Menu Innovation" class="item-image">
             </div>
         </div>
     </section>
@@ -409,60 +188,80 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        // Handle Search
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = document.getElementById('searchInput').value.toLowerCase();
-                const products = document.querySelectorAll('.menu-item');
-                let found = false;
-                products.forEach(product => {
-                    const title = product.querySelector('h3').textContent.toLowerCase();
-                    if (title.includes(query)) {
-                        product.style.display = 'block';
-                        found = true;
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-                if (!found) {
-                    alert('Không tìm thấy món ăn bạn cần!');
-                }
-            }
-        }
-
-        // Fade-in and Pop-up Animation
-        const fadeItems = document.querySelectorAll('.fade-in, .history-block');
-        function checkFade() {
-            fadeItems.forEach((item, index) => {
-                const rect = item.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top >= 0 && rect.top <= windowHeight * 0.8) {
-                    setTimeout(() => {
-                        item.classList.add('fade-in');
-                    }, index * 200); // Delay 0.2s cho từng phần tử
+        // Khi DOM đã sẵn sàng
+        $(document).ready(function () {
+            // Khởi tạo Owl Carousel cho Achievements với hiệu ứng zoom
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true, // Bật nút điều hướng
+                navText: [
+                    '<i class="fas fa-chevron-left"></i>',
+                    '<i class="fas fa-chevron-right"></i>'
+                ],
+                dots: true, // Bật dots
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 3 }, // Hiển thị 3 slide trên màn hình lớn hơn 768px
+                    1000: { items: 3 }
+                },
+                center: true, // Đặt slide chính ở giữa
+                onInitialized: function (event) {
+                    // Thêm lớp active cho slide chính khi khởi tạo
+                    var current = this._current;
+                    if (current >= this.items().length) current = 0;
+                    this.$element.find('.owl-item').eq(current).addClass('center');
+                },
+                onTranslated: function (event) {
+                    // Cập nhật lớp active khi slide thay đổi
+                    this.$element.find('.owl-item').removeClass('center');
+                    var current = this._current;
+                    if (current >= this.items().length) current = 0;
+                    this.$element.find('.owl-item').eq(current).addClass('center');
                 }
             });
-        }
 
-        // Gọi hàm khi cuộn và khi tải trang
-        window.addEventListener('scroll', checkFade);
-        window.addEventListener('load', checkFade);
+            // Fade-in and Pop-up Animation
+            const fadeItems = document.querySelectorAll('.fade-in, .history-block');
+            function checkFade() {
+                fadeItems.forEach((item, index) => {
+                    const rect = item.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top >= 0 && rect.top <= windowHeight * 0.8) {
+                        setTimeout(() => {
+                            item.classList.add('fade-in');
+                        }, index * 200); // Delay 0.2s cho từng phần tử
+                    }
+                });
+            }
+            window.addEventListener('scroll', checkFade);
+            window.addEventListener('load', checkFade);
 
-        // Owl Carousel for Achievements
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
+            // Handle Search (thêm kiểm tra nếu phần tử không tồn tại)
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function (event) {
+                    if (event.key === 'Enter') {
+                        const query = this.value.toLowerCase();
+                        const products = document.querySelectorAll('.menu-item');
+                        let found = false;
+                        products.forEach(product => {
+                            const title = product.querySelector('h3')?.textContent.toLowerCase() || '';
+                            if (title.includes(query)) {
+                                product.style.display = 'block';
+                                found = true;
+                            } else {
+                                product.style.display = 'none';
+                            }
+                        });
+                        if (!found && products.length > 0) {
+                            alert('Không tìm thấy món ăn bạn cần!');
+                        }
+                    }
+                });
             }
         });
     </script>
