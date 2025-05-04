@@ -183,26 +183,55 @@
                     </div>
                     </section>
     <!-- Customer Reviews Section -->
-<section class="reviews-section">
-        <h2>Đánh giá từ khách hàng</h2>
-        <div class="reviews-container">
+    <section class="reviews-section">
+        <h2>Khách hàng nói gì về chúng tôi</h2>
+      
+        <div class="slider-wrapper">
+          <button class="slider-btn left" onclick="scrollReviews(-1)">&#10094;</button>
+      
+          <div class="reviews-scroll-container" id="reviewsContainer">
             <div class="review-card">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Vũ Trọng Sinh">
-                <h3>Vũ Trọng Sinh</h3>
-                <p>"Mua hàng tại đây rất nhanh chóng. Web sử dụng dễ hiểu, thao tác dễ dàng. Shop này 10 điểm không cần chỉnh!"</p>
+              <img src="https://futureoflife.org/wp-content/uploads/2020/08/elon_musk_royal_society.jpg" alt="Elonmusk">
+              <div>
+                <h3>Elon Musk</h3>
+                <p>"Mua hoa tặng vợ mà ưng quá chừng. Web sử dụng mượt mà, thao tác dễ dàng."</p>
+              </div>
             </div>
             <div class="review-card">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Nguyễn Thùy Chi">
+              <img src="https://i.imgur.com/RmQmQFw.png" alt="Avatar">
+              <div>
                 <h3>Nguyễn Thùy Chi</h3>
                 <p>"Hoa đẹp, dịch vụ chăm sóc khách hàng tốt!"</p>
+              </div>
             </div>
             <div class="review-card">
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Nguyễn Thành Tùng">
-                <h3>Nguyễn Thành Tùng</h3>
+              <img src="https://i.imgur.com/0BzQ9kC.png" alt="Avatar">
+              <div>
+                <h3>Nguyễn Thanh Tùng</h3>
                 <p>"Rất hài lòng với chất lượng sản phẩm và phong cách phục vụ!"</p>
+              </div>
             </div>
+            <div class="review-card">
+                <img src="https://i.imgur.com/0BzQ9kC.png" alt="Avatar">
+                <div>
+                  <h3>Nguyễn Thanh Tùng</h3>
+                  <p>"Rất hài lòng với chất lượng sản phẩm và phong cách phục vụ!"</p>
+                </div>
+              </div>
+              <div class="review-card">
+                <img src="https://i.imgur.com/0BzQ9kC.png" alt="Avatar">
+                <div>
+                  <h3>Nguyễn Thanh Tùng</h3>
+                  <p>"Rất hài lòng với chất lượng sản phẩm và phong cách phục vụ!"</p>
+                </div>
+              </div>
+          </div>
+      
+          <button class="slider-btn right" onclick="scrollReviews(1)">&#10095;</button>
         </div>
-    </section>
+      </section>
+
+
      <!-- Modal for Product Detail -->
     <div class="modal" id="productModal">
         <div class="modal-content">
@@ -314,8 +343,15 @@
             slides[slideIndex].classList.add("active");
             dots[slideIndex].classList.add("active");
         }
-
-      
+//đánh giá khách hànghàng
+ function scrollReviews(direction) {
+    const container = document.getElementById("reviewsContainer");
+    const scrollAmount = container.offsetWidth * 0.5; // cuộn nửa chiều rộng (2 card)
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }  
 
         // Search function
         function handleSearch(event) {
