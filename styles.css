@@ -617,10 +617,14 @@ nav a {
 
 .hot-product-content h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #333;
     margin-bottom: 10px;
+    
+
 }
+
+
 
 .hot-product-content h3 {
     font-family: 'Roboto', sans-serif;
@@ -640,7 +644,7 @@ nav a {
 .hot-product-content .price {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    color: #ffd700;
+    color: #d11d1d;
     margin-bottom: 10px;
 }
 
@@ -723,7 +727,7 @@ nav a {
   }
   .review-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 20px rgb(255, 200, 0);
+   
   }
   
   .review-card img {
