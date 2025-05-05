@@ -258,6 +258,7 @@ nav {
     .modal-buttons {
         display: flex;
         gap: 10px;
+        align-items: flex-end;
     }
 
     .modal-buttons button.add-to-cart {
@@ -273,6 +274,8 @@ nav {
         display: flex;
         align-items: center;
         gap: 5px;
+        max-width: 160px;
+        max-height: 100px;
     }
 
     .modal-buttons button.add-to-cart:hover {
@@ -282,6 +285,36 @@ nav {
 
     .modal-buttons button.add-to-cart i {
         font-size: 1rem; /* Kích thước biểu tượng */
+    }
+    .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .quantity-control button {
+        background-color: #ffd700;
+        color: #000;
+        border: none;
+        padding: 6px 14px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .quantity-control button:hover {
+        background-color: #e6c200;
+    }
+    
+    .quantity-control span {
+        font-size: 1.2rem;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        min-width: 24px;
+        text-align: center;
     }
 
     /* Style cho menu item để có thể nhấn vào */
