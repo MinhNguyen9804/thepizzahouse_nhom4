@@ -186,24 +186,36 @@ function handleSearch(event) {
         </div>
     </section>
 
-    <!-- Modal for Product Detail -->
-    <div class="modal" id="productModal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeProductDetail()">×</span>
-            <div class="modal-image" id="modalImage"></div>
-            <div class="modal-info">
-                <div>
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalDescription"></p>
+        <!-- Modal for Product Detail -->
+        <div class="modal" id="productModal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeProductDetail()">×</span>
+                <div class="modal-image" id="modalImage"></div>
+                <div class="modal-info">
+                    <div>
+                        <h2 id="modalTitle"></h2>
+                        <p id="modalDescription"></p>
+                        <p id="modalPrice" class="modal-price"></p>
+                    
+                    <div id="unitPrice" style="display:none;"></div>
+                    <div class="quantity-control">
+                        <button id="decrease-btn">-</button>
+                        <span id="quantity">1</span>
+                        <button id="increase-btn">+</button>
+                    </div>
+                    <p class="modal-price">Tổng cộng : <span id="totalPrice"></span></p>
+                    </div>
+                    <div class="modal-buttons">
+                        <button class="add-to-cart" id="addToCartButton">
+                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                        </button>
+                    </div>
                 </div>
-                <div class="modal-buttons">
-                    <button class="add-to-cart" id="addToCartButton">
-                        <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
-                    </button>
+    
+                    
+                    
                 </div>
             </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -318,19 +330,59 @@ function handleSearch(event) {
         }
 
         // Hiển thị chi tiết sản phẩm trong modal
-        function showProductDetail(name, image, description, price) {
+       function showProductDetail(name, image, description, price) {
             const modal = document.getElementById('productModal');
             const modalImage = document.getElementById('modalImage');
             const modalTitle = document.getElementById('modalTitle');
             const modalDescription = document.getElementById('modalDescription');
+            const modalPrice = document.getElementById('modalPrice');
+            const unitPriceElement = document.getElementById('unitPrice');
+            const quantityDisplay = document.getElementById('quantity');
+            const totalPriceDisplay = document.getElementById('totalPrice');
             const addToCartButton = document.getElementById('addToCartButton');
 
+            // Lấy giá trị đơn giá từ price
+            const unitPrice = parseInt(price.replace(/[^\d]/g, ''), 10);
+
+            // Cập nhật nội dung modal
             modalImage.style.backgroundImage = `url('${image}')`;
             modalTitle.textContent = name;
             modalDescription.textContent = description;
+            modalPrice.textContent = `Giá: ${price}`;
+            unitPriceElement.textContent = unitPrice;
+            quantityDisplay.textContent = 1;
+            totalPriceDisplay.textContent = unitPrice.toLocaleString("vi-VN") + " VND";
+
+            // Thêm sự kiện cho nút "Thêm vào giỏ"
             addToCartButton.onclick = () => addToCart(name);
 
+            // Thiết lập số lượng ban đầu
+            let quantity = 1;
+
+            // Xử lý tăng/giảm số lượng
+            document.getElementById("increase-btn").onclick = () => {
+                quantity++;
+                quantityDisplay.textContent = quantity;
+                updateTotal(unitPrice, quantity);
+            };
+
+            document.getElementById("decrease-btn").onclick = () => {
+                if (quantity > 1) {
+                    quantity--;
+                    quantityDisplay.textContent = quantity;
+                    updateTotal(unitPrice, quantity);
+                }
+            };
+
+            // Hiển thị modal
             modal.style.display = 'flex';
+        }
+
+        // Hàm cập nhật tổng giá
+        function updateTotal(unitPrice, quantity) {
+            const totalPriceDisplay = document.getElementById('totalPrice');
+            const total = unitPrice * quantity;
+            totalPriceDisplay.textContent = total.toLocaleString("vi-VN") + " VND";
         }
 
         // Đóng modal

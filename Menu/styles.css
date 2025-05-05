@@ -228,6 +228,20 @@ nav {
     }
     .modal-price {
         font-family: 'Roboto', sans-serif;
+        font-size: 1.0rem;
+        color: #ffdd00;
+        margin-bottom: 15px;
+        font-weight:bold;
+    }
+    #modalPrice{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.0rem;
+        color: #ffdd00;
+        margin-bottom: 15px;
+        font-weight:lighter;
+    }
+    #totalPrice{
+        font-family: 'Roboto', sans-serif;
         font-size: 1.2rem;
         color: #ffdd00;
         margin-bottom: 15px;
@@ -246,6 +260,7 @@ nav {
         font-size: 1.8rem;
         color: #ffdd00;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .modal-info p {
@@ -290,12 +305,13 @@ nav {
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-bottom: 15px;
+        margin-bottom: 1px;
+        margin-top: 20px;
     }
     
     .quantity-control button {
-        background-color: #ffd700;
-        color: #000;
+        background-color: #313030;
+        color: #ffffff;
         border: none;
         padding: 6px 14px;
         font-size: 1.1rem;
