@@ -248,8 +248,8 @@
       </section>
 
 
-     <!-- Modal for Product Detail -->
-    <div class="modal" id="productModal">
+      <!-- Modal for Product Detail -->
+      <div class="modal" id="productModal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeProductDetail()">×</span>
             <div class="modal-image" id="modalImage"></div>
@@ -257,6 +257,15 @@
                 <div>
                     <h2 id="modalTitle"></h2>
                     <p id="modalDescription"></p>
+                    <p id="modalPrice" class="modal-price"></p>
+                
+                <div id="unitPrice" style="display:none;"></div>
+                <div class="quantity-control">
+                    <button id="decrease-btn">-</button>
+                    <span id="quantity">1</span>
+                    <button id="increase-btn">+</button>
+                </div>
+                <p class="modal-price">Tổng cộng : <span id="totalPrice"></span></p>
                 </div>
                 <div class="modal-buttons">
                     <button class="add-to-cart" id="addToCartButton">
@@ -264,8 +273,11 @@
                     </button>
                 </div>
             </div>
+
+                
+                
+            </div>
         </div>
-    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -317,121 +329,6 @@
         </div>
     </footer>
 
-    <script>
-        function addToCart(itemName) {
-            alert(`${itemName} đã được thêm vào giỏ hàng!`);
-        }
-
-        // Banner slideshow
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("banner-slide");
-            let dots = document.getElementsByClassName("dot");
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-                dots[i].classList.remove("active");
-            }
-
-            slideIndex++;
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
-            }
-
-            slides[slideIndex].classList.add("active");
-            dots[slideIndex].classList.add("active");
-
-            setTimeout(showSlides, 3000); // Chuyển slide sau 15 giây
-        }
-
-        function currentSlide(n) {
-            slideIndex = n;
-            let slides = document.getElementsByClassName("banner-slide");
-            let dots = document.getElementsByClassName("dot");
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-                dots[i].classList.remove("active");
-            }
-
-            slides[slideIndex].classList.add("active");
-            dots[slideIndex].classList.add("active");
-        }
-//đánh giá khách hànghàng
- function scrollReviews(direction) {
-    const container = document.getElementById("reviewsContainer");
-    const scrollAmount = container.offsetWidth * 0.5; // cuộn nửa chiều rộng (2 card)
-    container.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
-    });
-  }  
-
-        // Search function
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = document.getElementById('searchInput').value.toLowerCase();
-                alert('Chuyển hướng đến trang tìm kiếm với từ khóa: ' + query);
-                window.location.href = 'Menu/all.html?search=' + query;
-            }
-        }
-
-
-        // Hiển thị chi tiết sản phẩm trong modal
-        function showProductDetail(name, image, description, price) {
-            const modal = document.getElementById('productModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
-            const addToCartButton = document.getElementById('addToCartButton');
-
-            modalImage.style.backgroundImage = `url('${image}')`;
-            modalTitle.textContent = name;
-            modalDescription.textContent = description;
-            addToCartButton.onclick = () => addToCart(name);
-
-            modal.style.display = 'flex';
-        }
-
-        // Đóng modal
-        function closeProductDetail() {
-            const modal = document.getElementById('productModal');
-            modal.style.display = 'none';
-        }
-
-        // Đóng modal khi nhấn ra ngoài
-        window.onclick = function(event) {
-            const modal = document.getElementById('productModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        //đánh giá khách hàng
-        let currentIndex = 0;
-
-function showTestimonials() {
-  const cards = document.querySelectorAll('.testimonial-card');
-  cards.forEach((card, index) => {
-    card.style.display = (index === currentIndex || index === currentIndex + 1) ? 'block' : 'none';
-  });
-}
-
-function changeTestimonial(direction) {
-  const cards = document.querySelectorAll('.testimonial-card');
-  const total = cards.length;
-
-  currentIndex += direction * 2;
-
-  if (currentIndex < 0) currentIndex = total - 2;
-  if (currentIndex >= total) currentIndex = 0;
-
-  showTestimonials();
-}
-
-document.addEventListener("DOMContentLoaded", showTestimonials);
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>

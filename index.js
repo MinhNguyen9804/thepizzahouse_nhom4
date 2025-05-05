@@ -2,51 +2,84 @@ function addToCart(itemName) {
     alert(`${itemName} đã được thêm vào giỏ hàng!`);
 }
 
-function goToHomePage() {
-    window.location.href = 'all.html';
-}
-function goToKhaiviPage() {
-    window.location.href = 'Menu_Khaivi.html';
-}
-function goToPizzaPage() {
-    window.location.href = 'Menu_pizza.html';
-}
-function goToSpaghettiPage() {
-    window.location.href = 'Menu_Spaghetti.html';
-}
-function goToDrinkPage() {
-    window.location.href = 'Menu_Drink.html';
+function addToCart(itemName) {
+    alert(`${itemName} đã được thêm vào giỏ hàng!`);
 }
 
-function handleSearch(event) {
-    if (event.key === 'Enter') {
-        const query = document.getElementById('searchInput').value.toLowerCase();
-        const products = document.querySelectorAll('.menu-item');
+// Banner slideshow
+let slideIndex = 0;
+showSlides();
 
-        let found = false;
+function showSlides() {
+    let slides = document.getElementsByClassName("banner-slide");
+    let dots = document.getElementsByClassName("dot");
 
-        products.forEach(product => {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            if (title.includes(query)) {
-                product.style.display = 'block';
-                found = true;
-            } else {
-                product.style.display = 'none';
-            }
-        });
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
 
-        if (!found) {
-            alert('Không tìm thấy món ăn bạn cần!');
-        }
+    slideIndex++;
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
 
-        const viewMoreBtn = document.querySelector('.view-more');
-        if (viewMoreBtn) {
-            viewMoreBtn.style.display = 'none';
+    slides[slideIndex].classList.add("active");
+    dots[slideIndex].classList.add("active");
+
+    setTimeout(showSlides, 3000); // Chuyển slide sau 15 giây
+}
+
+function currentSlide(n) {
+    slideIndex = n;
+    let slides = document.getElementsByClassName("banner-slide");
+    let dots = document.getElementsByClassName("dot");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex].classList.add("active");
+    dots[slideIndex].classList.add("active");
+}
+//đánh giá khách hànghàng
+function scrollReviews(direction) {
+const container = document.getElementById("reviewsContainer");
+const scrollAmount = container.offsetWidth * 0.5; // cuộn nửa chiều rộng (2 card)
+container.scrollBy({
+left: direction * scrollAmount,
+behavior: 'smooth'
+});
+}  
+ // Search function
+       function handleSearch(event) {
+        if (event.key === 'Enter') {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            alert('Chuyển hướng đến trang tìm kiếm với từ khóa: ' + query);
+            window.location.href = 'Menu/all.html?search=' + query;
         }
     }
-}
-
-
+    function showTestimonials() {
+        const cards = document.querySelectorAll('.testimonial-card');
+        cards.forEach((card, index) => {
+          card.style.display = (index === currentIndex || index === currentIndex + 1) ? 'block' : 'none';
+        });
+      }
+      
+      function changeTestimonial(direction) {
+        const cards = document.querySelectorAll('.testimonial-card');
+        const total = cards.length;
+      
+        currentIndex += direction * 2;
+      
+        if (currentIndex < 0) currentIndex = total - 2;
+        if (currentIndex >= total) currentIndex = 0;
+      
+        showTestimonials();
+      }
+      
+      document.addEventListener("DOMContentLoaded", showTestimonials);
 // Hiển thị chi tiết sản phẩm trong modal
 function showProductDetail(name, image, description, price) {
     const modal = document.getElementById('productModal');
@@ -116,12 +149,3 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
-
-// Tab functionality
-const tabs = document.querySelectorAll('.menu-tabs button');
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-    });
-});
