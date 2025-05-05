@@ -226,7 +226,13 @@ nav {
         background-position: center;
         min-height: 300px;
     }
-
+    .modal-price {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        color: #ffdd00;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
     .modal-info {
         flex: 1;
         padding: 20px;

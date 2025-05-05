@@ -122,6 +122,7 @@
                 <div>
                     <h2 id="modalTitle"></h2>
                     <p id="modalDescription"></p>
+                    <p id="modalPrice" class="modal-price"></p>
                 </div>
                 <div class="modal-buttons">
                     <button class="add-to-cart" id="addToCartButton">
@@ -239,12 +240,15 @@
             const modal = document.getElementById('productModal');
             const modalImage = document.getElementById('modalImage');
             const modalTitle = document.getElementById('modalTitle');
+            
             const modalDescription = document.getElementById('modalDescription');
+            const modalPrice = document.getElementById('modalPrice');
             const addToCartButton = document.getElementById('addToCartButton');
 
             modalImage.style.backgroundImage = `url('${image}')`;
             modalTitle.textContent = name;
             modalDescription.textContent = description;
+            modalPrice.textContent = price;
             addToCartButton.onclick = () => addToCart(name);
 
             modal.style.display = 'flex';
