@@ -27,7 +27,7 @@ function showSlides() {
     slides[slideIndex].classList.add("active");
     dots[slideIndex].classList.add("active");
 
-    setTimeout(showSlides, 3000); // Chuyển slide sau 15 giây
+    //setTimeout(showSlides, 3000); // Chuyển slide sau 15 giây
 }
 
 function currentSlide(n) {

@@ -643,9 +643,19 @@ nav a {
     }
 /*court*/
 .hot-product-section {
-    background-color: #f5f5f0; /* Màu nền nhẹ giống mục quote */
-    padding: 40px 0; /* Giảm padding ngang để full chiều ngang */
-    width: 100%; /* Full chiều ngang */
+    background-color: #f5f5f0;
+    padding: 40px 0;
+    width: 76%;
+    border-top: 3px solid #050505;
+    align-items: center;
+    margin-left: 183px;
+    border-bottom: 3px solid black;
+}
+    .hot-product-section:hover{
+        transform: scale(1.02);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hot-product-card {
@@ -663,6 +673,7 @@ nav a {
     height: auto;
     border-radius: 10px;
 }
+
 
 .hot-product-content {
     text-align: left;
@@ -700,6 +711,7 @@ nav a {
     font-size: 1.2rem;
     color: #d11d1d;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .hot-product-content button {
@@ -947,4 +959,23 @@ footer {
     .menu-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pagination-dot.active {
+    background-color: #ffdd00;
 }

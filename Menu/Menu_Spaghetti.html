@@ -9,61 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
    
-    <script>
-        function goToHomePage() {
-            window.location.href = 'all.html';
-        }
-        function goToKhaiviPage() {
-            window.location.href = 'Menu_Khaivi.html';
-        }
-        function goToPizzaPage() {
-            window.location.href = 'Menu_pizza.html';
-        }
-        function goToSpaghettiPage() {
-            window.location.href = 'Menu_Spaghetti.html';
-        }
-        function goToDrinkPage() {
-            window.location.href = 'Menu_Drink.html';
-        }
-        function showMore() {
-        const hiddenProducts = document.querySelectorAll('.hidden-product');
-        hiddenProducts.forEach(product => {
-            product.style.display = 'block'; // Hiện sản phẩm ẩn
-        });
-        // Ẩn nút 'Xem thêm' sau khi hiện hết
-        document.querySelector('.view-more').style.display = 'none';
-    }
-    // Nút tìm kiếm.
-function handleSearch(event) {
-    if (event.key === 'Enter') {
-        const query = document.getElementById('searchInput').value.toLowerCase();
-        const products = document.querySelectorAll('.menu-item');
 
-        let found = false;
-
-        products.forEach(product => {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            if (title.includes(query)) {
-                product.style.display = 'block'; // Hiện món ăn đúng
-                found = true;
-            } else {
-                product.style.display = 'none';  // Ẩn món ăn không đúng
-            }
-        });
-
-        if (!found) {
-            alert('Không tìm thấy món ăn bạn cần!');
-        } 
-
-        // Ẩn nút "Xem thêm" luôn nếu có
-        const viewMoreBtn = document.querySelector('.view-more');
-        if (viewMoreBtn) {
-            viewMoreBtn.style.display = 'none';
-        }
-    }
-}
-
-    </script>
 </head>
 <body>
     <!-- Header -->

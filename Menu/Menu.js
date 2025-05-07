@@ -17,6 +17,14 @@ function goToSpaghettiPage() {
 function goToDrinkPage() {
     window.location.href = 'Menu_Drink.html';
 }
+function showMore() {
+    const hiddenProducts = document.querySelectorAll('.hidden-product');
+    hiddenProducts.forEach(product => {
+        product.style.display = 'block'; // Hiện sản phẩm ẩn
+    });
+    // Ẩn nút 'Xem thêm' sau khi hiện hết
+    document.querySelector('.view-more').style.display = 'none';
+}
 
 function handleSearch(event) {
     if (event.key === 'Enter') {
