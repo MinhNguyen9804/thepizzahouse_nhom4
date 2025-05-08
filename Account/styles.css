@@ -133,6 +133,22 @@ nav {
             outline: none;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+    /* --- Ghi nhớ đăng nhập căn chỉnh đẹp --- */
+.remember-check label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.remember-check input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: yellow; /* Màu của dấu tick */
+    cursor: pointer;
+}
 
 /* Banner Top Section */
 .banner-top {
