@@ -149,6 +149,9 @@ nav {
     accent-color: yellow; /* Màu của dấu tick */
     cursor: pointer;
 }
+.hide-order-btn {
+    display: none !important;
+}
 
 /* Banner Top Section */
 .banner-top {
