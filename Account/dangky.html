@@ -93,7 +93,7 @@
         <div class="remember-check">
             </label>
             <input type="checkbox" id="agreePolicy" name="agreePolicy" required>
-            <label for="agreePolicy">Tôi đồng ý với <a href="c:\Users\Phuong\OneDrive\Tài liệu\GitHub\thepizzahouse_nhom4\Us\policy.html" target="_blank" style="color: #0aecec;">chính sách trang web</a></label>
+            <label for="agreePolicy">Tôi đồng ý với <a href="policy.html" target="_blank" style="color: #0aecec;">chính sách trang web</a></label>
         </div>                        
         <button type="submit" class="submit-btn">Đăng ký</button>
 <p style="color: white;">Bạn chưa có tài khoản? <a href="đăng nhập.html" style="color: #0aecec;">Đăng nhập ngay</a></p>
@@ -199,6 +199,10 @@
         alert("Vui lòng điền đầy đủ thông tin.");
         return;
     }
+    if (password.length < 6) {
+        alert("Mật khẩu phải có ít nhất 6 ký tự.");
+        return;
+    }
 
     if (!agreePolicy) {
         alert("Bạn phải đồng ý với chính sách trang web.");
@@ -224,8 +228,9 @@
     users.push({ fullname, email, password });
     localStorage.setItem('users', JSON.stringify(users));
 
-    alert("Đăng ký thành công!");
-    document.getElementById('contactForm').reset();
+    alert("Đăng ký thành công! Bạn sẽ được chuyển đến trang đăng nhập.");
+    window.location.href = "c:\Users\Phuong\OneDrive\Tài liệu\GitHub\thepizzahouse_nhom4\Account\đăng nhập.html"; 
+
         }
     </script>
 </body>
