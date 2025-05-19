@@ -187,9 +187,45 @@
 
         // Xử lý form
         function submitForm(event) {
-            event.preventDefault();
-            alert('Cảm ơn bạn! Thông tin đã được gửi thành công.');
-            document.getElementById('contactForm').reset();
+    event.preventDefault();
+
+    const fullname = document.getElementById('fullname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const agreePolicy = document.getElementById('agreePolicy').checked;
+
+    if (!fullname || !email || !password || !confirmPassword) {
+        alert("Vui lòng điền đầy đủ thông tin.");
+        return;
+    }
+
+    if (!agreePolicy) {
+        alert("Bạn phải đồng ý với chính sách trang web.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Mật khẩu và xác nhận mật khẩu không khớp.");
+        return;
+    }
+
+    // Lấy danh sách người dùng hiện có từ localStorage (nếu có)
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Kiểm tra xem email đã được sử dụng chưa
+    const emailExists = users.some(user => user.email === email);
+    if (emailExists) {
+        alert("Email đã được sử dụng. Vui lòng chọn email khác.");
+        return;
+    }
+
+    // Thêm người dùng mới
+    users.push({ fullname, email, password });
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert("Đăng ký thành công!");
+    document.getElementById('contactForm').reset();
         }
     </script>
 </body>
