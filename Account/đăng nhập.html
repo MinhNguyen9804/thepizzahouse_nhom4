@@ -181,9 +181,35 @@
         // Xử lý form
         function submitForm(event) {
             event.preventDefault();
-            alert('Cảm ơn bạn! Thông tin đã được gửi thành công.');
-            document.getElementById('contactForm').reset();
+              const email = document.getElementById('email').value;
+        const username = email.split('@')[0]; // Lấy tên người dùng từ email (vd: abc@gmail.com → abc)
+
+        // Giả lập xác thực thành công
+        localStorage.setItem('username', username);
+
+        // Hiển thị tên đăng nhập lên giao diện
+        displayUsername();
+
+        alert('Đăng nhập thành công!');
+        document.getElementById('contactForm').reset();
         }
+         // Hàm hiển thị tên đăng nhập
+    function displayUsername() {
+        const username = localStorage.getItem('username');
+        if (username) {
+            const userIcon = document.querySelector('.icons');
+            userIcon.innerHTML = `
+                <span class="icons">
+                    <span style="color: white; margin-right: 10px;">👤 Xin chào, <strong>${username}</strong></span>
+                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
+                </span>
+            `;
+                  }
+    }
+  window.addEventListener('load', () => {
+        checkScroll();
+        displayUsername();
+    });
     </script>
 </body>
 </html>
