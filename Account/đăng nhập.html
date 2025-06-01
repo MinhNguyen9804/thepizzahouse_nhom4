@@ -192,6 +192,7 @@
 
         alert('Đăng nhập thành công!');
         document.getElementById('contactForm').reset();
+        window.location.href = "file:///C:/Users/Phuong/OneDrive/Ta%CC%80i%20li%C3%AA%CC%A3u/GitHub/thepizzahouse_nhom4/index.html";
         }
          // Hàm hiển thị tên đăng nhập
     function displayUsername() {
@@ -200,7 +201,7 @@
             const userIcon = document.querySelector('.icons');
             userIcon.innerHTML = `
                 <span class="icons">
-                    <span style="color: white; margin-right: 10px;">👤 Xin chào, <strong>${username}</strong></span>
+                    <span style="color: white; margin-right: 10px;">👤 </strong></span>
                     <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
                 </span>
             `;
