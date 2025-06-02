@@ -8,7 +8,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+   <style>
+        .account-dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        .account-dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+        }
+
+        .account-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -36,8 +67,14 @@
                 </div>
             </nav>
             <div class="icons">
-                <span class="icons">
-                    <a href="Account/đăng nhập.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                <div class="account-dropdown">
+    <a href="#" title="Tài khoản"><i class="fas fa-user"></i></a>
+    <div class="dropdown-menu">
+        <a href="Account/trangcanhan.html">Trang cá nhân</a>
+        <a href="Account/lichsudonhang.html">Lịch sử đơn hàng</a>
+        <a href="#" id="logout-btn">Đăng xuất</a>
+    </div>
+</div>
                     <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
                 </span>
             </div>
@@ -383,6 +420,16 @@
     window.addEventListener('load', () => {
         checkScroll();
         displayUsername();
+    });
+</script>
+<script>
+    document.getElementById('logout-btn').addEventListener('click', function (e) {
+        e.preventDefault();
+        // Xóa dữ liệu người dùng đăng nhập khỏi localStorage
+        localStorage.removeItem('loggedInUser');
+        alert('Bạn đã đăng xuất!');
+        // Chuyển về trang đăng nhập
+        window.location.href = 'Account/đăng nhập.html';
     });
 </script>
 
