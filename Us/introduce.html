@@ -261,6 +261,25 @@
                 });
             }
         });
+        /*Scrollytelling*/
+        document.addEventListener("DOMContentLoaded", () => {
+            const blocks = document.querySelectorAll('.history-block');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target); // Fade 1 lần duy nhất
+                    }
+                });
+            }, {
+                threshold: 0.3 // Tùy chỉnh tỉ lệ xuất hiện
+            });
+
+            blocks.forEach(block => {
+                observer.observe(block);
+            });
+        });
     </script>
 </body>
 </html>
