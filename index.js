@@ -78,12 +78,7 @@ behavior: 'smooth'
       
         showTestimonials();
       }
-      window.onload = function () {
-    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser) {
-        document.getElementById("welcome").textContent = `Chào, ${currentUser.fullname}!`;
-    }
-};
+      
       document.addEventListener("DOMContentLoaded", showTestimonials);
 // Hiển thị chi tiết sản phẩm trong modal
 function showProductDetail(name, image, description, price) {
