@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+(<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -164,7 +164,7 @@
                 }
             }
         }
-
+         
         // Hiệu ứng fade-in khi cuộn
         const contactItems = document.querySelectorAll('.contact-form .form-group, .contact-info');
         function checkScroll() {
@@ -178,39 +178,23 @@
         window.addEventListener('scroll', checkScroll);
         window.addEventListener('load', checkScroll);
 
-        // Xử lý form
-        function submitForm(event) {
-            event.preventDefault();
-              const email = document.getElementById('email').value;
-        const username = email.split('@')[0]; // Lấy tên người dùng từ email (vd: abc@gmail.com → abc)
+         function submitForm(event) {
+        event.preventDefault();
 
-        // Giả lập xác thực thành công
-        localStorage.setItem('username', username);
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
 
-        // Hiển thị tên đăng nhập lên giao diện
-        displayUsername();
+        // Kiểm tra thông tin đăng nhập (ví dụ đơn giản, thực tế nên kiểm tra với dữ liệu từ server)
+        if (email === "test@gmail.com" && password === "123456") {
+            // Lưu email vào localStorage
+            localStorage.setItem('loggedInUser', email);
 
-        alert('Đăng nhập thành công!');
-        document.getElementById('contactForm').reset();
-        window.location.href = "file:///C:/Users/Phuong/OneDrive/Ta%CC%80i%20li%C3%AA%CC%A3u/GitHub/thepizzahouse_nhom4/index.html";
+            // Chuyển hướng sang trang index.html
+            window.location.href = "file:///C:/Users/Phuong/OneDrive/Ta%CC%80i%20li%C3%AA%CC%A3u/GitHub/thepizzahouse_nhom4/index.html";
+        } else {
+            alert("Email hoặc mật khẩu không đúng!");
         }
-         // Hàm hiển thị tên đăng nhập
-    function displayUsername() {
-        const username = localStorage.getItem('username');
-        if (username) {
-            const userIcon = document.querySelector('.icons');
-            userIcon.innerHTML = `
-                <span class="icons">
-                    <span style="color: white; margin-right: 10px;">👤 Xin chào, <strong>${username}</strong></span>
-                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
-                </span>
-            `;
-                  }
     }
-  window.addEventListener('load', () => {
-        checkScroll();
-        displayUsername();
-    });
     </script>
 </body>
-</html>
+</html>)
