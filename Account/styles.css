@@ -1036,5 +1036,22 @@ strong {
                 font-size: 1rem;
                 color: #333;
             }
-            
+            .account-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.logout-menu {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #333;
+    padding: 8px 12px;
+    border-radius: 5px;
+    z-index: 999;
+}
+.logout-menu span:hover {
+    text-decoration: underline;
+}
+
 }
