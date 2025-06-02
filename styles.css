@@ -487,8 +487,8 @@ nav a {
         }
   
 /*Chi tiết món ăn*/
-       /* Modal styles */
-       .modal {
+      /* Modal styles */
+      .modal {
         display: none;
         position: fixed;
         top: 0;
@@ -526,7 +526,27 @@ nav a {
         background-position: center;
         min-height: 300px;
     }
-
+    .modal-price {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.0rem;
+        color: #ffdd00;
+        margin-bottom: 15px;
+        font-weight:bold;
+    }
+    #modalPrice{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.0rem;
+        color: #ffdd00;
+        margin-bottom: 15px;
+        font-weight:lighter;
+    }
+    #totalPrice{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        color: #ffdd00;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
     .modal-info {
         flex: 1;
         padding: 20px;
@@ -540,6 +560,7 @@ nav a {
         font-size: 1.8rem;
         color: #ffdd00;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .modal-info p {
@@ -552,6 +573,7 @@ nav a {
     .modal-buttons {
         display: flex;
         gap: 10px;
+        align-items: flex-end;
     }
 
     .modal-buttons button.add-to-cart {
@@ -567,6 +589,8 @@ nav a {
         display: flex;
         align-items: center;
         gap: 5px;
+        max-width: 160px;
+        max-height: 100px;
     }
 
     .modal-buttons button.add-to-cart:hover {
@@ -577,7 +601,37 @@ nav a {
     .modal-buttons button.add-to-cart i {
         font-size: 1rem; /* Kích thước biểu tượng */
     }
-
+    .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1px;
+        margin-top: 20px;
+    }
+    
+    .quantity-control button {
+        background-color: #313030;
+        color: #ffffff;
+        border: none;
+        padding: 6px 14px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .quantity-control button:hover {
+        background-color: #e6c200;
+    }
+    
+    .quantity-control span {
+        font-size: 1.2rem;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        min-width: 24px;
+        text-align: center;
+    }
     /* Style cho menu item để có thể nhấn vào */
     .menu-item {
         cursor: pointer;
@@ -589,9 +643,19 @@ nav a {
     }
 /*court*/
 .hot-product-section {
-    background-color: #f5f5f0; /* Màu nền nhẹ giống mục quote */
-    padding: 40px 0; /* Giảm padding ngang để full chiều ngang */
-    width: 100%; /* Full chiều ngang */
+    background-color: #f5f5f0;
+    padding: 40px 0;
+    width: 76%;
+    border-top: 3px solid #050505;
+    align-items: center;
+    margin-left: 183px;
+    border-bottom: 3px solid black;
+}
+    .hot-product-section:hover{
+        transform: scale(1.02);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hot-product-card {
@@ -610,6 +674,7 @@ nav a {
     border-radius: 10px;
 }
 
+
 .hot-product-content {
     text-align: left;
     flex: 1;
@@ -617,10 +682,14 @@ nav a {
 
 .hot-product-content h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #333;
     margin-bottom: 10px;
+    
+
 }
+
+
 
 .hot-product-content h3 {
     font-family: 'Roboto', sans-serif;
@@ -640,8 +709,9 @@ nav a {
 .hot-product-content .price {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    color: #ffd700;
+    color: #d11d1d;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .hot-product-content button {
@@ -723,7 +793,7 @@ nav a {
   }
   .review-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 20px rgb(255, 200, 0);
+   
   }
   
   .review-card img {
@@ -889,4 +959,23 @@ footer {
     .menu-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pagination-dot.active {
+    background-color: #ffdd00;
 }

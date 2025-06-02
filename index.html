@@ -37,7 +37,7 @@
             </nav>
             <div class="icons">
                 <span class="icons">
-                    <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                    <a href="Account/đăng nhập.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
                     <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
                 </span>
             </div>
@@ -48,7 +48,7 @@
     <section class="banner-container">
         <div class="banner-slide">
             <video autoplay muted loop>
-                <source src="image_index/4911800_Pizza_Bake_3840x2160.mp4" type="video/mp4">
+                <source src="Us/ImageVideo/Video.mp4" type="video/mp4">
                 Trình duyệt của bạn không hỗ trợ thẻ video.
             </video>
             <div class="banner-content">
@@ -129,17 +129,14 @@
             
             </div>
             </section>
-
-
-
             <section class="hot-product-section">
-                <div class="hot-product-card">
+                <div class="hot-product-card" onclick="showProductDetail(`Phô mai Burrata Margherita`, `https://pizza4ps.com/wp-content/uploads/2023/08/2-APPLY-2-Burrata-Parma-Ham-Margherita-2.jpg`, `Pizza với lớp đế mỏng giòn, phủ sốt cà chua tươi, phô mai Burrata tự làm tan chảy, thêm chút lá húng quế thơm lừng, mang đến hương vị Ý cổ điển đậm đà.`, `198,000 VND`)">
                     <img src="https://pizza4ps.com/wp-content/uploads/2023/08/2-APPLY-2-Burrata-Parma-Ham-Margherita-2.jpg" alt="Phô mai Burrata Margherita">
                     <div class="hot-product-content">
                         <h2>Sản phẩm hot</h2>
                         <h3>Phô mai Burrata Margherita</h3>
                         <p class="description">Pizza với lớp đế mỏng giòn, phủ sốt cà chua tươi, phô mai Burrata tự làm tan chảy, thêm chút lá húng quế thơm lừng, mang đến hương vị Ý cổ điển đậm đà.</p>
-                        <div class="price">198.000 VNĐ</div>
+                        <div class="price">198,000 VNĐ</div>
                         <button onclick="addToCart('Phô mai Burrata Margherita')">Thêm vào giỏ <i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
@@ -149,50 +146,37 @@
                 <h2>Must try</h2>
                 
                 <div class="menu-grid">
-                    <div class="menu-item" onclick="showProductDetail(`Da Gà Rộp Rộp Xốt Hàn - Cay`, `https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png`, `Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng cho một bữa tiệc vị giác bùng nổ với vị xốt Hàn đậm đà cùng cảm giác rộp rộp đầy thú vị trong mỗi miếng gà.`, `79,000 VND`)">
-                        <div class="image-wrapper">
-                        <img src="https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png" alt="Da Gà Rộp Rộp Xốt Hàn - Cay">
-                    </div>
-                        <h3>Da Gà Rộp Rộp Xốt Hàn - Cay</h3>
-                        <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng...</p>
-                        <div class="price">
-                            <span class="current-price">79.000 VND</span>
-                            <span class="old-price">89,000 VND</span>
-                        </div>
-                        <button onclick="addToCart('Da Gà Rộp Rộp Xốt Hàn - Cay')">Thêm vào giỏ</button>
+                    <div class="menu-item" onclick="showProductDetail(`Pizza Hải Sản Sốt Cà Chua Cay`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg`, `Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ, thêm phô mai hun khói, mang đến hương vị biển cả đậm đà.`, `185,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg" alt="Pizza Hải Sản Sốt Cà Chua Cay">
+                        <h3>Pizza Hải Sản Sốt Cà Chua Cay</h3>
+                        <p>Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ...</p>
+                        <div class="price">185,000 VND</div>
+                        <button onclick="addToCart('Pizza Hải Sản Sốt Cà Chua Cay')">Thêm vào giỏ</button>
                     </div>
                     
                    
-                    <div class="menu-item" onclick="showProductDetail(`Pizza Bò Dầu Tỏi`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg`, `Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen, tạo nên một món pizza đậm chất phương Tây, rất đáng thử.`, `168,000 VND`)">
-                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg" alt="Pizza Bò Dầu Tỏi">
-                        <h3>Pizza Bò Dầu Tỏi</h3>
-                        <p>Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen,...</p>
-                        <div class="price">
-                            <span class="current-price">145,000 VND</span>
-                            <span class="old-price">168,000 VND</span>
-                        </div>
-                        <button onclick="addToCart('Pizza Bò Dầu Tỏi')">Thêm vào giỏ</button>
+                    <div class="menu-item" onclick="showProductDetail(`Pizza Thịt Lợn Ướp Gừng`, `https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg`, `Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô mai, mang đến hương vị đậm đà, ấm áp, rất hợp cho ngày se lạnh.`, `158,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg" alt="Pizza Thịt Lợn Ướp Gừng">
+                        <h3>Pizza Thịt Lợn Ướp Gừng</h3>
+                        <p>Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô...</p>
+                        <div class="price">158,000 VND</div>
+                        <button onclick="addToCart('Pizza Thịt Lợn Ướp Gừng')">Thêm vào giỏ</button>
                     </div>
                     
-                    <div class="menu-item" onclick="showProductDetail(`Spaghetti Bolognese`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg`, `Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.`, `148,000 VND`)">
-                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
-                        <h3>Spaghetti Bolognese</h3>
-                        <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
-                        <div class="price">
-                            <span class="current-price">148,000 VND</span>
-                            <span class="old-price">170,000 VND</span>
-                        </div>
-                        <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
+                    <div class="menu-item" onclick="showProductDetail(`Spaghetti Pesto Tôm`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg`, `Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút phô mai ricotta, mang đến hương vị Ý hiện đại.`, `178,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg" alt="Spaghetti Pesto Tôm">
+                        <h3>Spaghetti Pesto Tôm</h3>
+                        <p>Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút...</p>
+                        <div class="price">178,000 VND</div>
+                        <button onclick="addToCart('Spaghetti Pesto Tôm')">Thêm vào giỏ</button>
                     </div>
-                    <div class="menu-item" onclick="showProductDetail(`Spaghetti Bolognese`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg`, `Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.`, `148,000 VND`)">
-                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
-                        <h3>Spaghetti Bolognese</h3>
-                        <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
-                        <div class="price">
-                            <span class="current-price">148,000 VND</span>
-                            <span class="old-price">170,000 VND</span>
-                        </div>
-                        <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
+                    
+                    <div class="menu-item" onclick="showProductDetail('Yuzu Wheat', 'Menu/image/YuzuBeer.jpg', 'Một loại bia lúa mì nhẹ nhàng, tươi mát với hương thơm đặc trưng từ quả yuzu (một loại quýt Nhật Bản). Bia có vị chua nhẹ, thanh mát, hậu vị dịu dàng, rất thích hợp để giải khát trong những ngày nóng hoặc dùng kèm các món ăn nhẹ.', '105,000 VND')">
+                        <img src="Menu/image/YuzuBeer.jpg" alt="Yuzu Wheat">
+                        <h3>Yuzu Wheat</h3>
+                        <p>Một loại bia lúa mì nhẹ nhàng, tươi mát với hương thơm đặc trưng từ quả yuzu (một loại...</p>
+                        <div class="price">105,000 VND</div>
+                        <button onclick="addToCart('Yuzu Wheat')">Thêm vào giỏ</button>
                     </div>
                     
                     
@@ -248,8 +232,8 @@
       </section>
 
 
-     <!-- Modal for Product Detail -->
-    <div class="modal" id="productModal">
+      <!-- Modal for Product Detail -->
+      <div class="modal" id="productModal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeProductDetail()">×</span>
             <div class="modal-image" id="modalImage"></div>
@@ -257,6 +241,15 @@
                 <div>
                     <h2 id="modalTitle"></h2>
                     <p id="modalDescription"></p>
+                    <p id="modalPrice" class="modal-price"></p>
+                
+                <div id="unitPrice" style="display:none;"></div>
+                <div class="quantity-control">
+                    <button id="decrease-btn">-</button>
+                    <span id="quantity">1</span>
+                    <button id="increase-btn">+</button>
+                </div>
+                <p class="modal-price">Tổng cộng : <span id="totalPrice"></span></p>
                 </div>
                 <div class="modal-buttons">
                     <button class="add-to-cart" id="addToCartButton">
@@ -264,8 +257,11 @@
                     </button>
                 </div>
             </div>
+
+                
+                
+            </div>
         </div>
-    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -317,121 +313,78 @@
         </div>
     </footer>
 
+    <script src="index.js"></script>
     <script>
-        function addToCart(itemName) {
-            alert(`${itemName} đã được thêm vào giỏ hàng!`);
-        }
-
-        // Banner slideshow
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("banner-slide");
-            let dots = document.getElementsByClassName("dot");
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-                dots[i].classList.remove("active");
+    function handleSearch(event) {
+        if (event.key === 'Enter') {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.menu-item');
+            let found = false;
+            products.forEach(product => {
+                const title = product.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    product.style.display = 'block';
+                    found = true;
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+            if (!found) {
+                alert('Không tìm thấy món ăn bạn cần!');
             }
-
-            slideIndex++;
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
-            }
-
-            slides[slideIndex].classList.add("active");
-            dots[slideIndex].classList.add("active");
-
-            setTimeout(showSlides, 15000); // Chuyển slide sau 15 giây
         }
+    }
 
-        function currentSlide(n) {
-            slideIndex = n;
-            let slides = document.getElementsByClassName("banner-slide");
-            let dots = document.getElementsByClassName("dot");
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-                dots[i].classList.remove("active");
+    // Hiệu ứng fade-in khi cuộn
+    const contactItems = document.querySelectorAll('.contact-form .form-group, .contact-info');
+    function checkScroll() {
+        contactItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top >= 0 && rect.top <= window.innerHeight * 0.8) {
+                item.classList.add('fade-in');
             }
+        });
+    }
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
 
-            slides[slideIndex].classList.add("active");
-            dots[slideIndex].classList.add("active");
+    // Xử lý đăng nhập
+    function submitForm(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const username = email.split('@')[0]; // Lấy tên trước dấu @
+
+        // Giả lập xác thực thành công
+        localStorage.setItem('username', username);
+
+        // Hiển thị tên người dùng
+        displayUsername();
+
+        alert('Đăng nhập thành công!');
+        document.getElementById('contactForm').reset();
+    }
+
+    // Hàm hiển thị tên người dùng trong header
+    function displayUsername() {
+        const username = localStorage.getItem('username');
+        if (username) {
+            const userIcon = document.querySelector('.icons');
+            userIcon.innerHTML = `
+                <span class="icons">
+                    <span style="color: white; margin-right: 10px;">👤<strong>${username}</strong></span>
+                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
+                </span>
+            `;
         }
-//đánh giá khách hànghàng
- function scrollReviews(direction) {
-    const container = document.getElementById("reviewsContainer");
-    const scrollAmount = container.offsetWidth * 0.5; // cuộn nửa chiều rộng (2 card)
-    container.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
+    }
+
+    // Hiển thị tên nếu đã đăng nhập trước đó
+    window.addEventListener('load', () => {
+        checkScroll();
+        displayUsername();
     });
-  }  
+</script>
 
-        // Search function
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = document.getElementById('searchInput').value.toLowerCase();
-                alert('Chuyển hướng đến trang tìm kiếm với từ khóa: ' + query);
-                window.location.href = 'Menu/all.html?search=' + query;
-            }
-        }
-
-
-        // Hiển thị chi tiết sản phẩm trong modal
-        function showProductDetail(name, image, description, price) {
-            const modal = document.getElementById('productModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
-            const addToCartButton = document.getElementById('addToCartButton');
-
-            modalImage.style.backgroundImage = `url('${image}')`;
-            modalTitle.textContent = name;
-            modalDescription.textContent = description;
-            addToCartButton.onclick = () => addToCart(name);
-
-            modal.style.display = 'flex';
-        }
-
-        // Đóng modal
-        function closeProductDetail() {
-            const modal = document.getElementById('productModal');
-            modal.style.display = 'none';
-        }
-
-        // Đóng modal khi nhấn ra ngoài
-        window.onclick = function(event) {
-            const modal = document.getElementById('productModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        //đánh giá khách hàng
-        let currentIndex = 0;
-
-function showTestimonials() {
-  const cards = document.querySelectorAll('.testimonial-card');
-  cards.forEach((card, index) => {
-    card.style.display = (index === currentIndex || index === currentIndex + 1) ? 'block' : 'none';
-  });
-}
-
-function changeTestimonial(direction) {
-  const cards = document.querySelectorAll('.testimonial-card');
-  const total = cards.length;
-
-  currentIndex += direction * 2;
-
-  if (currentIndex < 0) currentIndex = total - 2;
-  if (currentIndex >= total) currentIndex = 0;
-
-  showTestimonials();
-}
-
-document.addEventListener("DOMContentLoaded", showTestimonials);
-    </script>
 </body>
 </html>

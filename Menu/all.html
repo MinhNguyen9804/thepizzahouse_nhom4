@@ -101,7 +101,7 @@ function handleSearch(event) {
             </nav>
             <div class="icons">
                 <span class="icons">
-                    <a href="account.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                    <a href="thepizzahouse_nhom4\Account\đăng nhập.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
                     <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
                 </span>
             </div>
@@ -382,6 +382,15 @@ function handleSearch(event) {
                 <div>
                     <h2 id="modalTitle"></h2>
                     <p id="modalDescription"></p>
+                    <p id="modalPrice" class="modal-price"></p>
+                
+                <div id="unitPrice" style="display:none;"></div>
+                <div class="quantity-control">
+                    <button id="decrease-btn">-</button>
+                    <span id="quantity">1</span>
+                    <button id="increase-btn">+</button>
+                </div>
+                <p class="modal-price">Tổng cộng : <span id="totalPrice"></span></p>
                 </div>
                 <div class="modal-buttons">
                     <button class="add-to-cart" id="addToCartButton">
@@ -389,8 +398,11 @@ function handleSearch(event) {
                     </button>
                 </div>
             </div>
+
+                
+                
+            </div>
         </div>
-    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -445,93 +457,6 @@ function handleSearch(event) {
         </div>
     </footer>
 
-    <script>
-        function addToCart(itemName) {
-            alert(`${itemName} đã được thêm vào giỏ hàng!`);
-        }
-
-        function goToHomePage() {
-            window.location.href = 'all.html';
-        }
-        function goToKhaiviPage() {
-            window.location.href = 'Menu_Khaivi.html';
-        }
-        function goToPizzaPage() {
-            window.location.href = 'Menu_pizza.html';
-        }
-        function goToSpaghettiPage() {
-            window.location.href = 'Menu_Spaghetti.html';
-        }
-        function goToDrinkPage() {
-            window.location.href = 'Menu_Drink.html';
-        }
-
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = document.getElementById('searchInput').value.toLowerCase();
-                const products = document.querySelectorAll('.menu-item');
-
-                let found = false;
-
-                products.forEach(product => {
-                    const title = product.querySelector('h3').textContent.toLowerCase();
-                    if (title.includes(query)) {
-                        product.style.display = 'block';
-                        found = true;
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-
-                if (!found) {
-                    alert('Không tìm thấy món ăn bạn cần!');
-                }
-
-                const viewMoreBtn = document.querySelector('.view-more');
-                if (viewMoreBtn) {
-                    viewMoreBtn.style.display = 'none';
-                }
-            }
-        }
-
-        // Hiển thị chi tiết sản phẩm trong modal
-        function showProductDetail(name, image, description, price) {
-            const modal = document.getElementById('productModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
-            const addToCartButton = document.getElementById('addToCartButton');
-
-            modalImage.style.backgroundImage = `url('${image}')`;
-            modalTitle.textContent = name;
-            modalDescription.textContent = description;
-            addToCartButton.onclick = () => addToCart(name);
-
-            modal.style.display = 'flex';
-        }
-
-        // Đóng modal
-        function closeProductDetail() {
-            const modal = document.getElementById('productModal');
-            modal.style.display = 'none';
-        }
-
-        // Đóng modal khi nhấn ra ngoài
-        window.onclick = function(event) {
-            const modal = document.getElementById('productModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // Tab functionality
-        const tabs = document.querySelectorAll('.menu-tabs button');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-            });
-        });
-    </script>
+    <script src="Menu.js"></script>
 </body>
 </html>

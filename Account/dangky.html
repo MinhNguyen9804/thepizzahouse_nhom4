@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập - The Pizza House</title>
+    <title>Đăng ký - The Pizza House</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
@@ -57,13 +57,13 @@
     </header>
  <!-- Banner Top Section -->
  <section class="banner-top">
-    <h3>Đăng Nhập</h3>
+    <h3>Đăng ký</h3>
 </section>
 
 <section class="policy-section">
-    <h2>Đăng nhập tài khoản</h2>
+    <h2>Đăng ký tài khoản</h2>
     <p class="fade-in">
-        Chào mừng bạn đến với <strong>The Pizza House</strong>! Hãy đăng nhập để tiếp tục đặt món, theo dõi đơn hàng, và tận hưởng các ưu đãi dành riêng cho thành viên
+        Chào mừng bạn đến với <strong>The Pizza House</strong>! Hãy đăng ký để trở thành thành viên, nhận ưu đãi và trải nghiệm dịch vụ tốt nhất từ chúng tôi.
     </p>
     <p class="fade-in">
         <strong>Cảm ơn bạn đã tin tưởng và đồng hành cùng The Pizza House!</strong>
@@ -75,6 +75,10 @@
 <section class="contact-form">
     <form id="contactForm" onsubmit="submitForm(event)">
         <div class="form-group">
+            <label for="fullname">Họ và tên</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
         </div>
@@ -82,14 +86,17 @@
             <label for="password">Mật khẩu</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <div class="form-group remember-check">
-            <label>
-                <input type="checkbox" id="rememberMe" name="rememberMe">
-                Ghi nhớ đăng nhập
+        <div class="form-group">
+            <label for="confirmPassword">Xác nhận mật khẩu</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <div class="remember-check">
             </label>
-        </div>        
-        <button type="submit" class="submit-btn">Đăng nhập</button>
-<p style="color: white;">Bạn chưa có tài khoản? <a href="dangky.html" style="color: #0aecec;">Đăng ký ngay</a></p>
+            <input type="checkbox" id="agreePolicy" name="agreePolicy" required>
+            <label for="agreePolicy">Tôi đồng ý với <a href="policy.html" target="_blank" style="color: #0aecec;">chính sách trang web</a></label>
+        </div>                        
+        <button type="submit" class="submit-btn">Đăng ký</button>
+<p style="color: white;">Bạn chưa có tài khoản? <a href="đăng nhập.html" style="color: #0aecec;">Đăng nhập ngay</a></p>
     </form>
     <div class="contact-info">
         <h3 style="color: #fff; font-size: 1.3rem">Thông tin liên hệ</h3>
@@ -180,37 +187,49 @@
 
         // Xử lý form
         function submitForm(event) {
-            event.preventDefault();
-              const email = document.getElementById('email').value;
-        const username = email.split('@')[0]; // Lấy tên người dùng từ email (vd: abc@gmail.com → abc)
+    event.preventDefault();
 
-        // Giả lập xác thực thành công
-        localStorage.setItem('username', username);
+    const fullname = document.getElementById('fullname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const agreePolicy = document.getElementById('agreePolicy').checked;
 
-        // Hiển thị tên đăng nhập lên giao diện
-        displayUsername();
-
-        alert('Đăng nhập thành công!');
-        document.getElementById('contactForm').reset();
-        window.location.href = "file:///C:/Users/Phuong/OneDrive/Ta%CC%80i%20li%C3%AA%CC%A3u/GitHub/thepizzahouse_nhom4/index.html";
-        }
-         // Hàm hiển thị tên đăng nhập
-    function displayUsername() {
-        const username = localStorage.getItem('username');
-        if (username) {
-            const userIcon = document.querySelector('.icons');
-            userIcon.innerHTML = `
-                <span class="icons">
-                    <span style="color: white; margin-right: 10px;">👤 </strong></span>
-                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
-                </span>
-            `;
-                  }
+    if (!fullname || !email || !password || !confirmPassword) {
+        alert("Vui lòng điền đầy đủ thông tin.");
+        return;
     }
-  window.addEventListener('load', () => {
-        checkScroll();
-        displayUsername();
-    });
+    if (password.length < 6) {
+        alert("Mật khẩu phải có ít nhất 6 ký tự.");
+        return;
+    }
+
+    if (!agreePolicy) {
+        alert("Bạn phải đồng ý với chính sách trang web.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Mật khẩu và xác nhận mật khẩu không khớp.");
+        return;
+    }
+
+    // Lấy danh sách người dùng hiện có từ localStorage (nếu có)
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Kiểm tra xem email đã được sử dụng chưa
+    const emailExists = users.some(user => user.email === email);
+    if (emailExists) {
+        alert("Email đã được sử dụng. Vui lòng chọn email khác.");
+        return;
+    }
+
+    // Thêm người dùng mới
+    users.push({ fullname, email, password });
+    localStorage.setItem('users', JSON.stringify(users));
+     alert("Đăng ký thành công!");
+
+        }
     </script>
 </body>
 </html>

@@ -133,6 +133,25 @@ nav {
             outline: none;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
+    /* --- Ghi nhớ đăng nhập căn chỉnh đẹp --- */
+.remember-check label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.remember-check input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: yellow; /* Màu của dấu tick */
+    cursor: pointer;
+}
+.hide-order-btn {
+    display: none !important;
+}
 
 /* Banner Top Section */
 .banner-top {
@@ -994,4 +1013,28 @@ strong {
             .mission-row .image img {
                 max-width: 200px;
             }
+            .error-message {
+                color: #ff4d4f;
+                font-size: 0.9rem;
+                margin-top: 5px;
+                animation: shake 0.3s ease-in-out;
+            }
+            
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                50% { transform: translateX(5px); }
+                75% { transform: translateX(-5px); }
+                100% { transform: translateX(0); }
+            }
+            
+            .toggle-password {
+                position: absolute;
+                right: 10px;
+                top: 8px;
+                cursor: pointer;
+                font-size: 1rem;
+                color: #333;
+            }
+            
 }
