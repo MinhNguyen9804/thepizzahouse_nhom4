@@ -46,11 +46,7 @@
 
     <!-- Banner Section -->
     <section class="banner-container">
-        <div class="banner-slide">
-            <video autoplay muted loop>
-                <source src="Us/ImageVideo/Video.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ thẻ video.
-            </video>
+        <div class="banner-slide" style="background-image: url('image_index/Presentation1.png');">
             <div class="banner-content">
                 <h1>The Pizza House</h1>
                 <p>Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.</p>
@@ -78,69 +74,111 @@
         </div>
     </section>
 
-    <!-- New Dishes Section with Carousel -->
     <section class="menu" id="menu">
         <h2>Món mới</h2>
-        
-        <div class="menu-grid">
-            <div class="menu-item" onclick="showProductDetail(`Da Gà Rộp Rộp Xốt Hàn - Cay`, `https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png`, `Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng cho một bữa tiệc vị giác bùng nổ với vị xốt Hàn đậm đà cùng cảm giác rộp rộp đầy thú vị trong mỗi miếng gà.`, `79,000 VND`)">
-                <div class="image-wrapper">
-                <img src="https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png" alt="Da Gà Rộp Rộp Xốt Hàn - Cay">
-            </div>
-                <h3>Da Gà Rộp Rộp Xốt Hàn - Cay</h3>
-                <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng...</p>
-                <div class="price">
-                    <span class="current-price">79.000 VND</span>
-                    <span class="old-price">89,000 VND</span>
-                </div>
-                <button onclick="addToCart('Da Gà Rộp Rộp Xốt Hàn - Cay')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item " onclick="showProductDetail(`Salad Gà Giòn Không Xương`, `https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png`, `Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island, tươi ngon và bổ dưỡng.`, `89,000 VND`)">
-                <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png" alt="Salad Gà Giòn Không Xương">
-                <h3>Salad Gà Giòn Không Xương</h3>
-                <p>Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island</p>
-                <div class="price">
-                    <span class="current-price">89,000 VND</span>
-                    <span class="old-price">99,000 VND</span>
-                </div>
-                <button onclick="addToCart('Salad Gà Giòn Không Xương')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item" onclick="showProductDetail(`Pizza Bò Dầu Tỏi`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg`, `Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen, tạo nên một món pizza đậm chất phương Tây, rất đáng thử.`, `168,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg" alt="Pizza Bò Dầu Tỏi">
-                <h3>Pizza Bò Dầu Tỏi</h3>
-                <p>Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen,...</p>
-                <div class="price">
-                    <span class="current-price">145,000 VND</span>
-                    <span class="old-price">168,000 VND</span>
-                </div>
-                <button onclick="addToCart('Pizza Bò Dầu Tỏi')">Thêm vào giỏ</button>
-            </div>
-            
-            <div class="menu-item" onclick="showProductDetail(`Spaghetti Bolognese`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg`, `Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.`, `148,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
-                <h3>Spaghetti Bolognese</h3>
-                <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
-                <div class="price">
-                    <span class="current-price">148,000 VND</span>
-                    <span class="old-price">170,000 VND</span>
-                </div>
-                <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
-            </div>
-            
-            </div>
-            </section>
-            <section class="hot-product-section">
-                <div class="hot-product-card" onclick="showProductDetail(`Phô mai Burrata Margherita`, `https://pizza4ps.com/wp-content/uploads/2023/08/2-APPLY-2-Burrata-Parma-Ham-Margherita-2.jpg`, `Pizza với lớp đế mỏng giòn, phủ sốt cà chua tươi, phô mai Burrata tự làm tan chảy, thêm chút lá húng quế thơm lừng, mang đến hương vị Ý cổ điển đậm đà.`, `198,000 VND`)">
-                    <img src="https://pizza4ps.com/wp-content/uploads/2023/08/2-APPLY-2-Burrata-Parma-Ham-Margherita-2.jpg" alt="Phô mai Burrata Margherita">
-                    <div class="hot-product-content">
-                        <h2>Sản phẩm hot</h2>
-                        <h3>Phô mai Burrata Margherita</h3>
-                        <p class="description">Pizza với lớp đế mỏng giòn, phủ sốt cà chua tươi, phô mai Burrata tự làm tan chảy, thêm chút lá húng quế thơm lừng, mang đến hương vị Ý cổ điển đậm đà.</p>
-                        <div class="price">198,000 VNĐ</div>
-                        <button onclick="addToCart('Phô mai Burrata Margherita')">Thêm vào giỏ <i class="fas fa-shopping-cart"></i></button>
+        <div class="menu-slider-container">
+            <button class="menu-btn prev" onclick="currentMenuSlide(menuSlideIndex - 2)">❮</button>
+            <div class="menu-slides" id="menuSlides">
+                <!-- Slide 1 -->
+                <div class="menu-slide">
+                    <div class="menu-grid">
+                        <div class="menu-item" onclick="showProductDetail(`Da Gà Rộp Rộp Xốt Hàn - Cay`, `https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png`, `Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng cho một bữa tiệc vị giác bùng nổ với vị xốt Hàn đậm đà cùng cảm giác rộp rộp đầy thú vị trong mỗi miếng gà.`, `79,000 VND`)">
+                            <div class="image-wrapper">
+                                <img src="https://vuongquocruou.vn/wp-content/uploads/2024/12/ga-ran-kieu-han-quoc-2.png" alt="Da Gà Rộp Rộp Xốt Hàn - Cay">
+                            </div>
+                            <h3>Da Gà Rộp Rộp Xốt Hàn - Cay</h3>
+                            <p>Da Gà Rộp Rộp Xốt Hàn: Lớp da gà giòn rụm thấm đẫm nước xốt mặn mà. Hãy sẵn sàng...</p>
+                            <div class="price">
+                                <span class="current-price">79,000 VND</span>
+                                <span class="old-price">89,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Da Gà Rộp Rộp Xốt Hàn - Cay')">Thêm vào giỏ</button>
+                        </div>
+                        <div class="menu-item" onclick="showProductDetail(`Salad Gà Giòn Không Xương`, `https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png`, `Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island, tươi ngon và bổ dưỡng.`, `89,000 VND`)">
+                            <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-uc-ga-13193321.png" alt="Salad Gà Giòn Không Xương">
+                            <h3>Salad Gà Giòn Không Xương</h3>
+                            <p>Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island</p>
+                            <div class="price">
+                                <span class="current-price">79,000 VND</span>
+                                <span class="old-price">89,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Salad Gà Giòn Không Xương')">Thêm vào giỏ</button>
+                        </div>
+                        <div class="menu-item" onclick="showProductDetail(`Pizza Bò Dầu Tỏi`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg`, `Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen, tạo nên một món pizza đậm chất phương Tây, rất đáng thử.`, `168,000 VND`)">
+                            <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg" alt="Pizza Bò Dầu Tỏi">
+                            <h3>Pizza Bò Dầu Tỏi</h3>
+                            <p>Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen,...</p>
+                            <div class="price">
+                                <span class="current-price">145,000 VND</span>
+                                <span class="old-price">168,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Pizza Bò Dầu Tỏi')">Thêm vào giỏ</button>
+                        </div>
+                        <div class="menu-item" onclick="showProductDetail(`Spaghetti Bolognese`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg`, `Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai parmesan, mang đến hương vị Ý truyền thống, thơm ngon.`, `148,000 VND`)">
+                            <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200005_2.jpg" alt="Spaghetti Bolognese">
+                            <h3>Spaghetti Bolognese</h3>
+                            <p>Spaghetti với sốt bolognese đậm đà từ thịt bò và cà chua, thêm chút phô mai...</p>
+                            <div class="price">
+                                <span class="current-price">148,000 VND</span>
+                                <span class="old-price">170,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Spaghetti Bolognese')">Thêm vào giỏ</button>
+                        </div>
                     </div>
                 </div>
-            </section>
+                <!-- Slide 2 -->
+                <div class="menu-slide">
+                    <div class="menu-grid">
+                        <div class="menu-item" onclick="showProductDetail(`Pizza Gà Nướng BBQ`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000012_2.jpg`, `Gà nướng mềm thơm, phủ sốt BBQ đậm đà, thêm hành tím và phô mai, mang đến hương vị ngọt ngào, đậm chất Mỹ.`, `165,000 VND`)">
+                            <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000012_2.jpg" alt="Pizza Gà Nướng BBQ">
+                            <h3>Pizza Gà Nướng BBQ</h3>
+                            <p>Gà nướng mềm thơm, phủ sốt BBQ đậm đà, thêm hành tím và phô mai...</p>
+                            <div class="price">
+                                <span class="current-price">165,000 VND</span>
+                                <span class="old-price">180,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Pizza Gà Nướng BBQ')">Thêm vào giỏ</button>
+                        </div>
+                        <div class="menu-item" onclick="showProductDetail(`Spaghetti Sốt Kem Nấm`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200003_2.jpg`, `Spaghetti mềm mịn với sốt kem nấm béo ngậy, thêm chút tiêu đen và phô mai parmesan, mang đến hương vị Ý tinh tế.`, `155,000 VND`)">
+                            <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200003_2.jpg" alt="Spaghetti Sốt Kem Nấm">
+                            <h3>Spaghetti Sốt Kem Nấm</h3>
+                            <p>Spaghetti mềm mịn với sốt kem nấm béo ngậy, thêm chút tiêu đen...</p>
+                            <div class="price">
+                                <span class="current-price">155,000 VND</span>
+                                <span class="old-price">175,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Spaghetti Sốt Kem Nấm')">Thêm vào giỏ</button>
+                        </div>
+                        <div class="menu-item" onclick="showProductDetail(`Salad Cá Hồi Áp Chảo`, `https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-ca-hoi-13193321.png`, `Salad với cá hồi áp chảo thơm lừng, rau xanh tươi, sốt mè rang, mang đến hương vị thanh mát, bổ dưỡng.`, `95,000 VND`)">
+                            <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2024/11/27/cach-lam-salad-ca-hoi-13193321.png" alt="Salad Cá Hồi Áp Chảo">
+                            <h3>Salad Cá Hồi Áp Chảo</h3>
+                            <p>Salad với cá hồi áp chảo thơm lừng, rau xanh tươi, sốt mè rang...</p>
+                            <div class="price">
+                                <span class="current-price">95,000 VND</span>
+                                <span class="old-price">110,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Salad Cá Hồi Áp Chảo')">Thêm vào giỏ</button>
+                        </div>
+                        <div class="menu-item" onclick="showProductDetail(`Khoai Tây Chiên Sốt Phô Mai`, `https://pizza4ps.com/wp-content/uploads/2023/07/30000001_2.jpg`, `Khoai tây chiên giòn rụm, phủ sốt phô mai béo ngậy, thêm chút tiêu và ớt bột, là món khai vị không thể bỏ qua.`, `65,000 VND`)">
+                            <img src="https://pizza4ps.com/wp-content/uploads/2023/07/30000001_2.jpg" alt="Khoai Tây Chiên Sốt Phô Mai">
+                            <h3>Khoai Tây Chiên Sốt Phô Mai</h3>
+                            <p>Khoai tây chiên giòn rụm, phủ sốt phô mai béo ngậy, thêm chút tiêu...</p>
+                            <div class="price">
+                                <span class="current-price">65,000 VND</span>
+                                <span class="old-price">75,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Khoai Tây Chiên Sốt Phô Mai')">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="menu-btn next" onclick="currentMenuSlide(menuSlideIndex)">❯</button>
+        </div>
+        <div class="menu-dots" id="menuDots">
+            <span class="menu-dot active" onclick="currentMenuSlide(0)"></span>
+            <span class="menu-dot" onclick="currentMenuSlide(1)"></span>
+        </div>
+    </section>
 
 <section class="menu" id="menu">
                 <h2>Must try</h2>
