@@ -1,0 +1,65 @@
+ [
+    {
+        "name": "Yuzu Wheat",
+        "image": "image/YuzuBeer.jpg",
+        "description": "Một loại bia lúa mì nhẹ nhàng, tươi mát với hương thơm đặc trưng từ quả yuzu (một loại quýt Nhật Bản). Bia có vị chua nhẹ, thanh mát, hậu vị dịu dàng, rất thích hợp để giải khát trong những ngày nóng hoặc dùng kèm các món ăn nhẹ.",
+        "currentPrice": "105,000 VND",
+        "oldPrice": null,
+        "isHidden": false,
+        "category": "Đồ uống"
+    },
+    {
+        "name": "Whey Cider",
+        "image": "image/Wheycider.png",
+        "description": "Sự kết hợp độc đáo giữa nước whey (phần nước trong tách ra từ sữa khi làm phô mai) và nước táo lên men tự nhiên. Vị chua nhẹ tự nhiên từ whey hòa quyện với vị ngọt thanh của táo, tạo nên một loại cider tươi mát, lạ miệng và cực kỳ dễ uống.",
+        "currentPrice": "115,000 VND",
+        "oldPrice": null,
+        "isHidden": false,
+        "category": "Đồ uống"
+    },
+    {
+        "name": "Original Session IPA",
+        "image": "image/Originalsession.jpg",
+        "description": "Một phiên bản IPA nhẹ độ cồn (session IPA) nhưng vẫn đậm đà hương vị. Bia mang hương thơm nổi bật của hoa bia tươi, vị đắng nhẹ dễ chịu, cùng hậu vị khô gọn. Đây là lựa chọn hoàn hảo cho những ai yêu thích IPA nhưng muốn thưởng thức lâu hơn mà không bị nặng nề.",
+        "currentPrice": "95,000 VND",
+        "oldPrice": "105,000 VND",
+        "isHidden": false,
+        "category": "Đồ uống"
+    },
+    {
+        "name": "Dalat Whey Stout",
+        "image": "image/DalatWheyStout.png",
+        "description": "Một dòng stout độc đáo pha trộn whey từ phô mai Đà Lạt. Bia có màu đen đậm, hậu vị mượt mà, với hương cacao, cà phê rang nhẹ nhàng, thêm chút chua thanh tự nhiên từ whey, tạo nên trải nghiệm stout mới lạ, cân bằng giữa đậm đà và tươi mát.",
+        "currentPrice": "98,000 VND",
+        "oldPrice": null,
+        "isHidden": false,
+        "category": "Đồ uống"
+    },
+    {
+        "name": "Natural Sake",
+        "image": "image/NaturalSake.jpg",
+        "description": "Sake thủ công lên men tự nhiên, giữ trọn vẹn hương vị tinh tế của gạo. Vị sake êm mượt, nhẹ nhàng, hơi ngọt thanh với hậu vị sạch sẽ, dễ chịu – rất thích hợp để nhâm nhi cùng các món ăn Nhật hay đơn giản là thưởng thức riêng trong không gian thư giãn.",
+        "currentPrice": "128,000 VND",
+        "oldPrice": null,
+        "isHidden": false,
+        "category": "Đồ uống"
+    },
+    {
+        "name": "Red Sangria",
+        "image": "image/RedSangria.jpg",
+        "description": "Rượu vang đỏ kết hợp với trái cây tươi như cam, táo, berries, tạo nên một ly sangria quyến rũ, ngọt ngào và cực kỳ dễ uống. Vị vang nhẹ hoà cùng hương trái cây tự nhiên, rất hợp cho những buổi tụ họp bạn bè hay chill cuối tuần.",
+        "currentPrice": "123,000 VND",
+        "oldPrice": null,
+        "isHidden": false,
+        "category": "Đồ uống"
+    },
+    {
+        "name": "White Sangria",
+        "image": "image/WhiteSangria.jpg",
+        "description": "Phiên bản nhẹ nhàng hơn của sangria, sử dụng vang trắng cùng các loại trái cây tươi mát như đào, lê, nho. Hương vị tươi mới, dịu dàng, hậu vị ngọt nhẹ – White Sangria là lựa chọn hoàn hảo cho những ai thích cảm giác mát lạnh, sảng khoái.",
+        "currentPrice": "123,000 VND",
+        "oldPrice": null,
+        "isHidden": true,
+        "category": "Đồ uống"
+    }
+]
