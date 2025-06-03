@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
 </head>
 <body>
     <!-- Header -->
@@ -45,13 +47,12 @@
 
     <!-- Banner Top Section -->
     <section class="banner-top">
-        <h3>OUR POLICIES</h3>
         <h1>Điều khoản & Chính sách</h1>
     </section>
 
     <!-- Policy Section -->
     <section class="policy-section">
-     
+
 
         <h2>Chính sách bảo mật</h2>
         <p>Chúng tôi tại The Pizza House cam kết bảo vệ thông tin cá nhân của khách hàng một cách nghiêm túc và chuyên nghiệp. Mọi dữ liệu thu thập được sẽ chỉ được sử dụng cho các mục đích cải thiện dịch vụ và nâng cao trải nghiệm của khách hàng, đồng thời đảm bảo không chia sẻ với bất kỳ bên thứ ba nào mà không có sự đồng ý của bạn. Dưới đây là các nguyên tắc cơ bản trong chính sách bảo mật của chúng tôi:</p>
@@ -140,43 +141,7 @@
         </div>
     </footer>
 
-    <script>
-        function addToCart(itemName) {
-            alert(`${itemName} đã được thêm vào giỏ hàng!`);
-        }
-
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = document.getElementById('searchInput').value.toLowerCase();
-                const products = document.querySelectorAll('.menu-item');
-                let found = false;
-                products.forEach(product => {
-                    const title = product.querySelector('h3').textContent.toLowerCase();
-                    if (title.includes(query)) {
-                        product.style.display = 'block';
-                        found = true;
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-                if (!found) {
-                    alert('Không tìm thấy món ăn bạn cần!');
-                }
-            }
-        }
-
-        // Hiệu ứng fade-in khi cuộn
-        const policyItems = document.querySelectorAll('.policy-section h2, .policy-section p, .policy-section ul li');
-        function checkScroll() {
-            policyItems.forEach(item => {
-                const rect = item.getBoundingClientRect();
-                if (rect.top >= 0 && rect.top <= window.innerHeight * 0.8) {
-                    item.classList.add('fade-in');
-                }
-            });
-        }
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
-    </script>
+    <script src="policy.js"></script>
+    <script src="../header.js"></script>
 </body>
 </html>

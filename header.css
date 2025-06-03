@@ -1,0 +1,140 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
+}
+
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+    .logo-container img {
+        height: 40px;
+        width: 40px; /* Đảm bảo hình vuông để bo tròn */
+        margin-right: 10px;
+        border-radius: 50%; /* Biến hình ảnh thành hình tròn */
+        object-fit: cover; /* Giữ tỷ lệ hình ảnh khi cắt */
+        border: 1px solid white; /* (tùy chọn) thêm viền trắng cho đẹp */
+    }
+
+
+.icons a {
+    color: white; /* Màu trắng cho icon */
+    margin: 0 10px; /* Khoảng cách giữa các icon */
+    font-size: 20px; /* Kích thước icon */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+    .icons a:hover {
+        transform: scale(1.2); /* Hiệu ứng phóng to khi hover */
+        color: #FFD700; /* Đổi màu sang vàng khi hover */
+    }
+
+.search-bar {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+    .search-bar input {
+        width: 100%;
+        max-width: 400px;
+        padding: 0.5rem 15rem 0.5rem 2rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 20px;
+        background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" width="18px" height="18px"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat 10px center;
+        background-size: 18px;
+    }
+
+        .search-bar input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+/*Dropdown*/
+/* NAV LINK STYLE */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Gạch chân màu vàng khi hover */
+.dropdown a:hover {
+    border-bottom: 2px solid yellow;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black; /* nền đen */
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 999;
+}
+
+/* Hiển thị dropdown khi hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown menu item */
+.dropdown-menu li {
+    list-style: none;
+}
+
+    .dropdown-menu li a {
+        color: white; /* chữ trắng */
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+    }
+
+        /* Hover trên item trong dropdown */
+        .dropdown-menu li a:hover {
+            background-color: #333; /* nền xám đậm khi hover */
+        }

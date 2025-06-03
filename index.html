@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -38,6 +38,8 @@
             <div class="icons">
                 <span class="icons">
                     <a href="Account/đăng nhập.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                    <span id="username-display" style="color: white; margin-left: 8px;"></span>
+                    <button onclick="logout()">Thoát</button>
                     <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
                 </span>
             </div>
@@ -394,26 +396,28 @@
         document.getElementById('contactForm').reset();
     }
 
-    // Hàm hiển thị tên người dùng trong header
-    function displayUsername() {
-        const username = localStorage.getItem('username');
-        if (username) {
-            const userIcon = document.querySelector('.icons');
-            userIcon.innerHTML = `
-                <span class="icons">
-                    <span style="color: white; margin-right: 10px;">👤<strong>${username}</strong></span>
-                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
-                </span>
-            `;
-        }
-    }
+
 
     // Hiển thị tên nếu đã đăng nhập trước đó
     window.addEventListener('load', () => {
         checkScroll();
         displayUsername();
+    })
+</script>
+<script>
+    // Khi load trang index, kiểm tra có người dùng đăng nhập không
+    window.addEventListener('DOMContentLoaded', () => {
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            document.getElementById('username-display').textContent =`${loggedInUser}`;
+        }
     });
 </script>
-
+<script>
+    function logout() {
+        localStorage.removeItem('loggedInUser');
+        window.location.reload(); // hoặc chuyển về trang đăng nhập
+    }
+</script>
 </body>
 </html>

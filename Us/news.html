@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
 </head>
 <body>
     <!-- Header -->
@@ -44,8 +46,7 @@
     </header>
 
     <!-- Banner Top Section -->
-    <section class="banner-top" style="background-image: url('image/news-bg.jpg');">
-        <h3>OUR UPDATES</h3>
+    <section class="banner-top">
         <h1>Tin tức & Sự kiện</h1>
     </section>
 
@@ -131,43 +132,7 @@
         </div>
     </footer>
 
-    <script>
-        function addToCart(itemName) {
-            alert(`${itemName} đã được thêm vào giỏ hàng!`);
-        }
-
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = document.getElementById('searchInput').value.toLowerCase();
-                const products = document.querySelectorAll('.menu-item');
-                let found = false;
-                products.forEach(product => {
-                    const title = product.querySelector('h3').textContent.toLowerCase();
-                    if (title.includes(query)) {
-                        product.style.display = 'block';
-                        found = true;
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-                if (!found) {
-                    alert('Không tìm thấy món ăn bạn cần!');
-                }
-            }
-        }
-
-        // Hiệu ứng hover cho news-item
-        const newsItems = document.querySelectorAll('.news-item');
-        newsItems.forEach(item => {
-            item.addEventListener('mouseover', () => {
-                item.style.transform = 'scale(1.05)';
-                item.querySelector('h3').style.color = '#fbc02d';
-            });
-            item.addEventListener('mouseout', () => {
-                item.style.transform = 'scale(1)';
-                item.querySelector('h3').style.color = '#fff';
-            });
-        });
-    </script>
+    <script src="news.js"></script>
+    <script src="../header.js"></script>
 </body>
 </html>
