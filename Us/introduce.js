@@ -1,6 +1,4 @@
 ﻿
-                                 // Introduce
-
 
 // Khi DOM đã sẵn sàng
 $(document).ready(function () {
@@ -16,7 +14,7 @@ $(document).ready(function () {
             ],
             dots: true,
             autoplay: true,
-            autoplayTimeout: 3000,
+            autoplayTimeout: 2000,
             autoplayHoverPause: true,
             responsive: {
                 0: { items: 1 },
@@ -54,30 +52,7 @@ $(document).ready(function () {
     window.addEventListener('scroll', checkFade);
     window.addEventListener('load', checkFade);
 
-    // Handle Search
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('keypress', function (event) {
-            if (event.key === 'Enter') {
-                const query = this.value.toLowerCase();
-                const products = document.querySelectorAll('.menu-item');
-                let found = false;
-                products.forEach(product => {
-                    const title = product.querySelector('h3')?.textContent.toLowerCase() || '';
-                    if (title.includes(query)) {
-                        product.style.display = 'block';
-                        found = true;
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-                if (!found && products.length > 0) {
-                    alert('Không tìm thấy món ăn bạn cần!');
-                }
-            }
-        });
-    }
-});
+
 /*Scrollytelling*/
 document.addEventListener("DOMContentLoaded", () => {
     const blocks = document.querySelectorAll('.history-block');
