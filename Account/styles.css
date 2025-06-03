@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1036,5 +1036,40 @@ strong {
                 font-size: 1rem;
                 color: #333;
             }
-            
+            .account-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.logout-button {
+    display: none;
+    position: absolute;
+    top: 100%; /* nằm dưới biểu tượng user */
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 100;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 120px;
+}
+
+.account-dropdown:hover .logout-button {
+    display: block;
+}
+
+.logout-button button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.logout-button button:hover {
+    background-color: #c0392b;
+}
+
 }
