@@ -17,13 +17,22 @@ function goToSpaghettiPage() {
 function goToDrinkPage() {
     window.location.href = 'Menu_Drink.html';
 }
+
+let currentIndex = 0; // Biến lưu vị trí đang hiển thị
 function showMore() {
     const hiddenProducts = document.querySelectorAll('.hidden-product');
-    hiddenProducts.forEach(product => {
-        product.style.display = 'block'; // Hiện sản phẩm ẩn
-    });
-    // Ẩn nút 'Xem thêm' sau khi hiện hết
-    document.querySelector('.view-more').style.display = 'none';
+    const productsPerClick = 6; // Số sản phẩm muốn hiển thị mỗi lần bấm
+
+    for (let i = currentIndex; i < currentIndex + productsPerClick && i < hiddenProducts.length; i++) {
+        hiddenProducts[i].style.display = 'block'; // Hiện sản phẩm
+    }
+
+    currentIndex += productsPerClick; // Cập nhật vị trí đã hiện
+
+    // Nếu đã hiện hết thì ẩn nút "Xem thêm"
+    if (currentIndex >= hiddenProducts.length) {
+        document.querySelector('.view-more').style.display = 'none';
+    }
 }
 
 
@@ -106,3 +115,36 @@ tabs.forEach(tab => {
         tab.classList.add('active');
     });
 });
+function reattachEventListeners() {
+    const modalClose = document.querySelector('.modal-close');
+    if (modalClose) modalClose.onclick = closeProductDetail;
+
+    const decreaseBtn = document.getElementById('decrease-btn');
+    if (decreaseBtn) {
+        decreaseBtn.onclick = function() {
+            const quantityDisplay = document.getElementById('quantity');
+            let quantity = parseInt(quantityDisplay.textContent);
+            const unitPrice = parseInt(document.getElementById('unitPrice').textContent);
+            if (quantity > 1) {
+                quantity--;
+                quantityDisplay.textContent = quantity;
+                updateTotal(unitPrice, quantity);
+            }
+        };
+    }
+
+    const increaseBtn = document.getElementById('increase-btn');
+    if (increaseBtn) {
+        increaseBtn.onclick = function() {
+            const quantityDisplay = document.getElementById('quantity');
+            let quantity = parseInt(quantityDisplay.textContent);
+            const unitPrice = parseInt(document.getElementById('unitPrice').textContent);
+            quantity++;
+            quantityDisplay.textContent = quantity;
+            updateTotal(unitPrice, quantity);
+        };
+    }
+
+    const addToCartBtn = document.getElementById('addToCartButton');
+    if (addToCartBtn) addToCartBtn.onclick = () => addToCart(document.getElementById('modalTitle').textContent);
+}

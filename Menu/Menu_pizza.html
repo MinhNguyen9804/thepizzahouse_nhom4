@@ -61,73 +61,8 @@
             <button onclick="goToSpaghettiPage()">Spaghetti</button>
             <button onclick="goToDrinkPage()">Đồ uống</button>
         </div>
-        <div class="menu-grid">
-            <div class="menu-item" onclick="showProductDetail(`Phô mai Burrata Margherita`, `https://pizza4ps.com/wp-content/uploads/2023/08/2-APPLY-2-Burrata-Parma-Ham-Margherita-2.jpg`, `Pizza với lớp đế mỏng giòn, phủ sốt cà chua tươi, phô mai Burrata tự làm tan chảy, thêm chút lá húng quế thơm lừng, mang đến hương vị Ý cổ điển đậm đà.`, `198,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/08/2-APPLY-2-Burrata-Parma-Ham-Margherita-2.jpg" alt="Phô mai Burrata Margherita">
-                <h3>Phô mai Burrata Margherita</h3>
-                <p>Pizza với lớp đế mỏng giòn, phủ sốt cà chua tươi, phô mai Burrata tự làm tan chảy, thêm chút lá...</p>
-                <div class="price">198,000 VND</div>
-                <button onclick="addToCart('Phô mai Burrata Margherita')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item" onclick="showProductDetail(`Pizza Cá Hồi Xốt Kem Miso`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000012_2.jpg`, `Sự kết hợp độc đáo giữa cá hồi tươi ngon và xốt kem miso đậm đà, điểm thêm chút phô mai kéo sợi, tạo nên hương vị Nhật Bản hiện đại trên nền pizza Ý.`, `238,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000012_2.jpg" alt="Pizza Cá Hồi Xốt Kem Miso">
-                <h3>Pizza Cá Hồi Xốt Kem Miso</h3>
-                <p>Sự kết hợp độc đáo giữa cá hồi tươi ngon và xốt kem miso đậm đà, điểm thêm chút phô mai...</p>
-                <div class="price">238,000 VND</div>
-                <button onclick="addToCart('Pizza Cá Hồi Xốt Kem Miso')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item" onclick="showProductDetail(`Pizza Hải Sản Sốt Cà Chua Cay`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg`, `Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ, thêm phô mai hun khói, mang đến hương vị biển cả đậm đà.`, `185,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg" alt="Pizza Hải Sản Sốt Cà Chua Cay">
-                <h3>Pizza Hải Sản Sốt Cà Chua Cay</h3>
-                <p>Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ...</p>
-                <div class="price">185,000 VND</div>
-                <button onclick="addToCart('Pizza Hải Sản Sốt Cà Chua Cay')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item" onclick="showProductDetail(`Pizza Gà Xốt Teriyaki`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000017_2.jpg`, `Gà ướp xốt teriyaki ngọt đậm, kết hợp cùng phô mai tan chảy và chút rong biển, mang đến hương vị Nhật Bản hòa quyện trên lớp đế pizza giòn rụm.`, `159,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000017_2.jpg" alt="Pizza Gà Xốt Teriyaki">
-                <h3>Pizza Gà Xốt Teriyaki</h3>
-                <p>Gà ướp xốt teriyaki ngọt đậm, kết hợp cùng phô mai tan chảy và chút rong biển,...</p>
-                <div class="price">159,000 VND</div>
-                <button onclick="addToCart('Pizza Gà Xốt Teriyaki')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item" onclick="showProductDetail(`Pizza Nấm Tự Nhiên`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000024_2.jpg`, `Dành cho người ăn chay, pizza này kết hợp nhiều loại nấm tươi, sốt bí ngòi quế tây, thêm chút phô mai nhẹ, tạo nên hương vị thanh đạm mà hấp dẫn.`, `129,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000024_2.jpg" alt="Pizza Nấm Tự Nhiên">
-                <h3>Pizza Nấm Tự Nhiên</h3>
-                <p>Dành cho người ăn chay, pizza này kết hợp nhiều loại nấm tươi, sốt bí ngòi quế...</p>
-                <div class="price">129,000 VND</div>
-                <button onclick="addToCart('Pizza Nấm Tự Nhiên')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item" onclick="showProductDetail(`Pizza Thịt Lợn Ướp Gừng`, `https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg`, `Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô mai, mang đến hương vị đậm đà, ấm áp, rất hợp cho ngày se lạnh.`, `158,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg" alt="Pizza Thịt Lợn Ướp Gừng">
-                <h3>Pizza Thịt Lợn Ướp Gừng</h3>
-                <p>Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô...</p>
-                <div class="price">158,000 VND</div>
-                <button onclick="addToCart('Pizza Thịt Lợn Ướp Gừng')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Pizza Margherita Xúc Xích Ý`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000010_2.jpg`, `Pizza Margherita cổ điển với sốt cà chua, phô mai mozzarella, thêm xúc xích Ý Milano thơm ngon, điểm xuyết lá húng quế tươi, chuẩn vị Ý.`, `172,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000010_2.jpg" alt="Pizza Margherita Xúc Xích Ý">
-                <h3>Pizza Margherita Xúc Xích Ý</h3>
-                <p>Pizza Margherita cổ điển với sốt cà chua, phô mai mozzarella, thêm xúc xích Ý Milan...</p>
-                <div class="price">172,000 VND</div>
-                <button onclick="addToCart('Pizza Margherita Xúc Xích Ý')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Pizza Bò Dầu Tỏi`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg`, `Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen, tạo nên một món pizza đậm chất phương Tây, rất đáng thử.`, `168,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000021_2.jpg" alt="Pizza Bò Dầu Tỏi">
-                <h3>Pizza Bò Dầu Tỏi</h3>
-                <p>Thịt bò mềm thơm, phủ dầu tỏi đậm đà, kết hợp cùng phô mai kéo sợi và chút tiêu đen,...</p>
-                <div class="price">
-                    <span class="current-price">145,000 VND</span>
-                    <span class="old-price">168,000 VND</span>
-                </div>
-                <button onclick="addToCart('Pizza Bò Dầu Tỏi')">Thêm vào giỏ</button>
-            </div>
-            <div class="menu-item hidden-product" style="display: none;" onclick="showProductDetail(`Pizza Tôm Sốt Mayonnaise`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000015_2.jpg`, `Tôm tươi ngọt tự nhiên, phủ sốt mayonnaise béo ngậy, thêm chút phô mai và hành lá, mang đến hương vị hài hòa, dễ chịu cho mọi thực khách.`, `159,000 VND`)">
-                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000015_2.jpg" alt="Pizza Tôm Sốt Mayonnaise">
-                <h3>Pizza Tôm Sốt Mayonnaise</h3>
-                <p>Tôm tươi ngọt tự nhiên, phủ sốt mayonnaise béo ngậy, thêm chút phô mai và hành lá, mang...</p>
-                <div class="price">159,000 VND</div>
-                <button onclick="addToCart('Pizza Tôm Sốt Mayonnaise')">Thêm vào giỏ</button>
-            </div>
+        <div class="menu-grid" id="menuGrid">
+    <!-- Dữ liệu sẽ được tải động từ Pizza.json -->
         </div>
         <div class="view-more">
             <button onclick="showMore()">Xem thêm</button>
@@ -219,6 +154,6 @@
     </footer>
 
     <script src="Menu.js"></script>
-    <script src="../header.js"></script>
+    <script src="scripts/Pizza.js"></script>
 </body>
 </html>
