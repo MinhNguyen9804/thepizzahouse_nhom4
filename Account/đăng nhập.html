@@ -184,16 +184,16 @@
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
-        // Kiểm tra thông tin đăng nhập (ví dụ đơn giản, thực tế nên kiểm tra với dữ liệu từ server)
-        if (email === "test@gmail.com" && password === "123456") {
-            // Lưu email vào localStorage
-            localStorage.setItem('loggedInUser', email);
+        const users = JSON.parse(localStorage.getItem("users")) || [];
 
-            // Chuyển hướng sang trang index.html
-            window.location.href = "file:///C:/Users/Phuong/OneDrive/Ta%CC%80i%20li%C3%AA%CC%A3u/GitHub/thepizzahouse_nhom4/index.html";
-        } else {
-            alert("Email hoặc mật khẩu không đúng!");
-        }
+    const foundUser = users.find(user => user.email === email && user.password === password);
+
+    if (foundUser) {
+        localStorage.setItem('loggedInUser', email);
+        window.location.href = "file:///C:/Users/Phuong/OneDrive/Ta%CC%80i%20li%C3%AA%CC%A3u/GitHub/thepizzahouse_nhom4/index.html"; // đường dẫn trang chính
+    } else {
+        alert("Email hoặc mật khẩu không đúng!");
+    }
     }
     </script>
 </body>
