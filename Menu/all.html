@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-   
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
+
     <script>
-         function goToHomePage() {
+        function goToHomePage() {
             window.location.href = 'all.html';
         }
         function goToKhaiviPage() {
@@ -27,51 +29,51 @@
         }
         let currentIndex = 0; // Biến lưu vị trí đang hiển thị
 
-function showMore() {
-    const hiddenProducts = document.querySelectorAll('.hidden-product');
-    const productsPerClick = 6; // Số sản phẩm muốn hiển thị mỗi lần bấm
+        function showMore() {
+            const hiddenProducts = document.querySelectorAll('.hidden-product');
+            const productsPerClick = 6; // Số sản phẩm muốn hiển thị mỗi lần bấm
 
-    for (let i = currentIndex; i < currentIndex + productsPerClick && i < hiddenProducts.length; i++) {
-        hiddenProducts[i].style.display = 'block'; // Hiện sản phẩm
-    }
-
-    currentIndex += productsPerClick; // Cập nhật vị trí đã hiện
-
-    // Nếu đã hiện hết thì ẩn nút "Xem thêm"
-    if (currentIndex >= hiddenProducts.length) {
-        document.querySelector('.view-more').style.display = 'none';
-    }
-}
-
-// Nút tìm kiếm.
-function handleSearch(event) {
-    if (event.key === 'Enter') {
-        const query = document.getElementById('searchInput').value.toLowerCase();
-        const products = document.querySelectorAll('.menu-item');
-
-        let found = false;
-
-        products.forEach(product => {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            if (title.includes(query)) {
-                product.style.display = 'block'; // Hiện món ăn đúng
-                found = true;
-            } else {
-                product.style.display = 'none';  // Ẩn món ăn không đúng
+            for (let i = currentIndex; i < currentIndex + productsPerClick && i < hiddenProducts.length; i++) {
+                hiddenProducts[i].style.display = 'block'; // Hiện sản phẩm
             }
-        });
 
-        if (!found) {
-            alert('Không tìm thấy món ăn bạn cần!');
-        } 
+            currentIndex += productsPerClick; // Cập nhật vị trí đã hiện
 
-        // Ẩn nút "Xem thêm" luôn nếu có
-        const viewMoreBtn = document.querySelector('.view-more');
-        if (viewMoreBtn) {
-            viewMoreBtn.style.display = 'none';
+            // Nếu đã hiện hết thì ẩn nút "Xem thêm"
+            if (currentIndex >= hiddenProducts.length) {
+                document.querySelector('.view-more').style.display = 'none';
+            }
         }
-    }
-}
+
+        // Nút tìm kiếm.
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = document.getElementById('searchInput').value.toLowerCase();
+                const products = document.querySelectorAll('.menu-item');
+
+                let found = false;
+
+                products.forEach(product => {
+                    const title = product.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        product.style.display = 'block'; // Hiện món ăn đúng
+                        found = true;
+                    } else {
+                        product.style.display = 'none';  // Ẩn món ăn không đúng
+                    }
+                });
+
+                if (!found) {
+                    alert('Không tìm thấy món ăn bạn cần!');
+                }
+
+                // Ẩn nút "Xem thêm" luôn nếu có
+                const viewMoreBtn = document.querySelector('.view-more');
+                if (viewMoreBtn) {
+                    viewMoreBtn.style.display = 'none';
+                }
+            }
+        }
     </script>
 </head>
 <body>
