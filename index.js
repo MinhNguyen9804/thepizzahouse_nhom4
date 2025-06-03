@@ -149,3 +149,41 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
+/*Món mới*/
+// Hiệu ứng slider cho Món mới
+// Hiệu ứng slider cho Món mới
+let menuSlideIndex = 0;
+showMenuSlides();
+
+function showMenuSlides() {
+    let slides = document.getElementsByClassName("menu-slide");
+    let dots = document.getElementsByClassName("menu-dot");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    menuSlideIndex++;
+    if (menuSlideIndex > slides.length) { menuSlideIndex = 1; }
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[menuSlideIndex - 1].style.display = "block";
+    dots[menuSlideIndex - 1].className += " active";
+    setTimeout(showMenuSlides, 15000); // Chuyển slide mỗi 5 giây
+}
+
+window.currentMenuSlide = function (n) {
+    let slides = document.getElementsByClassName("menu-slide");
+    let dots = document.getElementsByClassName("menu-dot");
+    menuSlideIndex = n + 1;
+    if (menuSlideIndex > slides.length) { menuSlideIndex = 1; }
+    if (menuSlideIndex < 1) { menuSlideIndex = slides.length; }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[menuSlideIndex - 1].style.display = "block";
+    dots[menuSlideIndex - 1].className += " active";
+};
