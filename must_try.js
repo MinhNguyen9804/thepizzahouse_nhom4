@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('must_try.json')
         .then(response => {
             if (!response.ok) {
-                throw new Error(`Không thể tải file must_try. Mã lỗi: ${response.status}`);
+                throw new Error(`Không thể tải file must_try.json Mã lỗi: ${response.status}`);
             }
             return response.json();
         })
