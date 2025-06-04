@@ -37,9 +37,10 @@
             </nav>
             <div class="icons">
                     <div class="account-wrapper">
-                    <a href="Account/đăng nhập.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
+                    <a href="Account/đăng nhập.html" id="account-link" title="Tài khoản"> <i class="fas fa-user"></i></a>
                     
-                    <div class="dropdown-content">
+                    
+            <div class="dropdown-content" id="logout-dropdown">
             <button onclick="logout()">Đăng xuất</button>
                     </div>
                     <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
@@ -361,7 +362,7 @@
         }
     }
 
-    // Hiệu ứng fade-in khi cuộn
+   // Hiệu ứng fade-in khi cuộn
     const contactItems = document.querySelectorAll('.contact-form .form-group, .contact-info');
     function checkScroll() {
         contactItems.forEach(item => {
@@ -373,44 +374,141 @@
     }
     window.addEventListener('scroll', checkScroll);
     window.addEventListener('load', checkScroll);
-
+      
     // Xử lý đăng nhập
-    function submitForm(event) {
+        function submitForm(event) {
         event.preventDefault();
 
         const email = document.getElementById('email').value;
         const username = email.split('@')[0]; // Lấy tên trước dấu @
 
         // Giả lập xác thực thành công
-        localStorage.setItem('username', username);
+        localStorage.setItem('loggedInUser', username);
 
         // Hiển thị tên người dùng
         displayUsername();
+        function displayUsername() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        document.getElementById('username-display').textContent = loggedInUser;
+        document.querySelector('.fa-user').style.display = 'none'; // Ẩn icon tài khoản
+    }
+}
 
         alert('Đăng nhập thành công!');
         document.getElementById('contactForm').reset();
     }
 
-    // Hàm hiển thị tên người dùng trong header
-    function displayUsername() {
-        const username = localStorage.getItem('username');
-        if (username) {
-            const userIcon = document.querySelector('.icons');
-            userIcon.innerHTML = `
-                <span class="icons">
-                    <span style="color: white; margin-right: 10px;">👤<strong>${username}</strong></span>
-                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
-                </span>
-            `;
-        }
-    }
+
 
     // Hiển thị tên nếu đã đăng nhập trước đó
     window.addEventListener('load', () => {
         checkScroll();
         displayUsername();
+    })
+</script>
+<script>
+    // Khi load trang index, kiểm tra có người dùng đăng nhập không
+    window.addEventListener('DOMContentLoaded', () => {
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            document.getElementById('username-display').textContent = loggedInUser;
+        }
     });
 </script>
+<script>
+    function logout() {
+        localStorage.removeItem('loggedInUser');
+        window.location.reload(); // hoặc chuyển về trang đăng nhập
+    }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const accountLink = document.getElementById('account-link');
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        const dropdown = document.querySelector('.dropdown-content');
+        
+        if (!loggedInUser && dropdown) {
+        dropdown.style.display = 'none';
+        }
+        if (accountLink && loggedInUser) {
+            accountLink.addEventListener('click', (event) => {
+                event.preventDefault(); // Ngăn chuyển trang
+                const dropdown = document.querySelector('.dropdown-content');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+    });
+    accountLink.addEventListener('click', (event) => {
+    if (loggedInUser) {
+        event.preventDefault(); // đã đăng nhập => không chuyển trang
+        // toggle dropdown
+        const dropdown = document.querySelector('.dropdown-content');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+    // chưa đăng nhập => cho phép chuyển sang trang đăng nhập
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const accountLink = document.getElementById('account-link');
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        const dropdown = document.querySelector('.dropdown-content');
+
+        // 1. Ẩn dropdown nếu chưa đăng nhập
+        if (!loggedInUser && dropdown) {
+            dropdown.style.display = 'none';
+        }
+
+        // 2. Vô hiệu hóa chuyển hướng nếu đã đăng nhập
+        if (accountLink && loggedInUser) {
+            accountLink.addEventListener('click', (event) => {
+                event.preventDefault(); // Ngăn chuyển trang
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+    });
+</script>
+<style>
+/* Đảm bảo account-wrapper có vị trí tương đối để dropdown định vị được */
+.account-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 120%; /* nằm dưới icon */
+    right: 0;
+    background-color: #000000;
+    min-width: 120px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Nút trong dropdown */
+.dropdown-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover nút */
+.dropdown-content button:hover {
+    background-color: #d32f2f;
+}
+</style>
 
 </body>
 </html>
