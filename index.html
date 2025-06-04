@@ -12,43 +12,8 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="header-top">
-            <div class="logo-container">
-                <img src="image_index/logo.jpg" alt="The Pizza House Logo">
-                <h1>The Pizza House</h1>
-            </div>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
-            </div>
-            <nav>
-                <a href="index.html">Trang chủ</a>
-                <a href="Menu/all.html">Thực đơn</a>    
-                <a href="#newaa">Đặt bàn</a>
-                <div class="dropdown">
-                    <a href="Us/introduce.html">Chúng tôi</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Us/introduce.html">Giới thiệu</a></li>
-                        <li><a href="Us/news.html">Tin tức</a></li>
-                        <li><a href="Us/policy.html">Điều khoản</a></li>
-                        <li><a href="Us/contact.html">Liên hệ</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="icons">
-                    <div class="account-wrapper">
-                    <a href="Account/đăng nhập.html" id="account-link" title="Tài khoản"> <i class="fas fa-user"></i></a>    
-                    <div class="dropdown-content" id="logout-dropdown">
-                    <button onclick="logout()">Đăng xuất</button>
-                    </div>
-                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
-                    </div>
-                 <span id="username-display" style="color: white; margin-left: 4px;"></span>
-                </div>                  
-                </span>
-            </div>
-        </div>
-    </header>
+   <!-- Header sẽ được chèn động tại đây -->
+    <div id="header-placeholder"></div>
 
     <!-- Banner Section -->
     <section class="banner-container">
@@ -200,10 +165,43 @@
                 </section>
 <section class="menu" id="menu">
                 <h2>Must try</h2>
-                
-                <div class="menu-grid" id="mustTryGrid">
-    <!-- Dữ liệu sẽ được tải động từ must_try.json -->
-                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-item" onclick="showProductDetail(`Pizza Hải Sản Sốt Cà Chua Cay`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg`, `Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ, thêm phô mai hun khói, mang đến hương vị biển cả đậm đà.`, `185,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg" alt="Pizza Hải Sản Sốt Cà Chua Cay">
+                        <h3>Pizza Hải Sản Sốt Cà Chua Cay</h3>
+                        <p>Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ...</p>
+                        <div class="price">185,000 VND</div>
+                        <button onclick="addToCart('Pizza Hải Sản Sốt Cà Chua Cay')">Thêm vào giỏ</button>
+                    </div>
+
+
+                    <div class="menu-item" onclick="showProductDetail(`Pizza Thịt Lợn Ướp Gừng`, `https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg`, `Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô mai, mang đến hương vị đậm đà, ấm áp, rất hợp cho ngày se lạnh.`, `158,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg" alt="Pizza Thịt Lợn Ướp Gừng">
+                        <h3>Pizza Thịt Lợn Ướp Gừng</h3>
+                        <p>Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô...</p>
+                        <div class="price">158,000 VND</div>
+                        <button onclick="addToCart('Pizza Thịt Lợn Ướp Gừng')">Thêm vào giỏ</button>
+                    </div>
+
+                    <div class="menu-item" onclick="showProductDetail(`Spaghetti Pesto Tôm`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg`, `Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút phô mai ricotta, mang đến hương vị Ý hiện đại.`, `178,000 VND`)">
+                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg" alt="Spaghetti Pesto Tôm">
+                        <h3>Spaghetti Pesto Tôm</h3>
+                        <p>Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút...</p>
+                        <div class="price">178,000 VND</div>
+                        <button onclick="addToCart('Spaghetti Pesto Tôm')">Thêm vào giỏ</button>
+                    </div>
+
+                    <div class="menu-item" onclick="showProductDetail('Yuzu Wheat', 'Menu/image/YuzuBeer.jpg', 'Một loại bia lúa mì nhẹ nhàng, tươi mát với hương thơm đặc trưng từ quả yuzu (một loại quýt Nhật Bản). Bia có vị chua nhẹ, thanh mát, hậu vị dịu dàng, rất thích hợp để giải khát trong những ngày nóng hoặc dùng kèm các món ăn nhẹ.', '105,000 VND')">
+                        <img src="Menu/image/YuzuBeer.jpg" alt="Yuzu Wheat">
+                        <h3>Yuzu Wheat</h3>
+                        <p>Một loại bia lúa mì nhẹ nhàng, tươi mát với hương thơm đặc trưng từ quả yuzu (một loại...</p>
+                        <div class="price">105,000 VND</div>
+                        <button onclick="addToCart('Yuzu Wheat')">Thêm vào giỏ</button>
+                    </div>
+
+
+                    </div>
                     </section>
     <!-- Customer Reviews Section -->
     <section class="reviews-section">
@@ -335,29 +333,36 @@
             </ul>
         </div>
     </footer>
-
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="index.js"></script>
-    <script src="must_try.js"></script>
+   
+    
     <script>
-    function handleSearch(event) {
+     function handleSearch(event) {
         if (event.key === 'Enter') {
             const query = document.getElementById('searchInput').value.toLowerCase();
-            const products = document.querySelectorAll('.menu-item');
-            let found = false;
-            products.forEach(product => {
-                const title = product.querySelector('h3').textContent.toLowerCase();
-                if (title.includes(query)) {
-                    product.style.display = 'block';
-                    found = true;
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-            if (!found) {
-                alert('Không tìm thấy món ăn bạn cần!');
-            }
+            alert('Chuyển hướng đến trang thực đơn để tìm kiếm. ' );
+            window.location.href = 'Menu/all.html?search=' + query;
         }
     }
+    function showTestimonials() {
+        const cards = document.querySelectorAll('.testimonial-card');
+        cards.forEach((card, index) => {
+          card.style.display = (index === currentIndex || index === currentIndex + 1) ? 'block' : 'none';
+        });
+      }
+      
+      function changeTestimonial(direction) {
+        const cards = document.querySelectorAll('.testimonial-card');
+        const total = cards.length;
+      
+        currentIndex += direction * 2;
+      
+        if (currentIndex < 0) currentIndex = total - 2;
+        if (currentIndex >= total) currentIndex = 0;
+      
+        showTestimonials();
+      }
 
    // Hiệu ứng fade-in khi cuộn
     const contactItems = document.querySelectorAll('.contact-form .form-group, .contact-info');

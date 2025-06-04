@@ -31,8 +31,35 @@ header h1 {
     font-weight: 700;
     font-family: 'Dancing Script', cursive;
 }
+nav {
+    display: flex;
+    align-items: center;
+}
 
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1rem;
+    }
 
+        nav a:hover {
+            border-bottom: 2px solid yellow;
+        }
+
+.account-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.account-wrapper:hover .dropdown-content {
+    display: block;
+}
+.account-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
 
 .logo-container {
     display: flex;

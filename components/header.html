@@ -1,0 +1,35 @@
+<header>
+    <div class="header-top">
+        <div class="logo-container">
+            <img src="image_index/logo.jpg" alt="The Pizza House Logo">
+            <h1>The Pizza House</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
+        </div>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="Menu/all.html">Thực đơn</a>    
+            <a href="#newaa">Đặt bàn</a>
+            <div class="dropdown">
+                <a href="Us/introduce.html">Chúng tôi</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Us/introduce.html">Giới thiệu</a></li>
+                    <li><a href="Us/news.html">Tin tức</a></li>
+                    <li><a href="Us/policy.html">Điều khoản</a></li>
+                    <li><a href="Us/contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="icons">
+            <div class="account-wrapper">
+                <a href="Account/đăng nhập.html" id="account-link" title="Tài khoản"> <i class="fas fa-user"></i></a>    
+                <div class="dropdown-content" id="logout-dropdown">
+                    <button onclick="logout()">Đăng xuất</button>
+                </div>
+                <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
+            </div>
+            <span id="username-display" style="color: white; margin-left: 4px;"></span>
+        </div>                  
+    </div>
+</header>
