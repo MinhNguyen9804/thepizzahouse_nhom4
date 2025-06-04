@@ -17,7 +17,34 @@ function goToSpaghettiPage() {
 function goToDrinkPage() {
     window.location.href = 'Menu_Drink.html';
 }
+function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = document.getElementById('searchInput').value.toLowerCase();
+                const products = document.querySelectorAll('.menu-item');
 
+                let found = false;
+
+                products.forEach(product => {
+                    const title = product.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        product.style.display = 'block'; // Hiện món ăn đúng
+                        found = true;
+                    } else {
+                        product.style.display = 'none';  // Ẩn món ăn không đúng
+                    }
+                });
+
+                if (!found) {
+                    alert('Không tìm thấy món ăn bạn cần!');
+                }
+
+                // Ẩn nút "Xem thêm" luôn nếu có
+                const viewMoreBtn = document.querySelector('.view-more');
+                if (viewMoreBtn) {
+                    viewMoreBtn.style.display = 'none';
+                }
+            }
+        }
 let currentIndex = 0; // Biến lưu vị trí đang hiển thị
 function showMore() {
     const hiddenProducts = document.querySelectorAll('.hidden-product');
