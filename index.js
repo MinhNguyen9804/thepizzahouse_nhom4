@@ -187,3 +187,44 @@ window.currentMenuSlide = function (n) {
     slides[menuSlideIndex - 1].style.display = "block";
     dots[menuSlideIndex - 1].className += " active";
 };
+
+const tabs = document.querySelectorAll('.menu-tabs button');
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+    });
+});
+function reattachEventListeners() {
+    const modalClose = document.querySelector('.modal-close');
+    if (modalClose) modalClose.onclick = closeProductDetail;
+
+    const decreaseBtn = document.getElementById('decrease-btn');
+    if (decreaseBtn) {
+        decreaseBtn.onclick = function() {
+            const quantityDisplay = document.getElementById('quantity');
+            let quantity = parseInt(quantityDisplay.textContent);
+            const unitPrice = parseInt(document.getElementById('unitPrice').textContent);
+            if (quantity > 1) {
+                quantity--;
+                quantityDisplay.textContent = quantity;
+                updateTotal(unitPrice, quantity);
+            }
+        };
+    }
+
+    const increaseBtn = document.getElementById('increase-btn');
+    if (increaseBtn) {
+        increaseBtn.onclick = function() {
+            const quantityDisplay = document.getElementById('quantity');
+            let quantity = parseInt(quantityDisplay.textContent);
+            const unitPrice = parseInt(document.getElementById('unitPrice').textContent);
+            quantity++;
+            quantityDisplay.textContent = quantity;
+            updateTotal(unitPrice, quantity);
+        };
+    }
+
+    const addToCartBtn = document.getElementById('addToCartButton');
+    if (addToCartBtn) addToCartBtn.onclick = () => addToCart(document.getElementById('modalTitle').textContent);
+}
