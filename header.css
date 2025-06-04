@@ -36,7 +36,6 @@ nav {
     align-items: center;
 }
 
-<<<<<<< HEAD
     nav a {
         color: white;
         text-decoration: none;
@@ -62,8 +61,6 @@ nav {
     cursor: pointer;
 }
 
-=======
->>>>>>> a837afc038ef3dfce9adbe5b117db461a29e92d4
 .logo-container {
     display: flex;
     align-items: center;
@@ -77,6 +74,7 @@ nav {
         object-fit: cover; /* Giữ tỷ lệ hình ảnh khi cắt */
         border: 1px solid white; /* (tùy chọn) thêm viền trắng cho đẹp */
     }
+
 
 .icons a {
     color: white; /* Màu trắng cho icon */
@@ -111,7 +109,6 @@ nav {
             outline: none;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
-
 /*Dropdown*/
 /* NAV LINK STYLE */
 nav a {
@@ -164,52 +161,7 @@ nav a {
         text-decoration: none;
     }
 
+        /* Hover trên item trong dropdown */
         .dropdown-menu li a:hover {
             background-color: #333; /* nền xám đậm khi hover */
         }
-
-.account-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.account-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: black; /* nền đen */
-    padding: 10px 0;
-    min-width: 160px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    z-index: 999;
-}
-
-    .account-menu li {
-        list-style: none;
-    }
-
-        .account-menu li a {
-            color: white; /* chữ trắng */
-            padding: 10px 20px;
-            display: block;
-            text-decoration: none;
-        }
-
-            .account-menu li a:hover {
-                border-bottom: 2px solid yellow;
-            
-            }
-
-.account-dropdown:hover .account-menu {
-    display: block;
-}
-
-/* Style cho tên đăng nhập */
-#userName {
-    color: white;
-    margin-left: 10px;
-    font-size: 1rem;
-    display: none; /* Ẩn mặc định */
-}
