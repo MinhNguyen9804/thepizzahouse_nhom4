@@ -37,17 +37,14 @@
             </nav>
             <div class="icons">
                     <div class="account-wrapper">
-                    <a href="Account/đăng nhập.html" id="account-link" title="Tài khoản"> <i class="fas fa-user"></i></a>
-                    
-                    
-            <div class="dropdown-content" id="logout-dropdown">
-            <button onclick="logout()">Đăng xuất</button>
+                    <a href="Account/đăng nhập.html" id="account-link" title="Tài khoản"> <i class="fas fa-user"></i></a>    
+                    <div class="dropdown-content" id="logout-dropdown">
+                    <button onclick="logout()">Đăng xuất</button>
                     </div>
                     <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
                     </div>
                  <span id="username-display" style="color: white; margin-left: 4px;"></span>
-             </div>
-                   
+                </div>                  
                 </span>
             </div>
         </div>
@@ -425,50 +422,39 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const accountLink = document.getElementById('account-link');
-        const loggedInUser = localStorage.getItem('loggedInUser');
         const dropdown = document.querySelector('.dropdown-content');
-        
-        if (!loggedInUser && dropdown) {
-        dropdown.style.display = 'none';
+        const loggedInUser = localStorage.getItem('loggedInUser');
+
+        // Hiển thị tên người dùng
+        if (loggedInUser) {
+            const usernameDisplay = document.getElementById('username-display');
+            if (usernameDisplay) usernameDisplay.textContent = loggedInUser;
+        } else {
+            if (dropdown) dropdown.style.display = 'none';
         }
+
+        // Toggle dropdown khi click vào biểu tượng tài khoản
         if (accountLink && loggedInUser) {
             accountLink.addEventListener('click', (event) => {
-                event.preventDefault(); // Ngăn chuyển trang
-                const dropdown = document.querySelector('.dropdown-content');
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                event.preventDefault();
+                dropdown.classList.toggle('show-dropdown');
+            });
+
+            // Ẩn dropdown khi click ra ngoài
+            document.addEventListener('click', (event) => {
+                if (!accountLink.contains(event.target) && !dropdown.contains(event.target)) {
+                    dropdown.classList.remove('show-dropdown');
+                }
             });
         }
     });
-    accountLink.addEventListener('click', (event) => {
-    if (loggedInUser) {
-        event.preventDefault(); // đã đăng nhập => không chuyển trang
-        // toggle dropdown
-        const dropdown = document.querySelector('.dropdown-content');
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+
+    function logout() {
+        localStorage.removeItem('loggedInUser');
+        window.location.reload(); // Hoặc window.location.href = 'login.html';
     }
-    // chưa đăng nhập => cho phép chuyển sang trang đăng nhập
-});
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const accountLink = document.getElementById('account-link');
-        const loggedInUser = localStorage.getItem('loggedInUser');
-        const dropdown = document.querySelector('.dropdown-content');
 
-        // 1. Ẩn dropdown nếu chưa đăng nhập
-        if (!loggedInUser && dropdown) {
-            dropdown.style.display = 'none';
-        }
-
-        // 2. Vô hiệu hóa chuyển hướng nếu đã đăng nhập
-        if (accountLink && loggedInUser) {
-            accountLink.addEventListener('click', (event) => {
-                event.preventDefault(); // Ngăn chuyển trang
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-            });
-        }
-    });
-</script>
 <style>
 /* Đảm bảo account-wrapper có vị trí tương đối để dropdown định vị được */
 .account-wrapper {
@@ -480,10 +466,10 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 120%; /* nằm dưới icon */
+    top: 62%; /* nằm dưới icon */
     right: 0;
     background-color: #000000;
-    min-width: 120px;
+    min-width: 150px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     z-index: 99;
     border-radius: 8px;
