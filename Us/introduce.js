@@ -53,47 +53,48 @@ $(document).ready(function () {
     window.addEventListener('load', checkFade);
 
 
-/*Scrollytelling*/
-document.addEventListener("DOMContentLoaded", () => {
-    const blocks = document.querySelectorAll('.history-block');
+    /*Scrollytelling*/
+    document.addEventListener("DOMContentLoaded", () => {
+        const blocks = document.querySelectorAll('.history-block');
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target); // Fade 1 lần duy nhất
-            }
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target); // Fade 1 lần duy nhất
+                }
+            });
+        }, {
+            threshold: 0.3 // Tùy chỉnh tỉ lệ xuất hiện
         });
-    }, {
-        threshold: 0.3 // Tùy chỉnh tỉ lệ xuất hiện
+
+        blocks.forEach(block => {
+            observer.observe(block);
+        });
     });
 
-    blocks.forEach(block => {
-        observer.observe(block);
+
+    /* about us*/
+    let lastScrollY = window.scrollY;
+    let offset = 0;
+
+    const aboutText = document.querySelector(".about-text");
+    const pizzaText = document.querySelector(".pizza-text");
+
+    window.addEventListener("scroll", () => {
+        const currentY = window.scrollY;
+        const direction = currentY > lastScrollY ? 1 : -1;
+
+        offset += direction * 10; // tăng giá trị để chuyển động rõ ràng hơn
+
+        aboutText.style.transform = `translate(calc(-50% + ${offset}px), -50%)`;
+        pizzaText.style.transform = `translate(calc(-50% - ${offset}px), 50%)`;
+
+        lastScrollY = currentY <= 0 ? 0 : currentY;
     });
-});
 
 
-/* about us*/
-let lastScrollY = window.scrollY;
-let offset = 0;
-
-const aboutText = document.querySelector(".about-text");
-const pizzaText = document.querySelector(".pizza-text");
-
-window.addEventListener("scroll", () => {
-    const currentY = window.scrollY;
-    const direction = currentY > lastScrollY ? 1 : -1;
-
-    offset += direction * 10; // tăng giá trị để chuyển động rõ ràng hơn
-
-    aboutText.style.transform = `translate(calc(-50% + ${offset}px), -50%)`;
-    pizzaText.style.transform = `translate(calc(-50% - ${offset}px), 50%)`;
-
-    lastScrollY = currentY <= 0 ? 0 : currentY;
-});
-
-//Mision
+    //Mision
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -110,4 +111,4 @@ window.addEventListener("scroll", () => {
     document.querySelectorAll('.mission-row').forEach(row => {
         observer.observe(row);
     });
-
+}); // <-- đóng hàm $(document).ready
