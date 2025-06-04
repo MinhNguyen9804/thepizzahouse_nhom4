@@ -186,6 +186,19 @@
         color: #ffd900;
     }
 
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.success-message {
+    color: #00ff00;
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
 
 /* NEWS Section */
 .news-grid {
@@ -283,6 +296,20 @@
         border-style: solid;
         border-color: #ffea00 transparent transparent transparent;
     }
+
+    /* Quy tắc cho thẻ <a> bên trong .news-item */
+    .news-item a {
+        text-decoration: none; /* Loại bỏ gạch chân */
+        color: inherit; /* Kế thừa màu từ phần tử cha (ví dụ: h3 giữ #ffea00) */
+        display: block; /* Đảm bảo toàn bộ nội dung trong a được định dạng như một khối */
+    }
+
+        .news-item a:hover,
+        .news-item a:focus,
+        .news-item a:visited {
+            text-decoration: none; /* Loại bỏ gạch chân ở các trạng thái */
+            color: inherit; /* Giữ màu gốc */
+        }
 
 
 /* POLICY Section */
