@@ -1,4 +1,5 @@
-﻿function handleSearch(event) {
+﻿// Hàm tìm kiếm
+function handleSearch(event) {
     if (event.key === 'Enter') {
         const query = document.getElementById('searchInput').value.toLowerCase();
         const products = document.querySelectorAll('.menu-item');
@@ -17,3 +18,44 @@
         }
     }
 }
+
+// Hàm kiểm tra và hiển thị trạng thái đăng nhập
+function updateAccountStatus() {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const userName = document.getElementById("userName");
+    const accountMenu = document.getElementById("accountMenu");
+
+    if (storedUser && localStorage.getItem("remember") === "true") {
+        // Đã đăng nhập
+        const email = storedUser.email;
+        userName.textContent = email.split('@')[0]; // Hiển thị tên trước @
+        userName.style.display = "inline"; // Hiển thị tên
+        accountMenu.innerHTML = `
+            <li><a href="#" id="logoutLink">Đăng xuất</a></li>
+        `;
+    } else {
+        // Chưa đăng nhập
+        userName.textContent = "";
+        userName.style.display = "none";
+        accountMenu.innerHTML = `
+            <li><a href="login.html">Đăng nhập</a></li>
+            <li><a href="register.html">Đăng ký</a></li>
+        `;
+    }
+}
+
+// Xử lý đăng xuất
+document.addEventListener("click", (e) => {
+    if (e.target.id === "logoutLink") {
+        e.preventDefault();
+        localStorage.removeItem("user");
+        localStorage.removeItem("remember");
+        localStorage.removeItem("savedEmail");
+        localStorage.removeItem("savedPassword");
+        updateAccountStatus();
+        alert("Đăng xuất thành công!");
+    }
+});
+
+// Khởi tạo trạng thái tài khoản khi tải trang
+document.addEventListener("DOMContentLoaded", updateAccountStatus);
