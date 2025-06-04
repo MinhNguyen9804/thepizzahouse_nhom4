@@ -66,8 +66,8 @@
         "name": "Lasagna Bò",
         "image": "https://pizza4ps.com/wp-content/uploads/2023/07/20200015_2.jpg",
         "description": "Lasagna nướng với sốt bolognese từ thịt bò, lớp phô mai mozzarella tan chảy, từng lớp mì mềm, mang đến hương vị Ý đậm đà.",
-        "currentPrice": "188,000 VND",
-        "oldPrice": null,
+        "currentPrice": "168,000 VND",
+        "oldPrice": "188,000 VND",
         "isHidden": true,
         "category": "Spaghetti"
     },
