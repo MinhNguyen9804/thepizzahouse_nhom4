@@ -26,7 +26,7 @@
                 <a href="Menu/all.html">Thực đơn</a>    
                 <a href="#newaa">Đặt bàn</a>
                 <div class="dropdown">
-                    <a href="#">Chúng tôi</a>
+                    <a href="Us/introduce.html">Chúng tôi</a>
                     <ul class="dropdown-menu">
                         <li><a href="Us/introduce.html">Giới thiệu</a></li>
                         <li><a href="Us/news.html">Tin tức</a></li>
@@ -38,8 +38,6 @@
             <div class="icons">
                 <span class="icons">
                     <a href="Account/đăng nhập.html" title="Tài khoản"> <i class="fas fa-user"></i></a>
-                    <span id="username-display" style="color: white; margin-left: 8px;"></span>
-                    <button onclick="logout()">Thoát</button>
                     <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i> </a>
                 </span>
             </div>
@@ -161,7 +159,16 @@
                             </div>
                             <button onclick="addToCart('Salad Cá Hồi Áp Chảo')">Thêm vào giỏ</button>
                         </div>
-                        
+                        <div class="menu-item" onclick="showProductDetail(`Khoai Tây Chiên Sốt Phô Mai`, `https://pizza4ps.com/wp-content/uploads/2023/07/30000001_2.jpg`, `Khoai tây chiên giòn rụm, phủ sốt phô mai béo ngậy, thêm chút tiêu và ớt bột, là món khai vị không thể bỏ qua.`, `65,000 VND`)">
+                            <img src="https://pizza4ps.com/wp-content/uploads/2023/07/30000001_2.jpg" alt="Khoai Tây Chiên Sốt Phô Mai">
+                            <h3>Khoai Tây Chiên Sốt Phô Mai</h3>
+                            <p>Khoai tây chiên giòn rụm, phủ sốt phô mai béo ngậy, thêm chút tiêu...</p>
+                            <div class="price">
+                                <span class="current-price">65,000 VND</span>
+                                <span class="old-price">75,000 VND</span>
+                            </div>
+                            <button onclick="addToCart('Khoai Tây Chiên Sốt Phô Mai')">Thêm vào giỏ</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,42 +183,9 @@
 <section class="menu" id="menu">
                 <h2>Must try</h2>
                 
-                <div class="menu-grid">
-                    <div class="menu-item" onclick="showProductDetail(`Pizza Hải Sản Sốt Cà Chua Cay`, `https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg`, `Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ, thêm phô mai hun khói, mang đến hương vị biển cả đậm đà.`, `185,000 VND`)">
-                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/10000014_2.jpg" alt="Pizza Hải Sản Sốt Cà Chua Cay">
-                        <h3>Pizza Hải Sản Sốt Cà Chua Cay</h3>
-                        <p>Một lựa chọn dành cho người yêu hải sản với tôm, mực tươi, phủ sốt cà chua cay nhẹ...</p>
-                        <div class="price">185,000 VND</div>
-                        <button onclick="addToCart('Pizza Hải Sản Sốt Cà Chua Cay')">Thêm vào giỏ</button>
-                    </div>
-                    
-                   
-                    <div class="menu-item" onclick="showProductDetail(`Pizza Thịt Lợn Ướp Gừng`, `https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg`, `Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô mai, mang đến hương vị đậm đà, ấm áp, rất hợp cho ngày se lạnh.`, `158,000 VND`)">
-                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg" alt="Pizza Thịt Lợn Ướp Gừng">
-                        <h3>Pizza Thịt Lợn Ướp Gừng</h3>
-                        <p>Thịt lợn ướp gừng kiểu Nhật, phủ lên lớp đế pizza giòn, thêm chút hành lá và phô...</p>
-                        <div class="price">158,000 VND</div>
-                        <button onclick="addToCart('Pizza Thịt Lợn Ướp Gừng')">Thêm vào giỏ</button>
-                    </div>
-                    
-                    <div class="menu-item" onclick="showProductDetail(`Spaghetti Pesto Tôm`, `https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg`, `Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút phô mai ricotta, mang đến hương vị Ý hiện đại.`, `178,000 VND`)">
-                        <img src="https://pizza4ps.com/wp-content/uploads/2023/07/20200016_2.jpg" alt="Spaghetti Pesto Tôm">
-                        <h3>Spaghetti Pesto Tôm</h3>
-                        <p>Spaghetti với sốt pesto húng quế thơm lừng, kết hợp tôm tươi ngọt, thêm chút...</p>
-                        <div class="price">178,000 VND</div>
-                        <button onclick="addToCart('Spaghetti Pesto Tôm')">Thêm vào giỏ</button>
-                    </div>
-                    
-                    <div class="menu-item" onclick="showProductDetail('Yuzu Wheat', 'Menu/image/YuzuBeer.jpg', 'Một loại bia lúa mì nhẹ nhàng, tươi mát với hương thơm đặc trưng từ quả yuzu (một loại quýt Nhật Bản). Bia có vị chua nhẹ, thanh mát, hậu vị dịu dàng, rất thích hợp để giải khát trong những ngày nóng hoặc dùng kèm các món ăn nhẹ.', '105,000 VND')">
-                        <img src="Menu/image/YuzuBeer.jpg" alt="Yuzu Wheat">
-                        <h3>Yuzu Wheat</h3>
-                        <p>Một loại bia lúa mì nhẹ nhàng, tươi mát với hương thơm đặc trưng từ quả yuzu (một loại...</p>
-                        <div class="price">105,000 VND</div>
-                        <button onclick="addToCart('Yuzu Wheat')">Thêm vào giỏ</button>
-                    </div>
-                    
-                    
-                    </div>
+                <div class="menu-grid" id="mustTryGrid">
+    <!-- Dữ liệu sẽ được tải động từ must_try.json -->
+                </div>
                     </section>
     <!-- Customer Reviews Section -->
     <section class="reviews-section">
@@ -345,6 +319,7 @@
     </footer>
 
     <script src="index.js"></script>
+    <script src="must_try.js"></script>
     <script>
     function handleSearch(event) {
         if (event.key === 'Enter') {
@@ -396,28 +371,26 @@
         document.getElementById('contactForm').reset();
     }
 
-
+    // Hàm hiển thị tên người dùng trong header
+    function displayUsername() {
+        const username = localStorage.getItem('username');
+        if (username) {
+            const userIcon = document.querySelector('.icons');
+            userIcon.innerHTML = `
+                <span class="icons">
+                    <span style="color: white; margin-right: 10px;">👤<strong>${username}</strong></span>
+                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
+                </span>
+            `;
+        }
+    }
 
     // Hiển thị tên nếu đã đăng nhập trước đó
     window.addEventListener('load', () => {
         checkScroll();
         displayUsername();
-    })
-</script>
-<script>
-    // Khi load trang index, kiểm tra có người dùng đăng nhập không
-    window.addEventListener('DOMContentLoaded', () => {
-        const loggedInUser = localStorage.getItem('loggedInUser');
-        if (loggedInUser) {
-            document.getElementById('username-display').textContent =`${loggedInUser}`;
-        }
     });
 </script>
-<script>
-    function logout() {
-        localStorage.removeItem('loggedInUser');
-        window.location.reload(); // hoặc chuyển về trang đăng nhập
-    }
-</script>
+
 </body>
 </html>
