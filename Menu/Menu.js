@@ -175,37 +175,3 @@ function reattachEventListeners() {
     const addToCartBtn = document.getElementById('addToCartButton');
     if (addToCartBtn) addToCartBtn.onclick = () => addToCart(document.getElementById('modalTitle').textContent);
 }
-$(document).ready(function () {
-    $.get("../components/header_menu.html", function (headerHtml) {
-        $('#header-placeholder').replaceWith(headerHtml);
-
-        // Sau khi chèn header, thực hiện các logic liên quan đến header
-        const loggedInUser = localStorage.getItem('loggedInUser');
-        if (loggedInUser) {
-            const usernameDisplay = document.getElementById('username-display');
-            if (usernameDisplay) usernameDisplay.textContent = loggedInUser;
-        } else {
-            const dropdown = document.querySelector('#logout-dropdown');
-            if (dropdown) dropdown.style.display = 'none';
-        }
-
-        // Toggle dropdown khi click vào biểu tượng tài khoản
-        const accountLink = document.getElementById('account-link');
-        const dropdown = document.querySelector('.dropdown-content');
-        if (accountLink && loggedInUser) {
-            accountLink.addEventListener('click', (event) => {
-                event.preventDefault();
-                dropdown.classList.toggle('show-dropdown');
-            });
-
-            // Ẩn dropdown khi click ra ngoài
-            document.addEventListener('click', (event) => {
-                if (!accountLink.contains(event.target) && !dropdown.contains(event.target)) {
-                    dropdown.classList.remove('show-dropdown');
-                }
-            });
-        }
-    }).fail(function () {
-        console.error("Failed to load ./components/header_menu.html");
-    });
-});
