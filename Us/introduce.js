@@ -65,7 +65,7 @@ $(document).ready(function () {
                 }
             });
         }, {
-            threshold: 0.3 // Tùy chỉnh tỉ lệ xuất hiện
+            threshold: 0.2 // Tùy chỉnh tỉ lệ xuất hiện
         });
 
         blocks.forEach(block => {
