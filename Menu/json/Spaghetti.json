@@ -6,7 +6,8 @@
         "currentPrice": "108,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Spaghetti Bolognese",
@@ -15,7 +16,8 @@
         "currentPrice": "148,000 VND",
         "oldPrice": "170,000 VND",
         "isHidden": false,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+         "tag": "new"
     },
     {
         "name": "Spaghetti Pesto Tôm",
@@ -24,7 +26,8 @@
         "currentPrice": "178,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": "must-try"
     },
     {
         "name": "Fettuccine Cá Hồi Sốt Kem",
@@ -33,7 +36,8 @@
         "currentPrice": "198,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Spaghetti Carbonara",
@@ -42,7 +46,8 @@
         "currentPrice": "148,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Spaghetti Vongole",
@@ -51,7 +56,8 @@
         "currentPrice": "168,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Spaghetti Cua Sốt Kem",
@@ -60,7 +66,8 @@
         "currentPrice": "228,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Lasagna Bò",
@@ -69,7 +76,8 @@
         "currentPrice": "168,000 VND",
         "oldPrice": "188,000 VND",
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+         "tag": "new"
     },
     {
         "name": "Spaghetti Tôm Sốt Cà Chua",
@@ -78,6 +86,7 @@
         "currentPrice": "188,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     }
 ]

@@ -17,13 +17,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     menuItem.style.display = 'none';
                 }
                 menuItem.setAttribute('onclick', `showProductDetail('${item.name}', '${item.image}', '${item.description}', '${item.currentPrice}', '${item.oldPrice}')`);
+
+                // Tạo HTML cho tag (nếu có)
+                let tagHtml = '';
+                if (item.tag) {
+                    if (item.tag === 'must-try') {
+                        tagHtml = `<div class="must-try-tag">Must Try</div>`;
+                    } else if (item.tag === 'new') {
+                        tagHtml = `<div class="new-tag">Món mới</div>`;
+                    } else if (item.tag === 'hot') {
+                        tagHtml = `<div class="hot-tag"><i class="fas fa-fire"></i></div>`;
+                    }
+                }
+
                 let priceHtml = `<div class="price">`;
                 priceHtml += `<span class="current-price">${item.currentPrice}</span>`;
                 if (item.oldPrice) {
                     priceHtml += `<span class="old-price">${item.oldPrice}</span>`;
                 }
                 priceHtml += `</div>`;
+
                 menuItem.innerHTML = `
+                    ${tagHtml} <!-- Thêm tag vào đây -->
                     <img src="${item.image}" alt="${item.name}">
                     <h3>${item.name}</h3>
                     <p>${item.description.substring(0, 50)}...</p>

@@ -995,6 +995,110 @@ footer {
             border-radius: 50%;
             padding: 8px;
         }
+.menu-item {
+    position: relative; /* Đảm bảo định vị tương đối để tag nằm đúng vị trí */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-item, .hot-product-card {
+    position: relative; /* Đảm bảo định vị tương đối để tag nằm đúng vị trí */
+}
+
+/* CSS chung cho tất cả các tag kiểu ruy băng */
+.must-try-tag, .new-tag, .hot-tag {
+    position: absolute;
+       top: 25px;
+    right: -10px;/* Dịch sang phải để ruy băng trông tự nhiên */
+    color: white; /* Màu chữ */
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 20px; /* Padding cho thân chính của ruy băng */
+    text-align: center;
+    z-index: 10; /* Đảm bảo tag nằm trên các phần tử khác */
+    transform: rotate(45deg); /* Xoay ruy băng để trông tự nhiên */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng để nổi bật */
+}
+
+/* Tạo đuôi ruy băng bên trái và bên phải bằng pseudo-elements */
+.must-try-tag:before, .new-tag:before, .hot-tag:before,
+.must-try-tag:after, .new-tag:after, .hot-tag:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Đuôi ruy băng bên trái */
+.must-try-tag:before, .new-tag:before, .hot-tag:before {
+    left: -10px; /* Đặt ở bên trái của thân ruy băng */
+    border-width: 12px 10px 12px 0; /* Tạo hình tam giác */
+}
+
+/* Đuôi ruy băng bên phải */
+.must-try-tag:after, .new-tag:after, .hot-tag:after {
+    right: -10px; /* Đặt ở bên phải của thân ruy băng */
+    border-width: 12px 0 12px 10px; /* Tạo hình tam giác */
+}
+
+/* Tag "Must Try" */
+.must-try-tag {
+    background: linear-gradient(45deg, #ff2600, #ff4500); /* Gradient đỏ cam */
+}
+
+.must-try-tag:before {
+    border-color: transparent #ff4500 transparent transparent; /* Màu đuôi bên trái */
+}
+
+.must-try-tag:after {
+    border-color: transparent transparent transparent #ff6347; /* Màu đuôi bên phải */
+}
+
+/* Tag "Món mới" */
+.new-tag {
+    background: linear-gradient(45deg, #32cd32, #228b22); /* Gradient xanh lá */
+}
+
+.new-tag:before {
+    border-color: transparent #228b22 transparent transparent; /* Màu đuôi bên trái */
+}
+
+.new-tag:after {
+    border-color: transparent transparent transparent #32cd32; /* Màu đuôi bên phải */
+}
+
+/* Tag "Hot" (ngọn lửa) */
+.hot-tag {
+    background: linear-gradient(45deg, #ff4500, #ff8c00); /* Gradient cam cháy */
+    padding: 5px 10px; /* Padding nhỏ hơn vì chỉ chứa biểu tượng */
+    border-radius: 0; /* Không cần bo góc vì đã là ruy băng */
+}
+
+.hot-tag:before {
+    border-color: transparent #ff8c00 transparent transparent; /* Màu đuôi bên trái */
+}
+
+.hot-tag:after {
+    border-color: transparent transparent transparent #ff4500; /* Màu đuôi bên phải */
+}
+
+.hot-tag i {
+    margin: 0; /* Xóa margin mặc định của icon */
+    font-size: 14px; /* Kích thước biểu tượng ngọn lửa */
+}
+.must-try-tag, .new-tag, .hot-tag {
+    animation: wave 2s infinite ease-in-out;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(-5px); }
+}
 
 /* Responsive */
 @media (max-width: 768px) {
