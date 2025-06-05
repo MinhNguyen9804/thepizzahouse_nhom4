@@ -6,16 +6,18 @@
         "currentPrice": "79,000 VND",
         "oldPrice": "89,000 VND",
         "isHidden": false,
-        "category": "Khai vị"
+        "category": "Khai vị",
+        "tag": "new"
     },
     {
         "name": "Gà Giòn Không Xương",
         "image": "https://webreview.vn/images/items/21979.jpg",
         "description": "Gà giòn tan với sốt Cocktail thơm ngậy",
-       "currentPrice": "89,000 VND",
+        "currentPrice": "89,000 VND",
         "oldPrice": "99,000 VND",
         "isHidden": false,
-        "category": "Khai vị"
+        "category": "Khai vị",
+        "tag": "new"
     },
     {
         "name": "Tôm Bơ tỏi và Bánh Mì Nướng",
@@ -24,7 +26,8 @@
         "currentPrice": "129,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Khai vị"
+        "category": "Khai vị",
+        "tag": ""
     },
     {
         "name": "Bánh Phô Mai Xoắn",
@@ -33,7 +36,8 @@
         "currentPrice": "119,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Khai vị"
+        "category": "Khai vị",
+        "tag": ""
     },
     {
         "name": "Mực Chiên Giòn",
@@ -42,7 +46,8 @@
         "currentPrice": "129,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Khai vị"
+        "category": "Khai vị",
+        "tag": ""
     },
     {
         "name": "Bánh Kẹp Nướng Mexico",
@@ -51,7 +56,8 @@
         "currentPrice": "109,000 VND",
         "oldPrice": "129,000 VND",
         "isHidden": false,
-        "category": "Khai vị"
+        "category": "Khai vị",
+         "tag": "new"
     },
     {
         "name": "Salad Gà Giòn Không Xương",
@@ -60,7 +66,8 @@
         "currentPrice": "79,000 VND",
         "oldPrice": "89,000 VND",
         "isHidden": true,
-        "category": "Khai vị"
+        "category": "Khai vị",
+         "tag": "new"
     },
     {
         "name": "Salad Đặc Sắc",
@@ -69,7 +76,8 @@
         "currentPrice": "89,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Khai vị"
+        "category": "Khai vị",
+        "tag": ""
     },
     {
         "name": "Salad Trộn Sốt Caesar",
@@ -78,7 +86,8 @@
         "currentPrice": "89,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Khai vị"
+        "category": "Khai vị",
+        "tag": ""
     },
     {
         "name": "Phô mai Burrata Margherita",
@@ -87,7 +96,8 @@
         "currentPrice": "198,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+        "tag": ""
     },
     {
         "name": "Pizza Cá Hồi Xốt Kem Miso",
@@ -96,7 +106,8 @@
         "currentPrice": "238,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+        "tag": ""
     },
     {
         "name": "Pizza Hải Sản Sốt Cà Chua Cay",
@@ -105,7 +116,8 @@
         "currentPrice": "185,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+        "tag": "must-try"
     },
     {
         "name": "Pizza Gà Xốt Teriyaki",
@@ -114,7 +126,8 @@
         "currentPrice": "159,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+        "tag": ""
     },
     {
         "name": "Pizza Nấm Tự Nhiên",
@@ -123,7 +136,8 @@
         "currentPrice": "129,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+        "tag": ""
     },
     {
         "name": "Pizza Thịt Lợn Ướp Gừng",
@@ -132,7 +146,8 @@
         "currentPrice": "158,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+        "tag": "must-try"
     },
     {
         "name": "Pizza Margherita Xúc Xích Ý",
@@ -141,7 +156,8 @@
         "currentPrice": "172,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+        "tag": ""
     },
     {
         "name": "Pizza Bò Dầu Tỏi",
@@ -150,7 +166,8 @@
         "currentPrice": "145,000 VND",
         "oldPrice": "168,000 VND",
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+         "tag": "new"
     },
     {
         "name": "Pizza Tôm Sốt Mayonnaise",
@@ -159,7 +176,8 @@
         "currentPrice": "159,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Pizza"
+        "category": "Pizza",
+        "tag": ""
     },
     {
         "name": "Spaghetti Pomodoro",
@@ -168,7 +186,8 @@
         "currentPrice": "108,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Spaghetti Bolognese",
@@ -177,7 +196,8 @@
         "currentPrice": "148,000 VND",
         "oldPrice": "170,000 VND",
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": "new"
     },
     {
         "name": "Spaghetti Pesto Tôm",
@@ -186,7 +206,8 @@
         "currentPrice": "178,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": "must-try"
     },
     {
         "name": "Fettuccine Cá Hồi Sốt Kem",
@@ -195,7 +216,8 @@
         "currentPrice": "198,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Spaghetti Carbonara",
@@ -204,7 +226,8 @@
         "currentPrice": "148,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Spaghetti Vongole",
@@ -213,7 +236,8 @@
         "currentPrice": "168,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Spaghetti Cua Sốt Kem",
@@ -222,7 +246,8 @@
         "currentPrice": "228,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Lasagna Bò",
@@ -231,7 +256,8 @@
         "currentPrice": "168,000 VND",
         "oldPrice": "188,000 VND",
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+         "tag": "new"
     },
     {
         "name": "Spaghetti Tôm Sốt Cà Chua",
@@ -240,7 +266,8 @@
         "currentPrice": "188,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Spaghetti"
+        "category": "Spaghetti",
+        "tag": ""
     },
     {
         "name": "Yuzu Wheat",
@@ -249,7 +276,8 @@
         "currentPrice": "105,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": "must-try"
     },
     {
         "name": "Whey Cider",
@@ -258,7 +286,8 @@
         "currentPrice": "115,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     },
     {
         "name": "Original Session IPA",
@@ -267,7 +296,8 @@
         "currentPrice": "95,000 VND",
         "oldPrice": "105,000 VND",
         "isHidden": true,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+         "tag": "new"
     },
     {
         "name": "Dalat Whey Stout",
@@ -276,7 +306,8 @@
         "currentPrice": "98,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     },
     {
         "name": "Natural Sake",
@@ -285,7 +316,8 @@
         "currentPrice": "128,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     },
     {
         "name": "Red Sangria",
@@ -294,7 +326,8 @@
         "currentPrice": "123,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     },
     {
         "name": "White Sangria",
@@ -303,6 +336,7 @@
         "currentPrice": "123,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     }
 ]

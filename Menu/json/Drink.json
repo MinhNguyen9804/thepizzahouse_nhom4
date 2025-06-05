@@ -1,4 +1,4 @@
- [
+[
     {
         "name": "Yuzu Wheat",
         "image": "image/YuzuBeer.jpg",
@@ -6,7 +6,8 @@
         "currentPrice": "105,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": "must-try"
     },
     {
         "name": "Whey Cider",
@@ -15,7 +16,8 @@
         "currentPrice": "115,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     },
     {
         "name": "Original Session IPA",
@@ -24,7 +26,8 @@
         "currentPrice": "95,000 VND",
         "oldPrice": "105,000 VND",
         "isHidden": false,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+          "tag": "new"
     },
     {
         "name": "Dalat Whey Stout",
@@ -33,7 +36,8 @@
         "currentPrice": "98,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     },
     {
         "name": "Natural Sake",
@@ -42,7 +46,8 @@
         "currentPrice": "128,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     },
     {
         "name": "Red Sangria",
@@ -51,7 +56,8 @@
         "currentPrice": "123,000 VND",
         "oldPrice": null,
         "isHidden": false,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+        "tag": ""
     },
     {
         "name": "White Sangria",
@@ -60,6 +66,7 @@
         "currentPrice": "123,000 VND",
         "oldPrice": null,
         "isHidden": true,
-        "category": "Đồ uống"
+        "category": "Đồ uống",
+       "tag": ""
     }
 ]
