@@ -338,168 +338,47 @@
    
     
     <script>
-     function handleSearch(event) {
-        if (event.key === 'Enter') {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            alert('Chuyển hướng đến trang thực đơn để tìm kiếm. ' );
-            window.location.href = 'Menu/all.html?search=' + query;
-        }
-    }
-    function showTestimonials() {
-        const cards = document.querySelectorAll('.testimonial-card');
-        cards.forEach((card, index) => {
-          card.style.display = (index === currentIndex || index === currentIndex + 1) ? 'block' : 'none';
-        });
-      }
-      
-      function changeTestimonial(direction) {
-        const cards = document.querySelectorAll('.testimonial-card');
-        const total = cards.length;
-      
-        currentIndex += direction * 2;
-      
-        if (currentIndex < 0) currentIndex = total - 2;
-        if (currentIndex >= total) currentIndex = 0;
-      
-        showTestimonials();
-      }
+        // Hàm kiểm tra và hiển thị trạng thái đăng nhập
+        function updateAccountStatus() {
+            const storedUser = JSON.parse(localStorage.getItem("user"));
+            const userName = document.getElementById("userName");
+            const accountMenu = document.getElementById("accountMenu");
 
-   // Hiệu ứng fade-in khi cuộn
-    const contactItems = document.querySelectorAll('.contact-form .form-group, .contact-info');
-    function checkScroll() {
-        contactItems.forEach(item => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top >= 0 && rect.top <= window.innerHeight * 0.8) {
-                item.classList.add('fade-in');
+            if (storedUser && localStorage.getItem("remember") === "true") {
+                // Đã đăng nhập
+                const hoten = storedUser.hoten; // Sử dụng hoten thay vì email
+                userName.textContent = hoten || "Người dùng"; // Hiển thị hoten, nếu không có thì dùng mặc định
+                userName.style.display = "inline"; // Hiển thị tên
+                accountMenu.innerHTML = `
+                    <li><a href="#" id="logoutLink">Đăng xuất</a></li>
+                `;
+            } else {
+                // Chưa đăng nhập
+                userName.textContent = "";
+                userName.style.display = "none";
+                accountMenu.innerHTML = `
+                    <li><a href="Account/login.html">Đăng nhập</a></li>
+                    <li><a href="Account/register.html">Đăng ký</a></li>
+                `;
+            }
+        }
+
+        // Gọi hàm khi trang tải
+        document.addEventListener("DOMContentLoaded", updateAccountStatus);
+
+        // Xử lý đăng xuất
+        document.addEventListener("click", (e) => {
+            if (e.target.id === "logoutLink") {
+                e.preventDefault();
+                localStorage.removeItem("user");
+                localStorage.removeItem("remember");
+                localStorage.removeItem("savedEmail");
+                localStorage.removeItem("savedPassword");
+                updateAccountStatus();
+                alert("Đăng xuất thành công!");
             }
         });
-    }
-    window.addEventListener('scroll', checkScroll);
-    window.addEventListener('load', checkScroll);
-      
-    // Xử lý đăng nhập
-        function submitForm(event) {
-        event.preventDefault();
-
-        const email = document.getElementById('email').value;
-        const username = email.split('@')[0]; // Lấy tên trước dấu @
-
-        // Giả lập xác thực thành công
-        localStorage.setItem('loggedInUser', username);
-
-        // Hiển thị tên người dùng
-        displayUsername();
-        function displayUsername() {
-    const loggedInUser = localStorage.getItem('loggedInUser');
-    if (loggedInUser) {
-        document.getElementById('username-display').textContent = loggedInUser;
-        document.querySelector('.fa-user').style.display = 'none'; // Ẩn icon tài khoản
-    }
-}
-
-        alert('Đăng nhập thành công!');
-        document.getElementById('contactForm').reset();
-    }
-
-
-
-    // Hiển thị tên nếu đã đăng nhập trước đó
-    window.addEventListener('load', () => {
-        checkScroll();
-        displayUsername();
-    })
-</script>
-<script>
-    // Khi load trang index, kiểm tra có người dùng đăng nhập không
-    window.addEventListener('DOMContentLoaded', () => {
-        const loggedInUser = localStorage.getItem('loggedInUser');
-        if (loggedInUser) {
-            document.getElementById('username-display').textContent = loggedInUser;
-        }
-    });
-</script>
-<script>
-    function logout() {
-        localStorage.removeItem('loggedInUser');
-        window.location.reload(); // hoặc chuyển về trang đăng nhập
-    }
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const accountLink = document.getElementById('account-link');
-        const dropdown = document.querySelector('.dropdown-content');
-        const loggedInUser = localStorage.getItem('loggedInUser');
-
-        // Hiển thị tên người dùng
-        if (loggedInUser) {
-            const usernameDisplay = document.getElementById('username-display');
-            if (usernameDisplay) usernameDisplay.textContent = loggedInUser;
-        } else {
-            if (dropdown) dropdown.style.display = 'none';
-        }
-
-        // Toggle dropdown khi click vào biểu tượng tài khoản
-        if (accountLink && loggedInUser) {
-            accountLink.addEventListener('click', (event) => {
-                event.preventDefault();
-                dropdown.classList.toggle('show-dropdown');
-            });
-
-            // Ẩn dropdown khi click ra ngoài
-            document.addEventListener('click', (event) => {
-                if (!accountLink.contains(event.target) && !dropdown.contains(event.target)) {
-                    dropdown.classList.remove('show-dropdown');
-                }
-            });
-        }
-    });
-
-    function logout() {
-        localStorage.removeItem('loggedInUser');
-        window.location.reload(); // Hoặc window.location.href = 'login.html';
-    }
-</script>
-
-<style>
-/* Đảm bảo account-wrapper có vị trí tương đối để dropdown định vị được */
-.account-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-/* Style dropdown */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 62%; /* nằm dưới icon */
-    right: 0;
-    background-color: #000000;
-    min-width: 150px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 99;
-    border-radius: 8px;
-    padding: 10px;
-    transition: all 0.3s ease;
-}
-
-/* Nút trong dropdown */
-.dropdown-content button {
-    width: 100%;
-    padding: 10px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-/* Hover nút */
-.dropdown-content button:hover {
-    background-color: #d32f2f;
-}
-</style>
+    </script>
 
 </body>
 </html>
