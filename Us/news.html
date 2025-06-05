@@ -13,46 +13,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-         <div class="header-top">
-            <div class="logo-container">
-                <img src="../Menu/image/logo.jpg" alt="The Pizza House Logo">
-                <h1>The Pizza House</h1>
-            </div>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
-            </div>
-            <nav>
-                <a href="../index.html">Trang chủ</a>
-                <a href="../Menu/all.html">Thực đơn</a>
-                <a href="../Menu/all.html">Thực đơn</a>
-                <a href="#newaa">Đặt bàn</a>
-                <div class="dropdown">
-                    <a href="#">Chúng tôi</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="introduce.html">Giới thiệu</a></li>
-                        <li><a href="news.html">Tin tức</a></li>
-                        <li><a href="policy.html">Điều khoản</a></li>
-                        <li><a href="contact.html">Liên hệ</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="icons">
-                <div class="account-dropdown">
-                    <a href="#" title="Tài khoản"><i class="fas fa-user"></i></a>
-                    <ul class="account-menu">
-                          <li><a href="../Account/login.html">Đăng nhập</a></li>
-                        <li><a href="../Account/register.html">Đăng ký</a></li>
-                        <!-- Sau này có thể thêm -->
-                        <!-- <li><a href="profile.html">Tài khoản</a></li> -->
-                        <!-- <li><a href="#" onclick="logout()">Đăng xuất</a></li> -->
-                    </ul>
-                </div>
-                <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Banner Top Section -->
     <section class="banner-top">
@@ -150,7 +111,8 @@
             </ul>
         </div>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="news.js"> </script>
         <script src="../header.js"></script>
 </body>
