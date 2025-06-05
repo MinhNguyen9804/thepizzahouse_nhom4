@@ -170,7 +170,7 @@
 
             alert("Đăng nhập thành công!");
             setTimeout(() => {
-                window.location.href = "index.html"; // Đảm bảo đường dẫn đúng
+                window.location.href = "../index.html"; // Đảm bảo đường dẫn đúng
             }, 1500);
         });
     }
