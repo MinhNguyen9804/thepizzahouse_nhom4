@@ -76,7 +76,54 @@
         color: #ccc;
         font-size: 0.9rem;
     }
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 550px; /* bạn có thể chỉnh chiều cao tại đây */
+    overflow: hidden;
+}
 
+.custom-video {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Chữ hiển thị trên video */
+.video-overlay {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.video-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.video-p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 90px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
 
 /* CONTACT Section */
 .contact-form {
