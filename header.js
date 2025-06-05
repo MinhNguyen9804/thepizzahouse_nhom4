@@ -20,6 +20,47 @@ function handleSearch(event) {
 }
 
 
+    // Hàm kiểm tra và hiển thị trạng thái đăng nhập
+    function updateAccountStatus() {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+    const userName = document.getElementById("userName");
+    const accountMenu = document.getElementById("accountMenu");
+
+    if (storedUser && localStorage.getItem("remember") === "true") {
+            // Đã đăng nhập
+            const hoten = storedUser.hoten; // Sử dụng hoten thay vì email
+    userName.textContent = hoten || "Người dùng"; // Hiển thị hoten, nếu không có thì dùng mặc định
+    userName.style.display = "inline"; // Hiển thị tên
+    accountMenu.innerHTML = `
+    <li><a href="#" id="logoutLink">Đăng xuất</a></li>
+    `;
+        } else {
+        // Chưa đăng nhập
+        userName.textContent = "";
+    userName.style.display = "none";
+    accountMenu.innerHTML = `
+    <li><a href="Account/login.html">Đăng nhập</a></li>
+    <li><a href="Account/register.html">Đăng ký</a></li>
+            `;
+        }
+    }
+
+    // Gọi hàm khi trang tải
+    document.addEventListener("DOMContentLoaded", updateAccountStatus);
+
+    // Xử lý đăng xuất
+    document.addEventListener("click", (e) => {
+        if (e.target.id === "logoutLink") {
+            e.preventDefault();
+            localStorage.removeItem("user");
+            localStorage.removeItem("remember");
+            localStorage.removeItem("savedEmail");
+            localStorage.removeItem("savedPassword");
+            updateAccountStatus();
+            alert("Đăng xuất thành công!");
+        }
+    });
+
 
 // Xử lý đăng xuất
 document.addEventListener("click", (e) => {
