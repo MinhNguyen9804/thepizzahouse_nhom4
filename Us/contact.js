@@ -74,37 +74,41 @@ function submitForm(event) {
     alert('Cảm ơn bạn! Thông tin đã được gửi thành công.');
     document.getElementById('contactForm').reset();
 }
-$(document).ready(function () {
-    $.get("../components/Us_header.html", function (headerHtml) {
-        $('#header-placeholder').replaceWith(headerHtml);
+// Hàm kiểm tra và hiển thị trạng thái đăng nhập
+    function updateAccountStatus() {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const userName = document.getElementById("userName");
+    const accountMenu = document.getElementById("accountMenu");
 
-        // Sau khi chèn header, thực hiện các logic liên quan đến header
-        const loggedInUser = localStorage.getItem('loggedInUser');
-        if (loggedInUser) {
-            const usernameDisplay = document.getElementById('username-display');
-            if (usernameDisplay) usernameDisplay.textContent = loggedInUser;
+    if (currentUser) {
+            // Đã đăng nhập
+            const hoten = currentUser.hoten; // Sử dụng hoten
+    userName.textContent = hoten || "Người dùng"; // Hiển thị hoten, nếu không có thì dùng mặc định
+    userName.style.display = "inline"; // Hiển thị tên
+    accountMenu.innerHTML = `
+    <li><a href="#" id="logoutLink">Đăng xuất</a></li>
+    `;
         } else {
-            const dropdown = document.querySelector('#logout-dropdown');
-            if (dropdown) dropdown.style.display = 'none';
+        // Chưa đăng nhập
+        userName.textContent = "";
+    userName.style.display = "none";
+    accountMenu.innerHTML = `
+    <li><a href="../Account/login.html">Đăng nhập</a></li>
+    <li><a href="../Account/register.html">Đăng ký</a></li>
+    `;
         }
+    }
 
-        // Toggle dropdown khi click vào biểu tượng tài khoản
-        const accountLink = document.getElementById('account-link');
-        const dropdown = document.querySelector('.dropdown-content');
-        if (accountLink && loggedInUser) {
-            accountLink.addEventListener('click', (event) => {
-                event.preventDefault();
-                dropdown.classList.toggle('show-dropdown');
-            });
+    // Gọi hàm khi trang tải
+    document.addEventListener("DOMContentLoaded", updateAccountStatus);
 
-            // Ẩn dropdown khi click ra ngoài
-            document.addEventListener('click', (event) => {
-                if (!accountLink.contains(event.target) && !dropdown.contains(event.target)) {
-                    dropdown.classList.remove('show-dropdown');
-                }
-            });
+    // Xử lý đăng xuất
+    document.addEventListener("click", (e) => {
+        if (e.target.id === "logoutLink") {
+        e.preventDefault();
+    localStorage.removeItem("currentUser"); // Chỉ xóa trạng thái đăng nhập hiện tại
+    localStorage.removeItem("remember");
+    updateAccountStatus();
+    alert("Đăng xuất thành công!");
         }
-    }).fail(function () {
-        console.error("Failed to load ./components/Us_header.html");
     });
-});
