@@ -1,5 +1,3 @@
-﻿
-
 // Hiệu ứng hover cho news-item
 const newsItems = document.querySelectorAll('.news-item');
 newsItems.forEach(item => {
@@ -13,7 +11,7 @@ newsItems.forEach(item => {
     });
 });
 $(document).ready(function () {
-    $.get("../components/Us_header.html", function (headerHtml) {
+    $.get("../../components/news_header.html", function (headerHtml) {
         $('#header-placeholder').replaceWith(headerHtml);
 
         // Sau khi chèn header, thực hiện các logic liên quan đến header
@@ -43,6 +41,6 @@ $(document).ready(function () {
             });
         }
     }).fail(function () {
-        console.error("Failed to load ./components/Us_header.html");
+        console.error("Failed to load ../../components/Us_header.html");
     });
 });
