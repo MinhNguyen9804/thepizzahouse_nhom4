@@ -20,15 +20,16 @@ function handleSearch(event) {
 }
 
 
+
     // Hàm kiểm tra và hiển thị trạng thái đăng nhập
     function updateAccountStatus() {
-        const storedUser = JSON.parse(localStorage.getItem("user"));
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const userName = document.getElementById("userName");
     const accountMenu = document.getElementById("accountMenu");
 
-    if (storedUser && localStorage.getItem("remember") === "true") {
+    if (currentUser) {
             // Đã đăng nhập
-            const hoten = storedUser.hoten; // Sử dụng hoten thay vì email
+            const hoten = currentUser.hoten; // Sử dụng hoten
     userName.textContent = hoten || "Người dùng"; // Hiển thị hoten, nếu không có thì dùng mặc định
     userName.style.display = "inline"; // Hiển thị tên
     accountMenu.innerHTML = `
@@ -41,7 +42,7 @@ function handleSearch(event) {
     accountMenu.innerHTML = `
     <li><a href="Account/login.html">Đăng nhập</a></li>
     <li><a href="Account/register.html">Đăng ký</a></li>
-            `;
+    `;
         }
     }
 
@@ -51,29 +52,10 @@ function handleSearch(event) {
     // Xử lý đăng xuất
     document.addEventListener("click", (e) => {
         if (e.target.id === "logoutLink") {
-            e.preventDefault();
-            localStorage.removeItem("user");
-            localStorage.removeItem("remember");
-            localStorage.removeItem("savedEmail");
-            localStorage.removeItem("savedPassword");
-            updateAccountStatus();
-            alert("Đăng xuất thành công!");
+        e.preventDefault();
+    localStorage.removeItem("currentUser"); // Chỉ xóa trạng thái đăng nhập hiện tại
+    localStorage.removeItem("remember");
+    updateAccountStatus();
+    alert("Đăng xuất thành công!");
         }
     });
-
-
-// Xử lý đăng xuất
-document.addEventListener("click", (e) => {
-    if (e.target.id === "logoutLink") {
-        e.preventDefault();
-        localStorage.removeItem("user");
-        localStorage.removeItem("remember");
-        localStorage.removeItem("savedEmail");
-        localStorage.removeItem("savedPassword");
-        updateAccountStatus();
-        alert("Đăng xuất thành công!");
-    }
-});
-
-// Khởi tạo trạng thái tài khoản khi tải trang
-document.addEventListener("DOMContentLoaded", updateAccountStatus);
