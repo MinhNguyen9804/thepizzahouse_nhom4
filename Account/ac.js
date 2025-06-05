@@ -88,7 +88,7 @@
 
             if (!isValid) return;
 
-            const userData = { email, password };
+            const userData = { hoten, email, password }; // Thêm hoten vào userData
             localStorage.setItem("user", JSON.stringify(userData));
             if (agreeCheckbox.checked) {
                 localStorage.setItem("remember", "true");
@@ -98,7 +98,7 @@
 
             alert("Đăng ký thành công! Đang chuyển sang trang đăng nhập...");
             setTimeout(() => {
-                window.location.href = "../Account/login.html";
+                window.location.href = "login.html";
             }, 1500);
         });
     }
@@ -170,7 +170,7 @@
 
             alert("Đăng nhập thành công!");
             setTimeout(() => {
-                window.location.href = "../index.html";
+                window.location.href = "index.html"; // Đảm bảo đường dẫn đúng
             }, 1500);
         });
     }
