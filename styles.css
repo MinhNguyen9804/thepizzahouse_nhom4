@@ -1509,7 +1509,7 @@ footer {
     }
 
     .banner-dots {
-        bottom: 120px;
+        bottom: 100px;
         margin-left: 40px;
         margin-top: -100px;
     }
@@ -1769,6 +1769,7 @@ footer {
 
     .banner-slide {
         padding: 30px;
+        top: 60px;
     }
 
     .banner-content {
@@ -1900,4 +1901,4 @@ footer {
     align-items: center;
     justify-content: right;
 }
-}
+
