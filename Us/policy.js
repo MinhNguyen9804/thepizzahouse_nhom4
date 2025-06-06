@@ -1,17 +1,49 @@
 ﻿
-
-// Hiệu ứng fade-in khi cuộn
-const policyItems = document.querySelectorAll('.policy-section h2, .policy-section p, .policy-section ul li');
-function checkScroll() {
-    policyItems.forEach(item => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top <= window.innerHeight * 0.8) {
-            item.classList.add('fade-in');
-        }
+// Search function
+function handleSearch(event) {
+    if (event.key === 'Enter') {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        alert('Chuyển hướng đến trang thực đơn để tìm kiếm món ăn ');
+        window.location.href = '../Menu/all.html?search=' + query;
+    }
+}
+function showTestimonials() {
+    const cards = document.querySelectorAll('.testimonial-card');
+    cards.forEach((card, index) => {
+        card.style.display = (index === currentIndex || index === currentIndex + 1) ? 'block' : 'none';
     });
 }
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', checkScroll);
+
+function changeTestimonial(direction) {
+    const cards = document.querySelectorAll('.testimonial-card');
+    const total = cards.length;
+
+    currentIndex += direction * 2;
+
+    if (currentIndex < 0) currentIndex = total - 2;
+    if (currentIndex >= total) currentIndex = 0;
+
+    showTestimonials();
+}
+
+// Fade-in effect when scrolling
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeItems = document.querySelectorAll('.fade-item');
+
+    function checkFadeIn() {
+        fadeItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.85) {
+                item.classList.add("fade-in");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkFadeIn);
+    checkFadeIn(); // initial load
+});
+
+
 // Hàm kiểm tra và hiển thị trạng thái đăng nhập
     function updateAccountStatus() {
         const currentUser = JSON.parse(localStorage.getItem("currentUser"));

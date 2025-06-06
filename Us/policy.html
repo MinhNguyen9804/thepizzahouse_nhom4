@@ -12,98 +12,125 @@
     <link rel="stylesheet" href="../footer.css">
 </head>
 <body>
-    <!-- Header -->
-  <header>
-    <div class="header-top">
-        <div class="logo-container">
-            <img src="../Menu/image/logo.jpg" alt="The Pizza House Logo">
-            <h1>The Pizza House</h1>
-        </div>
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
-        </div>
-        <nav>
-            <a href="../index.html">Trang chủ</a>
-            <a href="../Menu/all.html">Thực đơn</a>
-            <a href="#newaa">Đặt bàn</a>
-            <div class="dropdown">
-                <a href="#">Chúng tôi</a>
-                <ul class="dropdown-menu">
-                    <li><a href="introduce.html">Giới thiệu</a></li>
-                    <li><a href="news.html">Tin tức</a></li>
-                    <li><a href="policy.html">Điều khoản</a></li>
-                    <li><a href="contact.html">Liên hệ</a></li>
-                </ul>
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <img src="../Menu/image/logo.jpg" alt="The Pizza House Logo">
+                <h1>The Pizza House</h1>
             </div>
-        </nav>
-        <div class="icons">
-            <div class="account-dropdown">
-                <a href="#" title="Tài khoản"><i class="fas fa-user"></i></a>
-                <ul class="account-menu" id="accountMenu">
-                    <li><a href="../Account/login.html">Đăng nhập</a></li>
-                    <li><a href="../Account/register.html">Đăng ký</a></li>
-                </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
             </div>
-            <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
-            <span id="userName" style="display: none;"></span> <!-- Thêm tên đăng nhập -->
+            <nav>
+                <a href="../index.html">Trang chủ</a>
+                <a href="../Menu/all.html">Thực đơn</a>
+                <a href="#newaa">Đặt bàn</a>
+                <div class="dropdown">
+                    <a href="#">Chúng tôi</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="introduce.html">Giới thiệu</a></li>
+                        <li><a href="news.html">Tin tức</a></li>
+                        <li><a href="policy.html">Điều khoản</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="icons">
+                <div class="account-dropdown">
+                    <a href="#" title="Tài khoản"><i class="fas fa-user"></i></a>
+                    <ul class="account-menu" id="accountMenu">
+                        <li><a href="../Account/login.html">Đăng nhập</a></li>
+                        <li><a href="../Account/register.html">Đăng ký</a></li>
+                    </ul>
+                </div>
+                <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
+                <span id="userName" style="display: none;"></span> <!-- Thêm tên đăng nhập -->
+            </div>
         </div>
-    </div>
-</header>
-
+    </header>
     <!-- Banner Top Section -->
     <section class="banner-top">
         <h1>Điều khoản & Chính sách</h1>
     </section>
 
+    <!-- Navigation inside page -->
+    <nav class="policy-nav">
+        <ul>
+            <li><a href="#privacy">Chính sách bảo mật</a></li>
+            <li><a href="#return">Chính sách đổi trả</a></li>
+            <li><a href="#delivery">Chính sách giao hàng</a></li>
+            <li><a href="#payment">Chính sách thanh toán</a></li>
+            <li><a href="#warranty">Chính sách bảo hành</a></li>
+        </ul>
+    </nav>
+
     <!-- Policy Section -->
     <section class="policy-section">
+        <div class="policy-block fade-item" id="privacy">
+            <h2>Chính sách bảo mật</h2>
+            <p>The Pizza House luôn trân trọng và cam kết bảo vệ quyền riêng tư của khách hàng. Mọi thông tin cá nhân được thu thập chỉ nhằm mục đích phục vụ tốt hơn, và hoàn toàn không chia sẻ với bất kỳ bên thứ ba nào nếu không có sự đồng ý rõ ràng từ khách hàng.</p>
+            <ul>
+                <li><strong>Thu thập:</strong> Bao gồm họ tên, địa chỉ email, số điện thoại và địa chỉ giao hàng – phục vụ cho việc xác nhận và hoàn tất đơn hàng.</li>
+                <li><strong>Bảo mật:</strong> Mọi dữ liệu đều được mã hóa bằng giao thức SSL tiên tiến, đảm bảo an toàn thông tin trên mọi thiết bị.</li>
+                <li><strong>Quyền của khách hàng:</strong> Bạn có thể yêu cầu chỉnh sửa, cập nhật hoặc xóa thông tin cá nhân bất kỳ lúc nào.</li>
+                <li><strong>Chia sẻ:</strong> Chỉ chia sẻ thông tin nếu được yêu cầu bởi pháp luật hoặc cơ quan chức năng có thẩm quyền.</li>
+            </ul>
+        </div>
 
+        <div class="policy-block fade-item" id="return">
+            <h2>Chính sách đổi trả</h2>
+            <p>Chúng tôi hiểu rằng sự hài lòng của bạn là ưu tiên hàng đầu. Nếu đơn hàng gặp lỗi hoặc không đúng như yêu cầu, Pizza House sẵn sàng hỗ trợ đổi trả nhanh chóng trong vòng 24 giờ kể từ khi giao hàng.</p>
+            <ul>
+                <li><strong>Điều kiện đổi trả:</strong> Sản phẩm còn nguyên vẹn, chưa sử dụng và không bị hư hỏng bởi người nhận.</li>
+                <li><strong>Quy trình:</strong> Vui lòng liên hệ qua số điện thoại <strong>0705 311 048</strong> hoặc gửi email kèm ảnh món ăn để được hỗ trợ nhanh nhất.</li>
+                <li><strong>Hoàn tiền:</strong> Nếu không thể đổi món, khách hàng sẽ được hoàn tiền 100%.</li>
+                <li><strong>Phí xử lý:</strong> Hoàn toàn miễn phí nếu lỗi thuộc về nhà hàng.</li>
+            </ul>
+        </div>
 
-        <h2>Chính sách bảo mật</h2>
-        <p>Chúng tôi tại The Pizza House cam kết bảo vệ thông tin cá nhân của khách hàng một cách nghiêm túc và chuyên nghiệp. Mọi dữ liệu thu thập được sẽ chỉ được sử dụng cho các mục đích cải thiện dịch vụ và nâng cao trải nghiệm của khách hàng, đồng thời đảm bảo không chia sẻ với bất kỳ bên thứ ba nào mà không có sự đồng ý của bạn. Dưới đây là các nguyên tắc cơ bản trong chính sách bảo mật của chúng tôi:</p>
-        <ul>
-            <li><strong>Thu thập thông tin</strong>: Chúng tôi chỉ thu thập các thông tin cần thiết như tên, email, số điện thoại để phục vụ cho việc đặt hàng và liên hệ với khách hàng. Ví dụ, khi bạn đặt bàn qua website, chúng tôi sẽ cần thông tin liên lạc để xác nhận.</li>
-            <li><strong>Bảo mật</strong>: Mọi dữ liệu của bạn đều được mã hóa và bảo vệ bằng công nghệ hiện đại nhất, đảm bảo an toàn tuyệt đối trong quá trình truyền tải và lưu trữ. Chúng tôi sử dụng giao thức SSL để mã hóa thông tin trên website.</li>
-            <li><strong>Quyền của khách hàng</strong>: Bạn có quyền yêu cầu xem, chỉnh sửa hoặc xóa thông tin cá nhân của mình bất kỳ lúc nào. Ngoài ra, bạn cũng có thể rút lại sự đồng ý cung cấp thông tin nếu không muốn tiếp tục sử dụng dịch vụ của chúng tôi.</li>
-            <li><strong>Chia sẻ thông tin</strong>: Chúng tôi cam kết không bán hoặc chia sẻ thông tin của bạn với bất kỳ bên thứ ba nào, trừ khi có yêu cầu từ cơ quan pháp luật hoặc trong trường hợp cần thiết để xử lý đơn hàng (ví dụ: chia sẻ địa chỉ với đối tác giao hàng).</li>
-        </ul>
+        <div class="policy-block fade-item" id="delivery">
+            <h2>Chính sách giao hàng</h2>
+            <p>Pizza House cam kết giao hàng nhanh chóng, đảm bảo giữ trọn hương vị và chất lượng món ăn. Dịch vụ giao hàng hiện tại áp dụng tại khu vực Hà Nội.</p>
+            <ul>
+                <li><strong>Thời gian giao:</strong> Trong khoảng 30–45 phút kể từ khi xác nhận đơn. Một số trường hợp có thể chậm hơn do thời tiết hoặc giao thông.</li>
+                <li><strong>Phí giao hàng:</strong> Miễn phí với đơn hàng từ 500.000đ trở lên; dưới mức này sẽ thu phí 30.000đ/lần giao.</li>
+                <li><strong>Khu vực áp dụng:</strong> Nội thành Hà Nội. Nếu ở ngoài khu vực, vui lòng liên hệ trực tiếp để được tư vấn riêng.</li>
+                <li><strong>Xác nhận đơn:</strong> Khách hàng sẽ nhận được thông báo xác nhận qua tin nhắn SMS hoặc email.</li>
+            </ul>
+        </div>
 
-        <h2>Chính sách đổi trả</h2>
-        <p>Chúng tôi hỗ trợ đổi trả trong vòng 24 giờ kể từ khi nhận hàng nếu món ăn không đúng với yêu cầu hoặc có lỗi từ phía nhà hàng. Chính sách này nhằm đảm bảo khách hàng luôn hài lòng với trải nghiệm ẩm thực tại The Pizza House. Dưới đây là các điều kiện và quy trình chi tiết:</p>
-        <ul>
-            <li><strong>Điều kiện</strong>: Món ăn phải còn nguyên vẹn, chưa sử dụng hoặc không bị hư hỏng do lỗi của khách hàng. Ví dụ, nếu bạn nhận được pizza không đúng loại đã đặt, bạn có thể yêu cầu đổi trả ngay lập tức.</li>
-            <li><strong>Quy trình</strong>: Vui lòng liên hệ qua số hotline 0705311048 hoặc email thepizzahouse@gmail.com để được hỗ trợ. Nhân viên của chúng tôi sẽ xác nhận thông tin đơn hàng và sắp xếp đổi trả trong thời gian sớm nhất.</li>
-            <li><strong>Hoàn tiền</strong>: Trong trường hợp không thể đổi món ăn (hết hàng hoặc lý do khách quan), chúng tôi sẽ hoàn tiền 100% giá trị món ăn đó vào tài khoản của bạn trong vòng 3-5 ngày làm việc.</li>
-            <li><strong>Phí đổi trả</strong>: Chúng tôi miễn phí toàn bộ chi phí đổi trả nếu lỗi thuộc về nhà hàng. Nếu khách hàng đổi trả vì lý do cá nhân, một khoản phí đổi trả nhỏ có thể được áp dụng tùy theo trường hợp.</li>
-        </ul>
+        <div class="policy-block fade-item" id="payment">
+            <h2>Chính sách thanh toán</h2>
+            <p>Chúng tôi hỗ trợ đa dạng phương thức thanh toán để mang lại sự tiện lợi và an tâm tối đa cho khách hàng.</p>
+            <ul>
+                <li><strong>Thanh toán khi nhận hàng (COD):</strong> Thanh toán tiền mặt khi nhận món.</li>
+                <li><strong>Thanh toán online:</strong> Hỗ trợ thanh toán bằng thẻ ngân hàng, ví điện tử như Momo và ZaloPay.</li>
+                <li><strong>Chuyển khoản ngân hàng:</strong> Sau khi đặt hàng, khách hàng sẽ nhận được thông tin tài khoản chuyển khoản qua email.</li>
+                <li><strong>Hủy đơn hàng:</strong> Vui lòng thông báo trước ít nhất 15 phút để tránh mất phí chế biến.</li>
+            </ul>
+        </div>
 
-        <h2>Chính sách giao hàng</h2>
-        <p>Chúng tôi cung cấp dịch vụ giao hàng tận nơi trong khu vực Hà Nội, đảm bảo món ăn được giao đến tay khách hàng trong thời gian nhanh nhất và giữ nguyên chất lượng. Dưới đây là thông tin chi tiết về chính sách giao hàng:</p>
-        <ul>
-            <li><strong>Thời gian giao hàng</strong>: Đơn hàng sẽ được giao trong vòng 30-45 phút kể từ khi xác nhận. Trong trường hợp thời tiết xấu hoặc giờ cao điểm, thời gian giao hàng có thể kéo dài hơn, nhưng chúng tôi sẽ thông báo trước cho khách hàng.</li>
-            <li><strong>Phí giao hàng</strong>: Miễn phí giao hàng cho đơn hàng trên 500,000 VND. Với đơn hàng dưới 500,000 VND, phí giao hàng là 30,000 VND trong nội thành Hà Nội và có thể thay đổi tùy theo khu vực.</li>
-            <li><strong>Khu vực giao hàng</strong>: Hiện tại, chúng tôi chỉ giao hàng trong khu vực Hà Nội. Nếu bạn ở khu vực khác, vui lòng liên hệ để được hỗ trợ đặt hàng đặc biệt.</li>
-            <li><strong>Xác nhận đơn hàng</strong>: Sau khi đặt hàng, bạn sẽ nhận được email hoặc tin nhắn xác nhận với thông tin chi tiết về thời gian giao hàng và mã đơn hàng để theo dõi.</li>
-        </ul>
-
-        <h2>Chính sách thanh toán</h2>
-        <p>Chúng tôi hỗ trợ nhiều phương thức thanh toán linh hoạt để mang lại sự tiện lợi tối đa cho khách hàng. Dưới đây là các phương thức thanh toán được áp dụng tại The Pizza House:</p>
-        <ul>
-            <li><strong>Thanh toán khi nhận hàng (COD)</strong>: Bạn có thể thanh toán bằng tiền mặt khi nhận món ăn từ nhân viên giao hàng. Vui lòng chuẩn bị tiền lẻ để việc thanh toán diễn ra nhanh chóng.</li>
-            <li><strong>Thanh toán trực tuyến</strong>: Chúng tôi chấp nhận thanh toán qua thẻ tín dụng, thẻ ghi nợ, hoặc ví điện tử (Momo, ZaloPay). Giao dịch trực tuyến được bảo mật tuyệt đối với công nghệ mã hóa.</li>
-            <li><strong>Chuyển khoản ngân hàng</strong>: Bạn có thể chuyển khoản trước qua tài khoản ngân hàng của nhà hàng. Thông tin tài khoản sẽ được gửi qua email sau khi bạn đặt hàng.</li>
-            <li><strong>Chính sách hủy đơn</strong>: Nếu bạn muốn hủy đơn hàng, vui lòng thông báo trước ít nhất 15 phút trước khi giao hàng. Nếu đơn hàng đã được chuẩn bị, một khoản phí hủy đơn có thể được áp dụng.</li>
-        </ul>
-
-        <h2>Chính sách bảo hành</h2>
-        <p>Mặc dù The Pizza House là nhà hàng ẩm thực, chúng tôi vẫn áp dụng chính sách bảo hành đặc biệt để đảm bảo chất lượng dịch vụ và sản phẩm:</p>
-        <ul>
-            <li><strong>Bảo hành chất lượng món ăn</strong>: Nếu món ăn không đạt chất lượng (ví dụ: không tươi, không đúng tiêu chuẩn), chúng tôi sẽ thay thế ngay lập tức hoặc hoàn tiền 100%.</li>
-            <li><strong>Thời gian bảo hành</strong>: Chính sách bảo hành áp dụng trong vòng 2 giờ kể từ khi nhận hàng. Sau khoảng thời gian này, chúng tôi không thể đảm bảo chất lượng món ăn do yếu tố bảo quản.</li>
-            <li><strong>Quy trình bảo hành</strong>: Vui lòng chụp ảnh món ăn và gửi kèm mô tả vấn đề qua email thepizzahouse@gmail.com. Đội ngũ của chúng tôi sẽ phản hồi trong vòng 24 giờ.</li>
-            <li><strong>Trách nhiệm</strong>: Chúng tôi không chịu trách nhiệm về các vấn đề phát sinh do khách hàng bảo quản món ăn không đúng cách sau khi nhận hàng.</li>
-        </ul>
+        <div class="policy-block fade-item" id="warranty">
+            <h2>Chính sách bảo hành</h2>
+            <p>Chất lượng món ăn là ưu tiên số một tại The Pizza House. Nếu có bất kỳ vấn đề nào liên quan đến món ăn, chúng tôi luôn sẵn sàng hỗ trợ đổi hoặc hoàn tiền hợp lý.</p>
+            <ul>
+                <li><strong>Cam kết chất lượng:</strong> Nếu món ăn không đạt tiêu chuẩn, chúng tôi sẽ hoàn tiền hoặc đổi món tương ứng.</li>
+                <li><strong>Thời gian hỗ trợ:</strong> Trong vòng 2 giờ sau khi nhận hàng, khách hàng có thể gửi phản hồi để được xử lý.</li>
+                <li><strong>Quy trình khiếu nại:</strong> Vui lòng chụp ảnh, mô tả lỗi rõ ràng và gửi qua email hoặc hotline.</li>
+                <li><strong>Trường hợp ngoại lệ:</strong> Chúng tôi không chịu trách nhiệm trong trường hợp món ăn bị bảo quản sai cách hoặc để quá thời gian khuyến nghị.</li>
+            </ul>
+        </div>
     </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Liên hệ ngay!</h2>
+        <p>Hãy liên hệ với The Pizza House nếu có bất cứ thắc mắc gì bạn nhé!</p>
+        <a href="contact.html" class="cta-btn">Liên hệ ngay</a>
+    </section>
+
+
+
 
     <!-- Footer -->
     <footer id="contact">
@@ -149,34 +176,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="policy.js"></script>
     <script src="../header.js"></script>
-       <script>
-    // Search function
-       function handleSearch(event) {
-        if (event.key === 'Enter') {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            alert('Chuyển hướng đến trang thực đơn để tìm kiếm món ăn ');
-            window.location.href = '../Menu/all.html?search=' + query;
-        }
-    }
-    function showTestimonials() {
-        const cards = document.querySelectorAll('.testimonial-card');
-        cards.forEach((card, index) => {
-          card.style.display = (index === currentIndex || index === currentIndex + 1) ? 'block' : 'none';
-        });
-      }
-      
-      function changeTestimonial(direction) {
-        const cards = document.querySelectorAll('.testimonial-card');
-        const total = cards.length;
-      
-        currentIndex += direction * 2;
-      
-        if (currentIndex < 0) currentIndex = total - 2;
-        if (currentIndex >= total) currentIndex = 0;
-      
-        showTestimonials();
-      }
-      
-    </script>
+
 </body>
 </html>
