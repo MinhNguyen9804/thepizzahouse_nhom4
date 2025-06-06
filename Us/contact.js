@@ -1,15 +1,25 @@
-﻿// Hàm cập nhật số lượng sản phẩm trên icon giỏ hàng
+﻿// Đặt bên ngoài
+function getCart() {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
+}
 function updateCartIconQuantity() {
-    const cart = getCart(); // Lấy giỏ hàng từ Local Storage
-    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0); // Tính tổng số lượng
-    const cartQuantityElement = document.getElementById('cartQuantity'); // ID của span trên icon giỏ hàng
+    const cart = getCart(); // Hàm lấy giỏ hàng từ Local Storage
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartQuantityElement = document.getElementById('cartQuantity');
 
     if (cartQuantityElement) {
         cartQuantityElement.textContent = totalQuantity;
-        cartQuantityElement.style.display = totalQuantity > 0 ? 'inline-block' : 'none'; // Hiện nếu có sp, ẩn nếu không
+        cartQuantityElement.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
     }
 }
-updateCartIconQuantity()
+
+// Gọi khi DOM sẵn sàng
+$(document).ready(function () {
+    updateCartIconQuantity();
+});
+
+
 
 // Hiệu ứng fade-in khi cuộn
 const contactItems = document.querySelectorAll('.contact-form .form-group, .contact-info');

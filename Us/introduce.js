@@ -1,15 +1,24 @@
-﻿// Hàm cập nhật số lượng sản phẩm trên icon giỏ hàng
+﻿
+function getCart() {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
+}
 function updateCartIconQuantity() {
-    const cart = getCart(); // Lấy giỏ hàng từ Local Storage
-    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0); // Tính tổng số lượng
-    const cartQuantityElement = document.getElementById('cartQuantity'); // ID của span trên icon giỏ hàng
+    const cart = getCart(); // Hàm lấy giỏ hàng từ Local Storage
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartQuantityElement = document.getElementById('cartQuantity');
 
     if (cartQuantityElement) {
         cartQuantityElement.textContent = totalQuantity;
-        cartQuantityElement.style.display = totalQuantity > 0 ? 'inline-block' : 'none'; // Hiện nếu có sp, ẩn nếu không
+        cartQuantityElement.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
     }
 }
-updateCartIconQuantity()
+
+// Gọi khi DOM sẵn sàng
+$(document).ready(function () {
+    updateCartIconQuantity();
+});
+
 
 // Khi DOM đã sẵn sàng
 $(document).ready(function () {
@@ -103,6 +112,7 @@ $(document).ready(function () {
         observer.observe(row);
     });
 }); // <-- đóng hàm $(document).ready
+
 // Hàm kiểm tra và hiển thị trạng thái đăng nhập
     function updateAccountStatus() {
         const currentUser = JSON.parse(localStorage.getItem("currentUser"));

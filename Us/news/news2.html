@@ -38,13 +38,22 @@
                 </div>
             </nav>
             <div class="icons">
-                <span class="icons">
-                    <a href="account.html" title="Tài khoản"><i class="fas fa-user"></i></a>
-                    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
-                </span>
+                <div class="account-dropdown">
+                    <a href="#" title="Tài khoản"><i class="fas fa-user"></i></a>
+                    <ul class="account-menu" id="accountMenu">
+                        <li><a href="../../Account/login.html">Đăng nhập</a></li>
+                        <li><a href="../../Account/register.html">Đăng ký</a></li>
+                    </ul>
+                </div>
+                <a href="../../cart/cart.html" title="Giỏ hàng" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartQuantity" class="cart-quantity">0</span>
+                </a>
+                <span id="userName" style="display: none;"></span> <!-- Thêm tên đăng nhập -->
             </div>
         </div>
     </header>
+
 
     <div class="news-detail-container">
         <div class="news-main">
@@ -55,10 +64,10 @@
             <p>The Pizza House hân hoan thông báo chương trình khuyến mãi đặc biệt trong tháng 5: <strong>Giảm giá 20% cho tất cả các món pizza</strong> tại tất cả chi nhánh trên toàn quốc!</p>
 
             <p>Đây là cơ hội tuyệt vời để bạn và gia đình thưởng thức những chiếc pizza thơm ngon với mức giá ưu đãi. Từ pizza cổ điển như Margherita, Pepperoni, đến các món pizza sáng tạo như Pizza Hà Nội Phố hay Pizza Bò Dầu Tỏi – tất cả đều được áp dụng chương trình này.</p>
-            
+
             <div style="text-align: center; margin: 20px 0;">
-            <img src="https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg" alt="Pizza Margherita" style="width:400px; max-width:150%; border-radius:5px;">
-            <p style="margin-top: 8px; font-style: italic;">Pizza Margherita</p>
+                <img src="https://pizza4ps.com/wp-content/uploads/2023/07/Extra-Parma-Ham-Margherita-4.jpg" alt="Pizza Margherita" style="width:400px; max-width:150%; border-radius:5px;">
+                <p style="margin-top: 8px; font-style: italic;">Pizza Margherita</p>
             </div>
 
             <p>Chương trình khuyến mãi sẽ kéo dài từ ngày <strong>01/05/2025 đến 31/05/2025</strong>. Đặc biệt, khi mua từ 2 pizza trở lên, bạn sẽ được tặng kèm một phần khai vị hoặc đồ uống miễn phí (áp dụng tại chi nhánh Hà Nội và Ba Đình).</p>
