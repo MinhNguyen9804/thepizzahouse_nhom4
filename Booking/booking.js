@@ -1,4 +1,8 @@
 // Hàm cập nhật số lượng sản phẩm trên icon giỏ hàng
+function getCart() {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
+}
 function updateCartIconQuantity() {
     const cart = getCart(); // Lấy giỏ hàng từ Local Storage
     const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0); // Tính tổng số lượng
