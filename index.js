@@ -386,3 +386,23 @@ function reattachEventListeners() {
     alert("Đăng xuất thành công!");
         }
     });
+
+    // quay lại đầu trang
+    // Hàm cuộn lên đầu trang
+// Hàm cuộn lên đầu trang
+document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Cuộn mượt mà
+    });
+});
+
+// Hiển thị/ẩn nút khi cuộn trang
+window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('backToTop');
+    if (window.pageYOffset > 200) { // Ngưỡng cuộn (200px)
+        backToTop.style.display = 'block';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});

@@ -53,36 +53,16 @@ $(document).ready(function () {
         fadeItems.forEach((item, index) => {
             const rect = item.getBoundingClientRect();
             const windowHeight = window.innerHeight;
-            if (rect.top >= 0 && rect.top <= windowHeight * 0.8) {
+            if (rect.top >= 0 && rect.top <= windowHeight * 0.9) {
                 setTimeout(() => {
                     item.classList.add('fade-in');
-                }, index * 200);
+                }, index * 100);
             }
         });
     }
     window.addEventListener('scroll', checkFade);
     window.addEventListener('load', checkFade);
 
-
-    /*Scrollytelling*/
-    document.addEventListener("DOMContentLoaded", () => {
-        const blocks = document.querySelectorAll('.history-block');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target); // Fade 1 lần duy nhất
-                }
-            });
-        }, {
-            threshold: 0.2 // Tùy chỉnh tỉ lệ xuất hiện
-        });
-
-        blocks.forEach(block => {
-            observer.observe(block);
-        });
-    });
 
 
     /* about us*/

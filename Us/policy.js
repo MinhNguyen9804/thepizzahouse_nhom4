@@ -11,18 +11,24 @@ function updateCartIconQuantity() {
 }
 updateCartIconQuantity()
 
-// Hiệu ứng fade-in khi cuộn
-const policyItems = document.querySelectorAll('.policy-section h2, .policy-section p, .policy-section ul li');
-function checkScroll() {
-    policyItems.forEach(item => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top <= window.innerHeight * 0.8) {
-            item.classList.add('fade-in');
-        }
-    });
-}
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', checkScroll);
+// Fade-in effect when scrolling
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeItems = document.querySelectorAll('.fade-item');
+
+    function checkFadeIn() {
+        fadeItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.85) {
+                item.classList.add("fade-in");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkFadeIn);
+    checkFadeIn(); // initial load
+});
+
+
 // Hàm kiểm tra và hiển thị trạng thái đăng nhập
     function updateAccountStatus() {
         const currentUser = JSON.parse(localStorage.getItem("currentUser"));
