@@ -1,4 +1,15 @@
-﻿
+﻿// Hàm cập nhật số lượng sản phẩm trên icon giỏ hàng
+function updateCartIconQuantity() {
+    const cart = getCart(); // Lấy giỏ hàng từ Local Storage
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0); // Tính tổng số lượng
+    const cartQuantityElement = document.getElementById('cartQuantity'); // ID của span trên icon giỏ hàng
+
+    if (cartQuantityElement) {
+        cartQuantityElement.textContent = totalQuantity;
+        cartQuantityElement.style.display = totalQuantity > 0 ? 'inline-block' : 'none'; // Hiện nếu có sp, ẩn nếu không
+    }
+}
+updateCartIconQuantity()
 
 // Hiệu ứng fade-in khi cuộn
 const policyItems = document.querySelectorAll('.policy-section h2, .policy-section p, .policy-section ul li');

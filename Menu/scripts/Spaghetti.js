@@ -10,14 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const menuGrid = document.getElementById('menuGrid');
             data.forEach(item => {
                 const menuItem = document.createElement('div');
-                // Thêm lớp 'menu-item' và 'hidden-product' nếu isHidden là true
                 menuItem.className = `menu-item${item.isHidden ? ' hidden-product' : ''}`;
-                // Thêm style display: none nếu isHidden là true
                 if (item.isHidden) {
                     menuItem.style.display = 'none';
                 }
-                menuItem.setAttribute('onclick', `showProductDetail('${item.name}', '${item.image}', '${item.description}', '${item.currentPrice}', '${item.oldPrice}')`);
-
                 // Tạo HTML cho tag (nếu có)
                 let tagHtml = '';
                 if (item.tag) {
@@ -30,24 +26,56 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
+                // Định dạng giá để hiển thị trong HTML
+                const formattedPrice = item.currentPrice; // Giá đã có định dạng trong JSON (e.g., "79,000 VND")
+                const formattedOldPrice = item.oldPrice ? item.oldPrice : '';
+                const rawPrice = item.rawPrice || parseFloat(item.currentPrice.replace(/[^0-9]/g, '')); // Sử dụng rawPrice hoặc parse nếu chưa cập nhật JSON
+
                 let priceHtml = `<div class="price">`;
-                priceHtml += `<span class="current-price">${item.currentPrice}</span>`;
+                priceHtml += `<span class="current-price">${formattedPrice}</span>`;
                 if (item.oldPrice) {
-                    priceHtml += `<span class="old-price">${item.oldPrice}</span>`;
+                    priceHtml += `<span class="old-price">${formattedOldPrice}</span>`;
                 }
                 priceHtml += `</div>`;
 
+                // Tạo button "Thêm vào giỏ"
+                const addToCartBtnHtml = `<button class="add-to-cart-btn" data-id="${item.id}" data-name="${item.name}" data-price="${rawPrice}" data-image="${item.image}">Thêm vào giỏ</button>`;
+
                 menuItem.innerHTML = `
-                    ${tagHtml} <!-- Thêm tag vào đây -->
+                    ${tagHtml}
                     <img src="${item.image}" alt="${item.name}">
                     <h3>${item.name}</h3>
                     <p>${item.description.substring(0, 50)}...</p>
                     ${priceHtml}
-                    <button onclick="addToCart('${item.name}')">Thêm vào giỏ</button>
+                    ${addToCartBtnHtml}
                 `;
+
+                // Gắn sự kiện click cho hình ảnh, tiêu đề và mô tả để mở modal
+                menuItem.querySelector('img').onclick = () => showProductDetail(item.name, item.image, item.description, formattedPrice, rawPrice, item.id);
+                menuItem.querySelector('h3').onclick = () => showProductDetail(item.name, item.image, item.description, formattedPrice, rawPrice, item.id);
+                menuItem.querySelector('p').onclick = () => showProductDetail(item.name, item.image, item.description, formattedPrice, rawPrice, item.id);
+
                 menuGrid.appendChild(menuItem);
             });
-            reattachEventListeners();
+
+            // Gắn sự kiện cho tất cả các nút "Thêm vào giỏ" SAU KHI chúng được thêm vào DOM
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Ngăn sự kiện click lan ra menuItem cha (tránh mở modal)
+                    const product = {
+                        id: this.dataset.id,
+                        name: this.dataset.name,
+                        price: parseFloat(this.dataset.price), // Đảm bảo là số
+                        image: this.dataset.image,
+                        quantity: 1 // Mặc định thêm 1 sản phẩm khi click nút này
+                    };
+                    addToCart(product);
+                });
+            });
+
+            // Gắn sự kiện cho nút đóng modal
+            const modalClose = document.querySelector('.modal-close');
+            if (modalClose) modalClose.onclick = closeProductDetail;
         })
         .catch(error => {
             console.error('Lỗi khi tải dữ liệu:', error);

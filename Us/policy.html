@@ -25,7 +25,7 @@
         <nav>
             <a href="../index.html">Trang chủ</a>
             <a href="../Menu/all.html">Thực đơn</a>
-            <a href="#newaa">Đặt bàn</a>
+            <a href="../Booking/booking.html">Đặt bàn</a>
             <div class="dropdown">
                 <a href="#">Chúng tôi</a>
                 <ul class="dropdown-menu">
@@ -44,7 +44,9 @@
                     <li><a href="../Account/register.html">Đăng ký</a></li>
                 </ul>
             </div>
-            <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
+            <a href="../cart/cart.html" title="Giỏ hàng" class="cart-icon"><i class="fas fa-shopping-cart"></i>
+                    <span id="cartQuantity" class="cart-quantity">0</span>
+                </a>
             <span id="userName" style="display: none;"></span> <!-- Thêm tên đăng nhập -->
         </div>
     </div>
@@ -147,6 +149,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="/Menu/Menu.js"></script>
     <script src="policy.js"></script>
     <script src="../header.js"></script>
        <script>
