@@ -1701,6 +1701,31 @@ footer {
         font-size: 0.8rem;
     }
 }
+#backToTop {
+    position: fixed; /* Cố định vị trí trên màn hình */
+    bottom: 20px; /* Khoảng cách từ dưới */
+    right: 20px; /* Khoảng cách từ phải */
+    background-color: #ff4500; /* Màu nền (cam cháy) */
+    color: white; /* Màu chữ */
+    border: none; /* Loại bỏ viền */
+    border-radius: 50%; /* Hình tròn */
+    width: 50px; /* Kích thước nút */
+    height: 50px; /* Kích thước nút */
+    font-size: 18px; /* Kích thước biểu tượng */
+    cursor: pointer; /* Con trỏ tay khi hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng */
+    opacity: 0.7; /* Độ mờ ban đầu */
+    transition: opacity 0.3s; /* Hiệu ứng mượt khi hover */
+    z-index: 1000; /* Đảm bảo nằm trên các phần tử khác */
+}
+
+#backToTop:hover {
+    opacity: 1; /* Tăng độ mờ khi hover */
+}
+
+#backToTop i {
+    margin-top: 2px; /* Điều chỉnh vị trí biểu tượng */
+}
 
 /* Mobile (max-width: 576px) */
 @media (max-width: 576px) {
