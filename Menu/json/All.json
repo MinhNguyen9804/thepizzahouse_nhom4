@@ -93,11 +93,11 @@
         "name": "Phô mai Burrata Margherita",
         "image": "https://pizza4ps.com/wp-content/uploads/2023/08/2-APPLY-2-Burrata-Parma-Ham-Margherita-2.jpg",
         "description": "Pizza với lớp đế mỏng giòn, phủ sốt cà chua tươi, phô mai Burrata tự làm tan chảy, thêm chút lá húng quế thơm lừng, mang đến hương vị Ý cổ điển đậm đà.",
-        "currentPrice": "198,000 VND",
-        "oldPrice": null,
+        "currentPrice": "99,000 VND",
+        "oldPrice": "198,000 VND",
         "isHidden": true,
         "category": "Pizza",
-        "tag": ""
+        "tag": "hot"
     },
     {
         "name": "Pizza Cá Hồi Xốt Kem Miso",

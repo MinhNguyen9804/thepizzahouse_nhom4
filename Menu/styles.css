@@ -217,10 +217,23 @@
         transform: scale(1.02);
     }
     /*tag*/
-.must-try-tag, .new-tag, .hot-tag {
+.must-try-tag, .new-tag {
     position: absolute;
        top: 25px;
     right: -10px;/* Dịch sang phải để ruy băng trông tự nhiên */
+    color: white; /* Màu chữ */
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 20px; /* Padding cho thân chính của ruy băng */
+    text-align: center;
+    z-index: 10; /* Đảm bảo tag nằm trên các phần tử khác */
+    transform: rotate(45deg); /* Xoay ruy băng để trông tự nhiên */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng để nổi bật */
+}
+.hot-tag{
+     position: absolute;
+       top: 10px;
+    right: 10px;/* Dịch sang phải để ruy băng trông tự nhiên */
     color: white; /* Màu chữ */
     font-size: 12px;
     font-weight: bold;
