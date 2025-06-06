@@ -1,6 +1,52 @@
-function addToCart(itemName) {
-    alert(`${itemName} đã được thêm vào giỏ hàng!`);
+
+// Hàm lấy giỏ hàng từ Local Storage
+function getCart() {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
 }
+
+// Hàm lưu giỏ hàng vào Local Storage
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
+// Cập nhật hàm addToCart để nhận đối tượng sản phẩm và cập nhật icon
+function addToCart(product) {
+    // 1. Kiểm tra trạng thái đăng nhập
+    const currentUser = localStorage.getItem('currentUser'); // Lấy trạng thái đăng nhập từ localStorage
+
+    if (!currentUser) { // Nếu không có người dùng đăng nhập
+        alert("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.");
+        // Tùy chọn: Chuyển hướng người dùng đến trang đăng nhập/đăng ký
+        window.location.href = '../Account/login.html'; // Hoặc '../Account/account.html' nếu đó là trang chung
+        return; // Dừng hàm nếu chưa đăng nhập
+    }
+    let cart = getCart();
+    const existingItem = cart.find(item => item.id === product.id);
+
+    if (existingItem) {
+        existingItem.quantity += product.quantity; // Thêm số lượng từ modal
+    } else {
+        cart.push({ ...product }); // Thêm sản phẩm mới
+    }
+    saveCart(cart);
+    alert(`${product.name} đã được thêm vào giỏ hàng!`);
+    updateCartIconQuantity(); // Gọi hàm cập nhật icon giỏ hàng
+}
+
+// Hàm cập nhật số lượng sản phẩm trên icon giỏ hàng
+function updateCartIconQuantity() {
+    const cart = getCart(); // Lấy giỏ hàng từ Local Storage
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0); // Tính tổng số lượng
+    const cartQuantityElement = document.getElementById('cartQuantity'); // ID của span trên icon giỏ hàng
+
+    if (cartQuantityElement) {
+        cartQuantityElement.textContent = totalQuantity;
+        cartQuantityElement.style.display = totalQuantity > 0 ? 'inline-block' : 'none'; // Hiện nếu có sp, ẩn nếu không
+    }
+}
+updateCartIconQuantity()
 
 function goToHomePage() {
     window.location.href = 'all.html';
@@ -64,66 +110,92 @@ function showMore() {
 
 
 
-// Hiển thị chi tiết sản phẩm trong modal
-function showProductDetail(name, image, description, price) {
+function showProductDetail(name, image, description, formattedPrice, rawPrice, id) {
+    // rawPrice: giá trị số (ví dụ: 120000)
+    // formattedPrice: giá trị hiển thị (ví dụ: "120,000 VNĐ")
+
     const modal = document.getElementById('productModal');
     const modalImage = document.getElementById('modalImage');
     const modalTitle = document.getElementById('modalTitle');
     const modalDescription = document.getElementById('modalDescription');
     const modalPrice = document.getElementById('modalPrice');
-    const unitPriceElement = document.getElementById('unitPrice');
+    const unitPriceElement = document.getElementById('unitPrice'); // hidden span để lưu giá trị số
     const quantityDisplay = document.getElementById('quantity');
     const totalPriceDisplay = document.getElementById('totalPrice');
     const addToCartButton = document.getElementById('addToCartButton');
 
-    // Lấy giá trị đơn giá từ price
-    const unitPrice = parseInt(price.replace(/[^\d]/g, ''), 10);
+    if (!modal || !modalImage || !modalTitle || !modalDescription || !modalPrice || !unitPriceElement || !quantityDisplay || !totalPriceDisplay || !addToCartButton) {
+        console.error("One or more modal elements not found in HTML. Make sure productModal and its children are present.");
+        return;
+    }
 
-    // Cập nhật nội dung modal
     modalImage.style.backgroundImage = `url('${image}')`;
     modalTitle.textContent = name;
     modalDescription.textContent = description;
-    modalPrice.textContent = `Giá: ${price}`;
-    unitPriceElement.textContent = unitPrice;
-    quantityDisplay.textContent = 1;
-    totalPriceDisplay.textContent = unitPrice.toLocaleString("vi-VN") + " VND";
+    modalPrice.textContent = `Giá: ${formattedPrice}`; // Hiển thị giá đã định dạng
+    unitPriceElement.textContent = rawPrice; // Lưu giá gốc (số) vào đây
+    quantityDisplay.textContent = 1; // Đặt lại số lượng về 1 mỗi khi mở modal
+    updateTotal(rawPrice, 1); // Cập nhật tổng tiền ban đầu
 
-    // Thêm sự kiện cho nút "Thêm vào giỏ"
-    addToCartButton.onclick = () => addToCart(name);
+    // Gắn sự kiện cho nút "Thêm vào giỏ" trong modal
+    addToCartButton.onclick = () => {
+        const productId = id; // Sử dụng ID đã truyền vào hoặc tạo từ tên
+        const productName = name;
+        const productPrice = parseFloat(rawPrice); // Đảm bảo là số
+        const productImage = image;
+        const productQuantity = parseInt(quantityDisplay.textContent);
 
-    // Thiết lập số lượng ban đầu
-    let quantity = 1;
-
-    // Xử lý tăng/giảm số lượng
-    document.getElementById("increase-btn").onclick = () => {
-        quantity++;
-        quantityDisplay.textContent = quantity;
-        updateTotal(unitPrice, quantity);
+        const product = {
+            id: productId, // Sử dụng ID đã truyền
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: productQuantity
+        };
+        addToCart(product);
+        closeProductDetail();
     };
 
-    document.getElementById("decrease-btn").onclick = () => {
-        if (quantity > 1) {
-            quantity--;
+    // Gắn lại sự kiện cho các nút tăng/giảm trong modal
+    const decreaseBtn = document.getElementById("decrease-btn");
+    const increaseBtn = document.getElementById("increase-btn");
+
+    if (decreaseBtn) {
+        decreaseBtn.onclick = () => {
+            let quantity = parseInt(quantityDisplay.textContent);
+            if (quantity > 1) {
+                quantity--;
+                quantityDisplay.textContent = quantity;
+                updateTotal(rawPrice, quantity);
+            }
+        };
+    }
+
+    if (increaseBtn) {
+        increaseBtn.onclick = () => {
+            let quantity = parseInt(quantityDisplay.textContent);
+            quantity++;
             quantityDisplay.textContent = quantity;
-            updateTotal(unitPrice, quantity);
-        }
-    };
+            updateTotal(rawPrice, quantity);
+        };
+    }
 
-    // Hiển thị modal
     modal.style.display = 'flex';
 }
 
-// Hàm cập nhật tổng giá
 function updateTotal(unitPrice, quantity) {
     const totalPriceDisplay = document.getElementById('totalPrice');
-    const total = unitPrice * quantity;
-    totalPriceDisplay.textContent = total.toLocaleString("vi-VN") + " VND";
+    if (totalPriceDisplay) {
+        const total = parseFloat(unitPrice) * quantity; // Đảm bảo tính toán với số
+        totalPriceDisplay.textContent = total.toLocaleString("vi-VN") + " VNĐ";
+    }
 }
 
-// Đóng modal
 function closeProductDetail() {
     const modal = document.getElementById('productModal');
-    modal.style.display = 'none';
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
 
 // Đóng modal khi nhấn ra ngoài
@@ -142,6 +214,7 @@ tabs.forEach(tab => {
         tab.classList.add('active');
     });
 });
+/*
 function reattachEventListeners() {
     const modalClose = document.querySelector('.modal-close');
     if (modalClose) modalClose.onclick = closeProductDetail;
@@ -175,6 +248,7 @@ function reattachEventListeners() {
     const addToCartBtn = document.getElementById('addToCartButton');
     if (addToCartBtn) addToCartBtn.onclick = () => addToCart(document.getElementById('modalTitle').textContent);
 }
+    */
  // Hàm kiểm tra và hiển thị trạng thái đăng nhập
     function updateAccountStatus() {
         const currentUser = JSON.parse(localStorage.getItem("currentUser"));

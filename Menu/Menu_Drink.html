@@ -13,8 +13,8 @@
 
 </head>
 <body>
-    <!-- Header -->
-   <header>
+        <!-- Header -->
+  <header>
     <div class="header-top">
         <div class="logo-container">
             <img src="../image_index/logo.jpg" alt="The Pizza House Logo">
@@ -26,7 +26,7 @@
         <nav>
             <a href="../index.html">Trang chủ</a>
             <a href="all.html">Thực đơn</a>    
-            <a href="#newaa">Đặt bàn</a>
+            <a href="../Booking/booking.html">Đặt bàn</a>
             <div class="dropdown">
                 <a href="../Us/introduce.html">Chúng tôi</a>
                 <ul class="dropdown-menu">
@@ -45,11 +45,12 @@
             <li><a href="../Account/register.html">Đăng ký</a></li>
         </ul>
     </div>
-    <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
+    <a href="../cart/cart.html" title="Giỏ hàng" class="cart-icon"><i class="fas fa-shopping-cart"></i>
+                    <span id="cartQuantity" class="cart-quantity">0</span>
+                </a>
     <span id="userName" style="display: none;"></span> <!-- Thêm tên đăng nhập -->
 </div>
 </header>
-
     <!-- Banner Top Section -->
     <section class="banner-top" style="background-image: url('image/winebanner.jpg');">
         <h3>OUR MENU</h3>
@@ -190,5 +191,25 @@
             }
         }
     </script>
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProductDetail()">&times;</span>
+            <div class="modal-body">
+                <div id="modalImage" class="modal-image"></div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <p id="modalPrice"></p>
+                    <input type="hidden" id="unitPrice"> <div class="quantity-control">
+                        <button id="decrease-btn">-</button>
+                        <span id="quantity">1</span>
+                        <button id="increase-btn">+</button>
+                    </div>
+                    <p class="total-price">Tổng cộng: <span id="totalPrice">0 VNĐ</span></p>
+                    <button id="addToCartButton" class="add-to-cart-btn">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

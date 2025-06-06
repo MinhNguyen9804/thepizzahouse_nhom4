@@ -12,42 +12,46 @@
     <link rel="stylesheet" href="../footer.css">
 </head>
 <body>
-    <header>
-        <div class="header-top">
-            <div class="logo-container">
-                <img src="../Menu/image/logo.jpg" alt="The Pizza House Logo">
-                <h1>The Pizza House</h1>
-            </div>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
-            </div>
-            <nav>
-                <a href="../index.html">Trang chủ</a>
-                <a href="../Menu/all.html">Thực đơn</a>
-                <a href="#newaa">Đặt bàn</a>
-                <div class="dropdown">
-                    <a href="#">Chúng tôi</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="introduce.html">Giới thiệu</a></li>
-                        <li><a href="news.html">Tin tức</a></li>
-                        <li><a href="policy.html">Điều khoản</a></li>
-                        <li><a href="contact.html">Liên hệ</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="icons">
-                <div class="account-dropdown">
-                    <a href="#" title="Tài khoản"><i class="fas fa-user"></i></a>
-                    <ul class="account-menu" id="accountMenu">
-                        <li><a href="../Account/login.html">Đăng nhập</a></li>
-                        <li><a href="../Account/register.html">Đăng ký</a></li>
-                    </ul>
-                </div>
-                <a href="cart.html" title="Giỏ hàng"><i class="fas fa-shopping-cart"></i></a>
-                <span id="userName" style="display: none;"></span> <!-- Thêm tên đăng nhập -->
-            </div>
+    <!-- Header -->
+  <header>
+    <div class="header-top">
+        <div class="logo-container">
+            <img src="../Menu/image/logo.jpg" alt="The Pizza House Logo">
+            <h1>The Pizza House</h1>
         </div>
-    </header>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm món ăn..." onkeypress="handleSearch(event)">
+        </div>
+        <nav>
+            <a href="../index.html">Trang chủ</a>
+            <a href="../Menu/all.html">Thực đơn</a>
+            <a href="../Booking/booking.html">Đặt bàn</a>
+            <div class="dropdown">
+                <a href="#">Chúng tôi</a>
+                <ul class="dropdown-menu">
+                    <li><a href="introduce.html">Giới thiệu</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="policy.html">Điều khoản</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="icons">
+            <div class="account-dropdown">
+                <a href="#" title="Tài khoản"><i class="fas fa-user"></i></a>
+                <ul class="account-menu" id="accountMenu">
+                    <li><a href="../Account/login.html">Đăng nhập</a></li>
+                    <li><a href="../Account/register.html">Đăng ký</a></li>
+                </ul>
+            </div>
+            <a href="../cart/cart.html" title="Giỏ hàng" class="cart-icon"><i class="fas fa-shopping-cart"></i>
+                    <span id="cartQuantity" class="cart-quantity">0</span>
+                </a>
+            <span id="userName" style="display: none;"></span> <!-- Thêm tên đăng nhập -->
+        </div>
+    </div>
+</header>
+
     <!-- Banner Top Section -->
     <section class="banner-top">
         <h1>Điều khoản & Chính sách</h1>
@@ -174,6 +178,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="/Menu/Menu.js"></script>
     <script src="policy.js"></script>
     <script src="../header.js"></script>
 
